@@ -90,6 +90,9 @@ h1, h2, h3 { margin: 0; }
   background-size: cover; background-position: center 30%; background-repeat: no-repeat;
   transform: scale(1.04); will-change: transform;
 }
+@media (max-width: 768px) {
+  .hero-bg { background-image: url("/assets/mobile -hero.png"); background-position: center top; }
+}
 .hero-bg::after {
   content: ""; position: absolute; inset: 0;
   background:
