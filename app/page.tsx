@@ -479,14 +479,14 @@ export default function Home() {
         </div>
         <div className="hosts-grid">
           <div className="host">
-            <div className="ph ph-stripe red"><span className="mono lbl">[ portrait · Jamie Vega ]</span></div>
+            <div className="ph"><img src="/assets/nick-bio.png" alt="Nick James Laporte" /></div>
             <div className="host-row">
-              <h3 className="host-name">Jamie Vega</h3>
-              <span className="mono host-handle">@jamievega</span>
+              <h3 className="host-name">Nick James Laporte</h3>
+              <a className="mono host-handle" href="https://www.linkedin.com/in/nicklaporte/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
             </div>
-            <div className="host-role">&quot;Recovering CTO. Designs by candlelight.&quot;</div>
+            <div className="host-role">&quot;Recovering SEO. Designs by candlelight.&quot;</div>
             <p className="host-bio">Jamie has built and broken three production systems before noon. Now she writes long emails about CSS and hosts a podcast about the people who keep the internet running after dark.</p>
-            <div className="host-links"><a href="#">Twitter ↗</a><a href="#">Mastodon ↗</a><a href="#">Newsletter ↗</a></div>
+            <div className="host-links"><a href="https://www.linkedin.com/in/nicklaporte/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="#">Mastodon ↗</a><a href="#">Newsletter ↗</a></div>
           </div>
           <div className="host">
             <div className="ph ph-stripe"><span className="mono lbl">[ portrait · Andre Kostov ]</span></div>
