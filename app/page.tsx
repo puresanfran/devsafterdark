@@ -489,7 +489,7 @@ export default function Home() {
             <div className="host-links"><a href="https://www.linkedin.com/in/nicklaporte/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="#">Mastodon ↗</a><a href="#">Newsletter ↗</a></div>
           </div>
           <div className="host">
-            <div className="ph ph-stripe"><span className="mono lbl">[ portrait · Andre Kostov ]</span></div>
+            <div className="ph"><img src="/assets/dennis-bio.png" alt="Dennis" /></div>
             <div className="host-row">
               <h3 className="host-name">Andre Kostov</h3>
               <span className="mono host-handle">@andrekost</span>
@@ -499,7 +499,7 @@ export default function Home() {
             <div className="host-links"><a href="#">Twitter ↗</a><a href="#">Mastodon ↗</a><a href="#">Newsletter ↗</a></div>
           </div>
           <div className="host">
-            <div className="ph ph-stripe warm"><span className="mono lbl">[ portrait · Theo Wells ]</span></div>
+            <div className="ph"><img src="/assets/aj-bio.png" alt="AJ" /></div>
             <div className="host-row">
               <h3 className="host-name">Theo Wells</h3>
               <span className="mono host-handle">@thewells</span>
