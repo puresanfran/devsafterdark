@@ -56,7 +56,7 @@ export default function Home() {
     ];
 
     const EPISODES = EPISODE_TITLES.map((title, i) => {
-      const idx = EPISODE_TITLES.length - i;
+      const idx = i + 1;
       const guest = GUESTS[i % GUESTS.length];
       const minutes = 28 + ((i * 13) % 34);
       const seconds = (i * 7) % 60;
@@ -66,7 +66,7 @@ export default function Home() {
         summary: SUMMARIES[i % SUMMARIES.length],
         tags: [TAGS[i % TAGS.length], TAGS[(i+3) % TAGS.length]],
       };
-    }).sort((a, b) => b.num - a.num);
+    }).sort((a, b) => a.num - b.num);
 
     /* ── Archive ── */
     let visibleCount = 10;
@@ -355,9 +355,9 @@ export default function Home() {
         <div className="hero-grain" aria-hidden="true"></div>
         <div className="hero-inner">
           <div className="coverline mono">
-            <span>Issue №043</span>
+            <span>Vol. 02 · Issue №001</span>
             <span className="coverline-mid">· The After-Hours Edition ·</span>
-            <span id="liveTime">Tuesday · 02:14 AM</span>
+            <span id="liveTime">Sunday · 02:14 AM</span>
           </div>
           <div className="hero-stage">
             <div className="eyebrow mono fade-up fade-up-1">A podcast for night-shift builders</div>
@@ -372,7 +372,7 @@ export default function Home() {
               <div className="play-cluster">
                 <button className="play-btn" id="playBtn" aria-label="Play latest episode">▶</button>
                 <div className="play-meta">
-                  <span className="ep">Now Playing · EP 043 · 47:13</span>
+                  <span className="ep">Now Playing · EP 001 · 47:13</span>
                   <span className="ttl">&quot;The Bug That Ate My Weekend&quot; — with Mara Chen</span>
                 </div>
               </div>
@@ -386,7 +386,7 @@ export default function Home() {
           </div>
         </div>
         <aside className="hero-meta-card" aria-label="Cover story">
-          <div className="mono label">This Week&apos;s Cover Story</div>
+          <div className="mono label">Vol. 02 · Cover Story</div>
           <div className="title">&quot;The Bug That Ate My Weekend&quot;</div>
           <div className="by">with Mara Chen, Design lead at LunaCo · 47 min</div>
         </aside>
@@ -396,7 +396,7 @@ export default function Home() {
       <div className="mini-player" id="miniPlayer" role="complementary" aria-label="Mini player">
         <button className="mini-play-btn" id="miniPlayBtn" aria-label="Play/pause">▶</button>
         <div className="mini-player-info">
-          <div className="ep-label mono">EP 043</div>
+          <div className="ep-label mono">EP 001</div>
           <div className="ep-title">&quot;The Bug That Ate My Weekend&quot; — Mara Chen</div>
         </div>
         <div className="mini-progress" id="miniProgress" role="progressbar" aria-valuenow={0} aria-valuemin={0} aria-valuemax={100}>
@@ -415,29 +415,29 @@ export default function Home() {
           <a href="#archive" className="mono" style={{color:'var(--accent)'}}>All issues →</a>
         </div>
         <div className="featured-grid">
-          <article className="card big" data-ep="043" tabIndex={0} role="button" aria-label="Episode 043: The Bug That Ate My Weekend">
-            <div className="ph ph-stripe warm"><span className="mono lbl">[ cover · ep 043 ]</span></div>
+          <article className="card big" data-ep="001" tabIndex={0} role="button" aria-label="Episode 001: The Bug That Ate My Weekend">
+            <div className="ph ph-stripe warm"><span className="mono lbl">[ cover · ep 001 ]</span></div>
             <div className="card-body">
-              <div className="card-eyebrow">EP 043 · 47:13 · Tuesday</div>
+              <div className="card-eyebrow">EP 001 · 47:13 · Tuesday</div>
               <div className="card-title">&quot;The Bug That Ate My Weekend&quot;</div>
               <div className="card-by">with Mara Chen, Design lead at LunaCo</div>
               <p className="card-deck">A 72-hour debugging spiral, two pots of coffee, and one humbling git blame.</p>
               <div className="card-tags"><span className="tag">craft</span><span className="tag">career</span></div>
             </div>
           </article>
-          <article className="card" data-ep="042" tabIndex={0} role="button" aria-label="Episode 042: Wireframes at 2am">
-            <div className="ph ph-stripe"><span className="mono lbl">[ cover · ep 042 ]</span></div>
+          <article className="card" data-ep="002" tabIndex={0} role="button" aria-label="Episode 002: Wireframes at 2am">
+            <div className="ph ph-stripe"><span className="mono lbl">[ cover · ep 002 ]</span></div>
             <div className="card-body">
-              <div className="card-eyebrow">EP 042 · 38:08</div>
+              <div className="card-eyebrow">EP 002 · 38:08</div>
               <div className="card-title">&quot;Wireframes at 2am&quot;</div>
               <div className="card-by">with Devon Hart, Founder of Rivet</div>
               <div className="card-tags"><span className="tag">design</span></div>
             </div>
           </article>
-          <article className="card" data-ep="041" tabIndex={0} role="button" aria-label="Episode 041: Sleep Is For The Deployed">
-            <div className="ph ph-stripe red"><span className="mono lbl">[ cover · ep 041 ]</span></div>
+          <article className="card" data-ep="003" tabIndex={0} role="button" aria-label="Episode 003: Sleep Is For The Deployed">
+            <div className="ph ph-stripe red"><span className="mono lbl">[ cover · ep 003 ]</span></div>
             <div className="card-body">
-              <div className="card-eyebrow">EP 041 · 42:55</div>
+              <div className="card-eyebrow">EP 003 · 42:55</div>
               <div className="card-title">&quot;Sleep Is For The Deployed&quot;</div>
               <div className="card-by">with Priya Anand, Staff Eng at Polyglot</div>
               <div className="card-tags"><span className="tag">infra</span></div>
@@ -450,7 +450,7 @@ export default function Home() {
           <div className="section-head" style={{marginBottom:0}}>
             <div>
               <div className="mono section-eyebrow">┘ The Archive ────────────</div>
-              <h2>All <em>43</em> episodes.</h2>
+              <h2>Vol. 02 — All <em>43</em> episodes.</h2>
             </div>
           </div>
           <div className="filter-bar" style={{marginTop:'32px'}}>
