@@ -56,12 +56,13 @@ export default function Home() {
     ];
 
     const EPISODES = EPISODE_TITLES.map((title, i) => {
-      const idx = i + 1;
+      const volume = i < 42 ? 1 : 2;
+      const volEpNum = i < 42 ? i + 1 : i - 41;
       const guest = GUESTS[i % GUESTS.length];
       const minutes = 28 + ((i * 13) % 34);
       const seconds = (i * 7) % 60;
       return {
-        num: idx, title, guest: guest.name, guestRole: guest.role,
+        num: i + 1, volume, volEpNum, title, guest: guest.name, guestRole: guest.role,
         duration: `${minutes}:${String(seconds).padStart(2,'0')}`,
         summary: SUMMARIES[i % SUMMARIES.length],
         tags: [TAGS[i % TAGS.length], TAGS[(i+3) % TAGS.length]],
@@ -71,6 +72,7 @@ export default function Home() {
     /* ── Archive ── */
     let visibleCount = 10;
     let activeTag = 'all';
+    let activeVol = 'all';
     let searchQ = '';
     let currentlyPlayingEl: HTMLButtonElement | null = null;
 
@@ -80,12 +82,13 @@ export default function Home() {
       const showMoreBtn = document.getElementById('showMore') as HTMLButtonElement;
 
       const filtered = EPISODES.filter(ep => {
+        const matchVol = activeVol === 'all' || ep.volume === Number(activeVol);
         const matchTag = activeTag === 'all' || ep.tags.includes(activeTag);
         const q = searchQ.toLowerCase();
         const matchSearch = !q || ep.title.toLowerCase().includes(q)
           || ep.guest.toLowerCase().includes(q) || ep.guestRole.toLowerCase().includes(q)
           || ep.summary.toLowerCase().includes(q) || ep.tags.some(t => t.includes(q));
-        return matchTag && matchSearch;
+        return matchVol && matchTag && matchSearch;
       });
 
       countEl.textContent = `${filtered.length} episode${filtered.length !== 1 ? 's' : ''}`;
@@ -98,13 +101,13 @@ export default function Home() {
       }
 
       list.innerHTML = showing.map(ep => `
-        <div class="archive-row" data-ep="${ep.num}" role="listitem" tabindex="0" aria-label="Episode ${ep.num}: ${ep.title}">
-          <span class="num">${ep.num}</span>
-          <button class="pp" data-ep="${ep.num}" aria-label="Play episode ${ep.num}">▶</button>
+        <div class="archive-row" data-ep="${ep.num}" role="listitem" tabindex="0" aria-label="Vol ${ep.volume} Episode ${ep.volEpNum}: ${ep.title}">
+          <span class="num">${String(ep.volEpNum).padStart(3,'0')}</span>
+          <button class="pp" data-ep="${ep.num}" aria-label="Play episode ${ep.volEpNum}">▶</button>
           <div>
             <div class="title">${ep.title}</div>
             <div class="deck">${ep.summary}</div>
-            <div class="card-tags" style="margin-top:8px;">${ep.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+            <div class="card-tags" style="margin-top:8px;"><span class="tag">Vol. ${ep.volume}</span>${ep.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
           </div>
           <div class="guest">${ep.guest}<small>${ep.guestRole}</small></div>
           <div class="dur">${ep.duration}</div>
@@ -157,7 +160,7 @@ export default function Home() {
 
     function showMiniPlayer(ep: typeof EPISODES[0]) {
       const mp = document.getElementById('miniPlayer') as HTMLElement;
-      (document.querySelector('.mini-player-info .ep-label') as HTMLElement).textContent = `EP ${String(ep.num).padStart(3,'0')}`;
+      (document.querySelector('.mini-player-info .ep-label') as HTMLElement).textContent = `Vol. ${ep.volume} · EP ${String(ep.volEpNum).padStart(3,'0')}`;
       (document.querySelector('.mini-player-info .ep-title') as HTMLElement).textContent = `"${ep.title}" — ${ep.guest}`;
       mp.classList.add('visible');
       (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = '❚❚';
@@ -204,10 +207,20 @@ export default function Home() {
     });
 
     /* ── Filter + search ── */
+    document.getElementById('volChips')?.addEventListener('click', e => {
+      const chip = (e.target as HTMLElement).closest('.fchip') as HTMLElement;
+      if (!chip) return;
+      document.querySelectorAll('#volChips .fchip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeVol = chip.dataset.vol || 'all';
+      visibleCount = 10;
+      renderArchive();
+    });
+
     document.getElementById('filterChips')?.addEventListener('click', e => {
       const chip = (e.target as HTMLElement).closest('.fchip') as HTMLElement;
       if (!chip) return;
-      document.querySelectorAll('.fchip').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('#filterChips .fchip').forEach(c => c.classList.remove('active'));
       chip.classList.add('active');
       activeTag = chip.dataset.tag || 'all';
       visibleCount = 10;
@@ -331,7 +344,7 @@ export default function Home() {
       <header className="nav" id="mainNav">
         <div className="nav-brand">
           <a href="#" className="wordmark">Devs<em>After</em>Dark</a>
-          <div className="mono issue">Vol. 02 · Issue 43</div>
+          <div className="mono issue">Vol. 02 · EP 001</div>
         </div>
         <nav className="nav-links" aria-label="Primary navigation">
           <a href="#latest" className="active">The Latest</a>
@@ -455,6 +468,11 @@ export default function Home() {
           </div>
           <div className="filter-bar" style={{marginTop:'32px'}}>
             <input className="search-input" id="searchInput" type="search" placeholder="Search episodes, guests, topics…" aria-label="Search episodes" />
+            <div className="filter-chips" id="volChips" role="group" aria-label="Filter by volume">
+              <button className="fchip active" data-vol="all">All Volumes</button>
+              <button className="fchip" data-vol="2">Vol. 2</button>
+              <button className="fchip" data-vol="1">Vol. 1</button>
+            </div>
             <div className="filter-chips" id="filterChips" role="group" aria-label="Filter by tag">
               <button className="fchip active" data-tag="all">All</button>
               <button className="fchip" data-tag="craft">Craft</button>
