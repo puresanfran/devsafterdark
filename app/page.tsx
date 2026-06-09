@@ -517,7 +517,7 @@ export default function Home() {
           <div className="host">
             <div className="ph"><img src="/assets/dennis-bio.png" alt="Dennis" /></div>
             <div className="host-row">
-              <h3 className="host-name">Andre Kostov</h3>
+              <h3 className="host-name">Dennis Edson</h3>
               <span className="mono host-handle">@andrekost</span>
             </div>
             <div className="host-role">&quot;Indie hacker. Three failed startups, one mostly-okay one.&quot;</div>
@@ -527,7 +527,7 @@ export default function Home() {
           <div className="host">
             <div className="ph"><img src="/assets/aj-bio.png" alt="AJ" /></div>
             <div className="host-row">
-              <h3 className="host-name">Theo Wells</h3>
+              <h3 className="host-name">A.J. La Porte</h3>
               <span className="mono host-handle">@thewells</span>
             </div>
             <div className="host-role">&quot;Editor-in-chief. Lives on cold brew and red pen.&quot;</div>
