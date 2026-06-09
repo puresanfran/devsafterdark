@@ -92,6 +92,14 @@ export default function Home() {
       });
 
       countEl.textContent = `${filtered.length} episode${filtered.length !== 1 ? 's' : ''}`;
+
+      const headerEl = document.getElementById('archiveHeader') as HTMLElement;
+      if (headerEl) {
+        const volLabel = activeVol === 'all' ? 'All Volumes' : `Vol. ${activeVol}`;
+        const count = filtered.length;
+        headerEl.innerHTML = `${volLabel} — <em>${count}</em> episode${count !== 1 ? 's' : ''}.`;
+      }
+
       const showing = filtered.slice(0, visibleCount);
 
       if (filtered.length === 0) {
@@ -463,7 +471,7 @@ export default function Home() {
           <div className="section-head" style={{marginBottom:0}}>
             <div>
               <div className="mono section-eyebrow">┘ The Archive ────────────</div>
-              <h2>Vol. 02 — All <em>43</em> episodes.</h2>
+              <h2 id="archiveHeader">All Volumes — <em>43</em> episodes.</h2>
             </div>
           </div>
           <div className="filter-bar" style={{marginTop:'32px'}}>
