@@ -67,7 +67,7 @@ export default function Home() {
         summary: SUMMARIES[i % SUMMARIES.length],
         tags: [TAGS[i % TAGS.length], TAGS[(i+3) % TAGS.length]],
       };
-    }).sort((a, b) => a.num - b.num);
+    }).sort((a, b) => b.num - a.num);
 
     /* ── Archive ── */
     let visibleCount = 10;
