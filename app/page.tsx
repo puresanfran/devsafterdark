@@ -512,7 +512,6 @@ export default function Home() {
             </div>
             <div className="host-role">&quot;Recovering SEO. Designs by candlelight.&quot;</div>
             <p className="host-bio">Nick Laporte is the founder, host, and chaos coordinator of Developers:After Dark. When he&apos;s not convincing developers to open up about their fears on a podcast, he&apos;s building things out of PVC pipe and buying domain names no one asked for. He considers the show &quot;more than 1s and 0s,&quot; which is either very profound or a cry for help. Probably both.</p>
-            <div className="host-links"><a href="https://www.linkedin.com/in/nicklaporte/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="#">Mastodon ↗</a><a href="#">Newsletter ↗</a></div>
           </div>
           <div className="host">
             <div className="ph"><img src="/assets/dennis-bio.png" alt="Dennis Edson" /></div>
@@ -521,7 +520,6 @@ export default function Home() {
             </div>
             <div className="host-role">&quot;He edits out our mistakes so we sound smarter than we are.&quot;</div>
             <p className="host-bio">Dennis Edson co-hosts, edits, and somehow keeps Developers:After Dark from sounding like a conference call gone wrong. Armed with a license to create awesome things, Dennis is the quiet backbone of the operation, the kind of person who writes &quot;very clear notes&quot; in the comments of a budget doc while everyone else is panicking. He is the show&apos;s signal-to-noise ratio.</p>
-            <div className="host-links"></div>
           </div>
           <div className="host">
             <div className="ph"><img src="/assets/aj-bio.png" alt="AJ" /></div>
@@ -531,7 +529,6 @@ export default function Home() {
             </div>
             <div className="host-role">&quot;Editor-in-chief. Lives on cold brew and red pen.&quot;</div>
             <p className="host-bio">Theo runs the cutting room — turns rambling 90-minute conversations into 40-minute episodes that feel like a tight short story. Former newsroom audio producer, occasional ghost-writer, full-time night owl.</p>
-            <div className="host-links"><a href="#">Twitter ↗</a><a href="#">Email ↗</a><a href="#">Newsletter ↗</a></div>
           </div>
         </div>
       </section>
