@@ -515,14 +515,13 @@ export default function Home() {
             <div className="host-links"><a href="https://www.linkedin.com/in/nicklaporte/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="#">Mastodon ↗</a><a href="#">Newsletter ↗</a></div>
           </div>
           <div className="host">
-            <div className="ph"><img src="/assets/dennis-bio.png" alt="Dennis" /></div>
+            <div className="ph"><img src="/assets/dennis-bio.png" alt="Dennis Edson" /></div>
             <div className="host-row">
               <h3 className="host-name">Dennis Edson</h3>
-              <span className="mono host-handle">@andrekost</span>
             </div>
-            <div className="host-role">&quot;Indie hacker. Three failed startups, one mostly-okay one.&quot;</div>
-            <p className="host-bio">Andre quit a Big Tech job to launch a tiny CRM out of his kitchen. He believes in shipping ugly, the magic of the 11pm git commit, and that documentation is a love language.</p>
-            <div className="host-links"><a href="#">Twitter ↗</a><a href="#">Mastodon ↗</a><a href="#">Newsletter ↗</a></div>
+            <div className="host-role">&quot;He edits out our mistakes so we sound smarter than we are.&quot;</div>
+            <p className="host-bio">Dennis Edson co-hosts, edits, and somehow keeps Developers:After Dark from sounding like a conference call gone wrong. Armed with a license to create awesome things, Dennis is the quiet backbone of the operation, the kind of person who writes &quot;very clear notes&quot; in the comments of a budget doc while everyone else is panicking. He is the show&apos;s signal-to-noise ratio.</p>
+            <div className="host-links"></div>
           </div>
           <div className="host">
             <div className="ph"><img src="/assets/aj-bio.png" alt="AJ" /></div>
