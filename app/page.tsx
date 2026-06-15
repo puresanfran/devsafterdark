@@ -517,6 +517,7 @@ export default function Home() {
             <div className="ph"><img src="/assets/dennis-bio.png" alt="Dennis Edson" /></div>
             <div className="host-row">
               <h3 className="host-name">Dennis Edson</h3>
+              <a className="mono host-handle" href="https://www.linkedin.com/in/dennisedson/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
             </div>
             <div className="host-role">&quot;He edits out our mistakes so we sound smarter than we are.&quot;</div>
             <p className="host-bio">Dennis Edson co-hosts, edits, and somehow keeps Developers:After Dark from sounding like a conference call gone wrong. Armed with a license to create awesome things, Dennis is the quiet backbone of the operation, the kind of person who writes &quot;very clear notes&quot; in the comments of a budget doc while everyone else is panicking. He is the show&apos;s signal-to-noise ratio.</p>
@@ -525,7 +526,7 @@ export default function Home() {
             <div className="ph"><img src="/assets/aj-bio.png" alt="AJ" /></div>
             <div className="host-row">
               <h3 className="host-name">A.J. La Porte</h3>
-              <span className="mono host-handle">@thewells</span>
+              <a className="mono host-handle" href="https://www.linkedin.com/in/ajlaporte/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
             </div>
             <div className="host-role">&quot;Editor-in-chief. Lives on cold brew and red pen.&quot;</div>
             <p className="host-bio">Theo runs the cutting room — turns rambling 90-minute conversations into 40-minute episodes that feel like a tight short story. Former newsroom audio producer, occasional ghost-writer, full-time night owl.</p>
