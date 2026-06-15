@@ -511,7 +511,7 @@ export default function Home() {
               <a className="mono host-handle" href="https://www.linkedin.com/in/nicklaporte/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
             </div>
             <div className="host-role">&quot;Recovering SEO. Designs by candlelight.&quot;</div>
-            <p className="host-bio">Jamie has built and broken three production systems before noon. Now she writes long emails about CSS and hosts a podcast about the people who keep the internet running after dark.</p>
+            <p className="host-bio">Nick LaPorte is the founder, host, and chaos coordinator of Developers:After Dark. When he&apos;s not convincing developers to open up about their fears on a podcast, he&apos;s building things out of PVC pipe and buying domain names no one asked for. He considers the show &quot;more than 1s and 0s,&quot; which is either very profound or a cry for help. Probably both.</p>
             <div className="host-links"><a href="https://www.linkedin.com/in/nicklaporte/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="#">Mastodon ↗</a><a href="#">Newsletter ↗</a></div>
           </div>
           <div className="host">
