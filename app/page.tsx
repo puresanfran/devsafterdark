@@ -528,8 +528,8 @@ export default function Home() {
               <h3 className="host-name">A.J. La Porte</h3>
               <a className="mono host-handle" href="https://www.linkedin.com/in/ajlaporte/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
             </div>
-            <div className="host-role">&quot;Editor-in-chief. Lives on cold brew and red pen.&quot;</div>
-            <p className="host-bio">Theo runs the cutting room — turns rambling 90-minute conversations into 40-minute episodes that feel like a tight short story. Former newsroom audio producer, occasional ghost-writer, full-time night owl.</p>
+            <div className="host-role">&quot;Co-host, producer, and the reason there&apos;s a plan.&quot;</div>
+            <p className="host-bio">A.J. LaPorte is the producer and co-host of Developers:After Dark, which means he&apos;s the one making sure things actually happen while Nick talks and Dennis edits. Part of the legendary LaPorte duo on the show, A.J. brings the structure to the storytelling, the kind of behind-the-scenes energy that makes everyone else look organized. He has not yet bought a domain name for this.</p>
           </div>
         </div>
       </section>
