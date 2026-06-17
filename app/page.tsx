@@ -305,7 +305,7 @@ export default function Home() {
     const handleScroll = () => {
       nav.classList.toggle('scrolled', window.scrollY > 80);
       const heroHeight = (document.querySelector('.hero') as HTMLElement).offsetHeight;
-      if (window.scrollY > heroHeight * 0.8 && !miniPaused) {
+      if (window.scrollY > heroHeight * 0.8 && !audio.paused) {
         (document.getElementById('miniPlayer') as HTMLElement).classList.add('visible');
       }
       let current = 'latest';
