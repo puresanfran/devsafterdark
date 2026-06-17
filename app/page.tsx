@@ -61,11 +61,16 @@ export default function Home() {
       const guest = GUESTS[i % GUESTS.length];
       const minutes = 28 + ((i * 13) % 34);
       const seconds = (i * 7) % 60;
+      const paddedVolEp = String(volEpNum).padStart(3, '0');
+      const audioUrl = volume === 1 && volEpNum !== 27
+        ? `https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-${paddedVolEp}.mp3`
+        : null;
       return {
         num: i + 1, volume, volEpNum, title, guest: guest.name, guestRole: guest.role,
         duration: `${minutes}:${String(seconds).padStart(2,'0')}`,
         summary: SUMMARIES[i % SUMMARIES.length],
         tags: [TAGS[i % TAGS.length], TAGS[(i+3) % TAGS.length]],
+        audioUrl,
       };
     }).sort((a, b) => b.num - a.num);
 
@@ -140,10 +145,24 @@ export default function Home() {
       });
     }
 
-    /* ── Mini player ── */
-    let miniPaused = true;
-    let miniProgress = 0;
-    let miniInterval: ReturnType<typeof setInterval> | null = null;
+    /* ── Audio engine ── */
+    const audio = new Audio();
+    audio.preload = 'none';
+
+    audio.addEventListener('timeupdate', () => {
+      if (!audio.duration) return;
+      const pct = (audio.currentTime / audio.duration) * 100;
+      (document.getElementById('miniProgressFill') as HTMLElement).style.width = pct + '%';
+      (document.getElementById('miniProgress') as HTMLElement)?.setAttribute('aria-valuenow', String(Math.round(pct)));
+    });
+
+    audio.addEventListener('ended', () => {
+      (document.getElementById('miniProgressFill') as HTMLElement).style.width = '0%';
+      (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = '▶';
+      if (currentlyPlayingEl) { currentlyPlayingEl.textContent = '▶'; currentlyPlayingEl.classList.remove('playing'); currentlyPlayingEl = null; }
+      (document.getElementById('playBtn') as HTMLButtonElement).textContent = '▶';
+      (document.getElementById('playBtn') as HTMLButtonElement).classList.remove('playing');
+    });
 
     function triggerPlay(ep: typeof EPISODES[0], btnEl: HTMLButtonElement) {
       if (currentlyPlayingEl && currentlyPlayingEl !== btnEl) {
@@ -152,17 +171,17 @@ export default function Home() {
       }
       const isPlaying = btnEl.classList.contains('playing');
       if (isPlaying) {
+        audio.pause();
         btnEl.textContent = '▶';
         btnEl.classList.remove('playing');
         currentlyPlayingEl = null;
-        miniPaused = true;
         (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = '▶';
       } else {
         btnEl.textContent = '❚❚';
         btnEl.classList.add('playing');
         currentlyPlayingEl = btnEl;
-        miniPaused = false;
         showMiniPlayer(ep);
+        if (ep.audioUrl) { audio.src = ep.audioUrl; audio.play().catch(() => {}); }
       }
     }
 
@@ -172,46 +191,48 @@ export default function Home() {
       (document.querySelector('.mini-player-info .ep-title') as HTMLElement).textContent = `"${ep.title}" — ${ep.guest}`;
       mp.classList.add('visible');
       (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = '❚❚';
-      startMiniProgress();
-    }
-
-    function startMiniProgress() {
-      if (miniInterval) clearInterval(miniInterval);
-      miniInterval = setInterval(() => {
-        if (!miniPaused) {
-          miniProgress = Math.min(miniProgress + 0.15, 100);
-          (document.getElementById('miniProgressFill') as HTMLElement).style.width = miniProgress + '%';
-          (document.getElementById('miniProgress') as HTMLElement).setAttribute('aria-valuenow', String(Math.round(miniProgress)));
-          if (miniProgress >= 100) { if (miniInterval) clearInterval(miniInterval); miniProgress = 0; }
-        }
-      }, 500);
     }
 
     document.getElementById('miniPlayBtn')?.addEventListener('click', () => {
-      miniPaused = !miniPaused;
-      (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = miniPaused ? '▶' : '❚❚';
-      if (!miniPaused) startMiniProgress();
+      if (audio.paused) {
+        audio.play().catch(() => {});
+        (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = '❚❚';
+        if (currentlyPlayingEl) currentlyPlayingEl.textContent = '❚❚';
+      } else {
+        audio.pause();
+        (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = '▶';
+        if (currentlyPlayingEl) currentlyPlayingEl.textContent = '▶';
+      }
     });
 
     document.getElementById('miniClose')?.addEventListener('click', () => {
+      audio.pause();
+      audio.src = '';
       (document.getElementById('miniPlayer') as HTMLElement).classList.remove('visible');
-      if (miniInterval) clearInterval(miniInterval);
-      miniPaused = true; miniProgress = 0;
       (document.getElementById('miniProgressFill') as HTMLElement).style.width = '0%';
       if (currentlyPlayingEl) { currentlyPlayingEl.textContent = '▶'; currentlyPlayingEl.classList.remove('playing'); currentlyPlayingEl = null; }
       (document.getElementById('playBtn') as HTMLButtonElement).textContent = '▶';
       (document.getElementById('playBtn') as HTMLButtonElement).classList.remove('playing');
     });
 
-    /* ── Hero play ── */
-    let heroPlaying = false;
+    /* ── Hero play (latest episode with audio) ── */
+    const latestEp = [...EPISODES].reverse().find(ep => ep.audioUrl) ?? null;
     document.getElementById('playBtn')?.addEventListener('click', () => {
-      heroPlaying = !heroPlaying;
-      (document.getElementById('playBtn') as HTMLButtonElement).textContent = heroPlaying ? '❚❚' : '▶';
-      (document.getElementById('playBtn') as HTMLButtonElement).classList.toggle('playing', heroPlaying);
-      (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = heroPlaying ? '❚❚' : '▶';
-      miniPaused = !heroPlaying;
-      if (heroPlaying) { (document.getElementById('miniPlayer') as HTMLElement).classList.add('visible'); startMiniProgress(); }
+      if (!latestEp) return;
+      const heroBtn = document.getElementById('playBtn') as HTMLButtonElement;
+      const isPlaying = heroBtn.classList.contains('playing');
+      if (isPlaying) {
+        audio.pause();
+        heroBtn.textContent = '▶';
+        heroBtn.classList.remove('playing');
+        (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = '▶';
+      } else {
+        if (audio.src !== latestEp.audioUrl) { audio.src = latestEp.audioUrl!; }
+        audio.play().catch(() => {});
+        heroBtn.textContent = '❚❚';
+        heroBtn.classList.add('playing');
+        showMiniPlayer(latestEp);
+      }
     });
 
     /* ── Filter + search ── */
