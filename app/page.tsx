@@ -149,11 +149,30 @@ export default function Home() {
     const audio = new Audio();
     audio.preload = 'none';
 
+    function formatTime(secs: number) {
+      const m = Math.floor(secs / 60);
+      const s = Math.floor(secs % 60);
+      return `${m}:${String(s).padStart(2, '0')}`;
+    }
+
     audio.addEventListener('timeupdate', () => {
       if (!audio.duration) return;
       const pct = (audio.currentTime / audio.duration) * 100;
       (document.getElementById('miniProgressFill') as HTMLElement).style.width = pct + '%';
       (document.getElementById('miniProgress') as HTMLElement)?.setAttribute('aria-valuenow', String(Math.round(pct)));
+      const timeEl = document.getElementById('miniTime');
+      if (timeEl) timeEl.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+    });
+
+    document.getElementById('miniProgress')?.addEventListener('click', (e) => {
+      const bar = e.currentTarget as HTMLElement;
+      const rect = bar.getBoundingClientRect();
+      const pct = ((e as MouseEvent).clientX - rect.left) / rect.width;
+      if (audio.duration) audio.currentTime = pct * audio.duration;
+    });
+
+    document.getElementById('miniVolume')?.addEventListener('input', (e) => {
+      audio.volume = Number((e.target as HTMLInputElement).value);
     });
 
     audio.addEventListener('ended', () => {
@@ -444,6 +463,8 @@ export default function Home() {
         <div className="mini-progress" id="miniProgress" role="progressbar" aria-valuenow={0} aria-valuemin={0} aria-valuemax={100}>
           <div className="mini-progress-fill" id="miniProgressFill"></div>
         </div>
+        <div className="mini-time mono" id="miniTime">0:00 / 0:00</div>
+        <input className="mini-volume" id="miniVolume" type="range" min="0" max="1" step="0.05" defaultValue="1" aria-label="Volume" />
         <button className="mini-close" id="miniClose" aria-label="Close player">✕</button>
       </div>
 
