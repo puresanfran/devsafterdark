@@ -251,7 +251,7 @@ export default function Home() {
     function showMiniPlayer(ep: typeof EPISODES[0]) {
       const mp = document.getElementById('miniPlayer') as HTMLElement;
       (document.querySelector('.mini-player-info .ep-label') as HTMLElement).textContent = `Vol. ${ep.volume} · EP ${String(ep.volEpNum).padStart(3,'0')}`;
-      (document.querySelector('.mini-player-info .ep-title') as HTMLElement).textContent = `"${ep.title}" with ${ep.guest}`;
+      (document.querySelector('.mini-player-info .ep-title') as HTMLElement).textContent = `"${ep.title}" — ${ep.guest}`;
       mp.classList.add('visible');
       (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = '❚❚';
     }
@@ -478,7 +478,7 @@ export default function Home() {
                 <button className="play-btn" id="playBtn" aria-label="Play latest episode">▶</button>
                 <div className="play-meta">
                   <span className="ep">Now Playing · EP 001 · 47:13</span>
-                  <span className="ttl">&quot;The Bug That Ate My Weekend&quot; with Mara Chen</span>
+                  <span className="ttl">&quot;The Bug That Ate My Weekend&quot; — with Mara Chen</span>
                 </div>
               </div>
               <a href="#archive" className="btn btn-ghost">Browse the archive →</a>
@@ -504,7 +504,7 @@ export default function Home() {
         <button className="mini-skip-btn" id="miniSkipFwd" aria-label="Skip forward 15 seconds">15⟩</button>
         <div className="mini-player-info">
           <div className="ep-label mono">EP 001</div>
-          <div className="ep-title">&quot;The Bug That Ate My Weekend&quot; · Mara Chen</div>
+          <div className="ep-title">&quot;The Bug That Ate My Weekend&quot; — Mara Chen</div>
         </div>
         <div className="mini-progress" id="miniProgress" role="progressbar" aria-valuenow={0} aria-valuemin={0} aria-valuemax={100}>
           <div className="mini-progress-fill" id="miniProgressFill"></div>
