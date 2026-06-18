@@ -81,19 +81,29 @@ export default function Home() {
       "If your side project has been 'almost ready' for six months, this one is for you.",
     ];
 
+    const VOL1_DURATIONS: Record<number, string> = {
+      1:'1:40:13', 2:'1:43:33', 3:'2:04:23', 4:'1:29:17', 5:'1:52:56',
+      6:'1:43:26', 7:'1:19:55', 8:'1:10:17', 9:'1:15:59', 10:'1:12:54',
+      11:'1:07:01', 12:'1:16:02', 13:'1:06:41', 14:'1:01:57', 15:'1:17:21',
+      16:'1:06:29', 17:'1:12:14', 18:'57:16',  19:'1:07:52', 20:'1:00:23',
+      21:'1:07:46', 22:'1:07:55', 23:'1:06:06', 24:'1:04:05', 25:'1:06:46',
+      26:'1:06:03', 27:'—',       28:'1:01:12', 29:'1:06:10', 30:'1:12:29',
+      31:'1:08:12', 32:'1:11:50', 33:'1:25:32', 34:'1:18:03', 35:'48:01',
+      36:'57:44',   37:'53:53',   38:'1:13:10', 39:'41:53',   40:'56:21',
+      41:'57:52',   42:'1:03:53',
+    };
+
     const EPISODES = EPISODE_TITLES.map((title, i) => {
       const volume = i < 42 ? 1 : 2;
       const volEpNum = i < 42 ? i + 1 : i - 41;
       const guest = GUESTS[i % GUESTS.length];
-      const minutes = 28 + ((i * 13) % 34);
-      const seconds = (i * 7) % 60;
       const paddedVolEp = String(volEpNum).padStart(3, '0');
       const audioUrl = volume === 1 && volEpNum !== 27
         ? `https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-${paddedVolEp}.mp3`
         : null;
       return {
         num: i + 1, volume, volEpNum, title, guest: guest.name, guestRole: guest.role,
-        duration: `${minutes}:${String(seconds).padStart(2,'0')}`,
+        duration: volume === 1 ? (VOL1_DURATIONS[volEpNum] ?? '—') : '—',
         summary: SUMMARIES[i % SUMMARIES.length],
         tags: [TAGS[i % TAGS.length], TAGS[(i+3) % TAGS.length]],
         audioUrl,
