@@ -87,7 +87,7 @@ export default function Home() {
       11:'1:07:01', 12:'1:16:02', 13:'1:06:41', 14:'1:01:57', 15:'1:17:21',
       16:'1:06:29', 17:'1:12:14', 18:'57:16',  19:'1:07:52', 20:'1:00:23',
       21:'1:07:46', 22:'1:07:55', 23:'1:06:06', 24:'1:04:05', 25:'1:06:46',
-      26:'1:06:03', 27:'—',       28:'1:01:12', 29:'1:06:10', 30:'1:12:29',
+      26:'1:06:03', 27:'',         28:'1:01:12', 29:'1:06:10', 30:'1:12:29',
       31:'1:08:12', 32:'1:11:50', 33:'1:25:32', 34:'1:18:03', 35:'48:01',
       36:'57:44',   37:'53:53',   38:'1:13:10', 39:'41:53',   40:'56:21',
       41:'57:52',   42:'1:03:53',
@@ -103,7 +103,7 @@ export default function Home() {
         : null;
       return {
         num: i + 1, volume, volEpNum, title, guest: guest.name, guestRole: guest.role,
-        duration: volume === 1 ? (VOL1_DURATIONS[volEpNum] ?? '—') : '—',
+        duration: volume === 1 ? (VOL1_DURATIONS[volEpNum] ?? '') : '',
         summary: SUMMARIES[i % SUMMARIES.length],
         tags: [TAGS[i % TAGS.length], TAGS[(i+3) % TAGS.length]],
         audioUrl,
