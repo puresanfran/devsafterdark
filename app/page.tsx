@@ -72,7 +72,7 @@ export default function Home() {
       'A 72-hour debugging spiral, two pots of coffee, and one humbling git blame.',
       'On designing things alone at night, the courage of the first draft, and why polish is overrated.',
       "What happens when the on-call phone rings and the room is dark and the bug isn't yours.",
-      "A speedrun through a side project — the constraints, the cuts, the launch day panic.",
+      "A speedrun through a side project: the constraints, the cuts, the launch day panic.",
       "An intermittent failure that only happened on Tuesdays. We tried everything.",
       "A founder story that starts in a dive bar and ends with paying customers.",
       "Letting go of the perfect system diagram and learning to ship something messy.",
@@ -138,7 +138,7 @@ export default function Home() {
       if (headerEl) {
         const volLabel = activeVol === 'all' ? 'All Volumes' : `Vol. ${activeVol}`;
         const count = filtered.length;
-        headerEl.innerHTML = `${volLabel} — <em>${count}</em> episode${count !== 1 ? 's' : ''}.`;
+        headerEl.innerHTML = `${volLabel}: <em>${count}</em> episode${count !== 1 ? 's' : ''}.`;
       }
 
       const showing = filtered.slice(0, visibleCount);
@@ -251,7 +251,7 @@ export default function Home() {
     function showMiniPlayer(ep: typeof EPISODES[0]) {
       const mp = document.getElementById('miniPlayer') as HTMLElement;
       (document.querySelector('.mini-player-info .ep-label') as HTMLElement).textContent = `Vol. ${ep.volume} · EP ${String(ep.volEpNum).padStart(3,'0')}`;
-      (document.querySelector('.mini-player-info .ep-title') as HTMLElement).textContent = `"${ep.title}" — ${ep.guest}`;
+      (document.querySelector('.mini-player-info .ep-title') as HTMLElement).textContent = `"${ep.title}" with ${ep.guest}`;
       mp.classList.add('visible');
       (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = '❚❚';
     }
@@ -471,14 +471,14 @@ export default function Home() {
               <em>after</em> bedtime.
             </h1>
             <p className="deck fade-up fade-up-3">
-              Late-night conversations with the people who keep the internet running while you sleep — the founders, the maintainers, the on-call engineers, and the friends-of-friends with one truly weird production story.
+              Late-night conversations with the people who keep the internet running while you sleep: the founders, the maintainers, the on-call engineers, and the friends-of-friends with one truly weird production story.
             </p>
             <div className="hero-actions fade-up fade-up-4">
               <div className="play-cluster">
                 <button className="play-btn" id="playBtn" aria-label="Play latest episode">▶</button>
                 <div className="play-meta">
                   <span className="ep">Now Playing · EP 001 · 47:13</span>
-                  <span className="ttl">&quot;The Bug That Ate My Weekend&quot; — with Mara Chen</span>
+                  <span className="ttl">&quot;The Bug That Ate My Weekend&quot; with Mara Chen</span>
                 </div>
               </div>
               <a href="#archive" className="btn btn-ghost">Browse the archive →</a>
@@ -504,7 +504,7 @@ export default function Home() {
         <button className="mini-skip-btn" id="miniSkipFwd" aria-label="Skip forward 15 seconds">15⟩</button>
         <div className="mini-player-info">
           <div className="ep-label mono">EP 001</div>
-          <div className="ep-title">&quot;The Bug That Ate My Weekend&quot; — Mara Chen</div>
+          <div className="ep-title">&quot;The Bug That Ate My Weekend&quot; · Mara Chen</div>
         </div>
         <div className="mini-progress" id="miniProgress" role="progressbar" aria-valuenow={0} aria-valuemin={0} aria-valuemax={100}>
           <div className="mini-progress-fill" id="miniProgressFill"></div>
@@ -560,7 +560,7 @@ export default function Home() {
           <div className="section-head" style={{marginBottom:0}}>
             <div>
               <div className="mono section-eyebrow">┘ The Archive ────────────</div>
-              <h2 id="archiveHeader">All Volumes — <em>43</em> episodes.</h2>
+              <h2 id="archiveHeader">All Volumes: <em>43</em> episodes.</h2>
             </div>
           </div>
           <div className="filter-bar" style={{marginTop:'32px'}}>
@@ -629,7 +629,7 @@ export default function Home() {
           <span className="tape" style={{marginBottom:'24px',display:'inline-block'}}>Open Submissions</span>
           <h2>Pitch us<br /><em>a story.</em></h2>
           <p className="deck-large">
-            We&apos;re not interested in the polished version. We want the part you usually leave out — the bug that took two months, the bet that didn&apos;t pay off, the late-night decision that turned into a company.
+            We&apos;re not interested in the polished version. We want the part you usually leave out: the bug that took two months, the bet that didn&apos;t pay off, the late-night decision that turned into a company.
           </p>
           <div className="steps">
             <div className="step"><span className="step-num">1.</span><div><div className="step-k">Pitch</div><div className="step-v">A paragraph or two. The arc, not the bullet points.</div></div></div>
@@ -757,7 +757,7 @@ export default function Home() {
         </div>
       </footer>
       <div className="colophon mono">
-        <span>© DevsAfterDark Studios — Brewed at unreasonable hours.</span>
+        <span>© DevsAfterDark Studios. Brewed at unreasonable hours.</span>
         <span>v.02.43 · published Tuesday 02:14 AM</span>
       </div>
     </>
