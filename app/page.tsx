@@ -175,6 +175,14 @@ export default function Home() {
       audio.volume = Number((e.target as HTMLInputElement).value);
     });
 
+    document.getElementById('miniSkipBack')?.addEventListener('click', () => {
+      audio.currentTime = Math.max(0, audio.currentTime - 15);
+    });
+
+    document.getElementById('miniSkipFwd')?.addEventListener('click', () => {
+      audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 15);
+    });
+
     audio.addEventListener('ended', () => {
       (document.getElementById('miniProgressFill') as HTMLElement).style.width = '0%';
       (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = '▶';
@@ -455,7 +463,9 @@ export default function Home() {
 
       {/* MINI PLAYER */}
       <div className="mini-player" id="miniPlayer" role="complementary" aria-label="Mini player">
+        <button className="mini-skip-btn" id="miniSkipBack" aria-label="Skip back 15 seconds">⟨15</button>
         <button className="mini-play-btn" id="miniPlayBtn" aria-label="Play/pause">▶</button>
+        <button className="mini-skip-btn" id="miniSkipFwd" aria-label="Skip forward 15 seconds">15⟩</button>
         <div className="mini-player-info">
           <div className="ep-label mono">EP 001</div>
           <div className="ep-title">&quot;The Bug That Ate My Weekend&quot; — Mara Chen</div>
