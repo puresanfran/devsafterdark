@@ -353,7 +353,7 @@ export default function Home() {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('scroll', handleParallax);
       clearInterval(clockInterval);
-      if (miniInterval) clearInterval(miniInterval);
+      audio.pause();
     };
   }, []);
 
