@@ -143,9 +143,10 @@ h1, h2, h3 { margin: 0; }
 .mini-progress { flex: 1; height: 4px; background: var(--line); position: relative; cursor: pointer; max-width: 280px; border-radius: 2px; }
 .mini-progress-fill { height: 100%; background: var(--accent); width: 0%; transition: width 0.25s linear; border-radius: 2px; }
 .mini-time { font-family: var(--mono); font-size: 11px; color: var(--mute); white-space: nowrap; flex-shrink: 0; }
+.mini-vol-icon { font-size: 14px; flex-shrink: 0; opacity: 0.6; }
 .mini-volume { -webkit-appearance: none; appearance: none; width: 80px; height: 3px; border-radius: 2px; background: var(--line); outline: none; cursor: pointer; flex-shrink: 0; accent-color: var(--accent); }
 .mini-volume::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); cursor: pointer; }
-@media (max-width: 640px) { .mini-progress { display: none; } .mini-time { display: none; } .mini-volume { display: none; } }
+@media (max-width: 640px) { .mini-progress { display: none; } .mini-time { display: none; } .mini-vol-icon { display: none; } .mini-volume { display: none; } }
 .mini-close { background: none; border: none; color: var(--mute); cursor: pointer; font-size: 18px; line-height: 1; padding: 4px; }
 
 /* ═══ SECTION FRAME ═══ */

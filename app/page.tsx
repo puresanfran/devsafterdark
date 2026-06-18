@@ -464,6 +464,7 @@ export default function Home() {
           <div className="mini-progress-fill" id="miniProgressFill"></div>
         </div>
         <div className="mini-time mono" id="miniTime">0:00 / 0:00</div>
+        <span className="mini-vol-icon">&#128266;</span>
         <input className="mini-volume" id="miniVolume" type="range" min="0" max="1" step="0.05" defaultValue="1" aria-label="Volume" />
         <button className="mini-close" id="miniClose" aria-label="Close player">✕</button>
       </div>
