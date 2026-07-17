@@ -412,10 +412,32 @@ export default function Home() {
 
     renderArchive();
 
+    /* ── Vol 2 countdown ── */
+    const vol2Target = new Date('2026-08-01T00:00:00').getTime();
+    function updateCountdown() {
+      const diff = vol2Target - Date.now();
+      if (diff <= 0) {
+        document.getElementById('vol2Countdown')!.textContent = 'It\'s here!';
+        return;
+      }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      const pad = (n: number) => String(n).padStart(2, '0');
+      (document.getElementById('cdDays') as HTMLElement).textContent = String(d);
+      (document.getElementById('cdHours') as HTMLElement).textContent = pad(h);
+      (document.getElementById('cdMins') as HTMLElement).textContent = pad(m);
+      (document.getElementById('cdSecs') as HTMLElement).textContent = pad(s);
+    }
+    updateCountdown();
+    const countdownInterval = setInterval(updateCountdown, 1000);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('scroll', handleParallax);
       clearInterval(clockInterval);
+      clearInterval(countdownInterval);
       audio.pause();
     };
   }, []);
@@ -493,10 +515,18 @@ export default function Home() {
             <span className="col-r">New episodes · Tuesdays · 11 PM ET</span>
           </div>
         </div>
-        <aside className="hero-meta-card" aria-label="Cover story">
-          <div className="mono label">Vol. 02 · Cover Story</div>
-          <div className="title">&quot;The Bug That Ate My Weekend&quot;</div>
-          <div className="by">with Mara Chen, Design lead at LunaCo · 47 min</div>
+        <aside className="hero-meta-card vol2-teaser" aria-label="Volume 2 teaser">
+          <div className="mono label">Vol. 02 · Coming Soon</div>
+          <div className="title">Volume 2 drops<br /><em>August 1st.</em></div>
+          <div className="countdown-row mono" id="vol2Countdown">
+            <span><span id="cdDays">--</span><span className="cd-unit">d</span></span>
+            <span className="cd-sep">:</span>
+            <span><span id="cdHours">--</span><span className="cd-unit">h</span></span>
+            <span className="cd-sep">:</span>
+            <span><span id="cdMins">--</span><span className="cd-unit">m</span></span>
+            <span className="cd-sep">:</span>
+            <span><span id="cdSecs">--</span><span className="cd-unit">s</span></span>
+          </div>
         </aside>
       </section>
 
