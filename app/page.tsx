@@ -558,7 +558,7 @@ export default function Home() {
         <div id="archive" style={{marginTop:'64px'}}>
           <div className="section-head" style={{marginBottom:0}}>
             <div>
-              <div className="mono section-eyebrow">┘ The Archive ────────────</div>
+              <div className="mono section-eyebrow">┘ The Audio Archive ────────────</div>
               <h2 id="archiveHeader">All Volumes: <em>43</em> episodes.</h2>
             </div>
           </div>
