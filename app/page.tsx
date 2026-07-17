@@ -746,7 +746,7 @@ export default function Home() {
           <p className="deck-foot">A small magazine of late-night conversations with the people who build the internet you use every day.</p>
         </div>
         <div className="col">
-          <h4 className="mono">Listen</h4>
+          <h4 className="mono">Watch/Listen</h4>
           <a href="#">Apple Podcasts</a><a href="#">Spotify</a><a href="#">Overcast</a><a href="#">RSS</a>
         </div>
         <div className="col">
