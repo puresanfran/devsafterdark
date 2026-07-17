@@ -755,7 +755,7 @@ export default function Home() {
         </div>
         <div className="col">
           <h4 className="mono">Read</h4>
-          <a href="#">Transcripts</a><a href="#">Newsletter</a><a href="#">Twitter</a><a href="#">Mastodon</a>
+          <a href="#">Transcripts</a><a href="#">Newsletter</a>
         </div>
       </footer>
       <div className="colophon mono">
