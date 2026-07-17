@@ -436,7 +436,7 @@ export default function Home() {
       <header className="nav" id="mainNav">
         <div className="nav-brand">
           <a href="#" className="wordmark">Devs<em>After</em>Dark</a>
-          <div className="mono issue">Vol. 02 · EP 001</div>
+          <div className="mono issue">Vol. 01 · EP 042</div>
         </div>
         <nav className="nav-links" aria-label="Primary navigation">
           <a href="#latest" className="active">The Latest</a>
@@ -460,7 +460,7 @@ export default function Home() {
         <div className="hero-grain" aria-hidden="true"></div>
         <div className="hero-inner">
           <div className="coverline mono">
-            <span>Vol. 02 · Issue №001</span>
+            <span>Vol. 01 · Issue №042</span>
             <span className="coverline-mid">· The After-Hours Edition ·</span>
             <span id="liveTime">Sunday · 02:14 AM</span>
           </div>
@@ -477,8 +477,8 @@ export default function Home() {
               <div className="play-cluster">
                 <button className="play-btn" id="playBtn" aria-label="Play latest episode">▶</button>
                 <div className="play-meta">
-                  <span className="ep">Now Playing · EP 001 · 47:13</span>
-                  <span className="ttl">&quot;The Bug That Ate My Weekend&quot; — with Mara Chen</span>
+                  <span className="ep">Now Playing · EP 042 · 1:03:53</span>
+                  <span className="ttl">&quot;App Certification with the Ecosystem Quality Team&quot;</span>
                 </div>
               </div>
               <a href="#archive" className="btn btn-ghost">Browse the archive →</a>
@@ -519,38 +519,37 @@ export default function Home() {
       <section className="frame latest" id="latest" aria-label="Latest episodes">
         <div className="section-head">
           <div>
-            <div className="mono section-eyebrow">┘ This Week&apos;s Issue ────────────</div>
+            <div className="mono section-eyebrow">┘ Latest Issues ────────────</div>
             <h2>The <em>latest</em> editions,<br />fresh off the late shift.</h2>
           </div>
           <a href="#archive" className="mono" style={{color:'var(--accent)'}}>All issues →</a>
         </div>
         <div className="featured-grid">
-          <article className="card big" data-ep="001" tabIndex={0} role="button" aria-label="Episode 001: The Bug That Ate My Weekend">
-            <div className="ph ph-stripe warm"><span className="mono lbl">[ cover · ep 001 ]</span></div>
+          <article className="card big" data-ep="042" tabIndex={0} role="button" aria-label="Episode 042: App Certification with the Ecosystem Quality Team">
+            <div className="ph ph-stripe warm"><span className="mono lbl">[ cover · ep 042 ]</span></div>
             <div className="card-body">
-              <div className="card-eyebrow">EP 001 · 47:13 · Tuesday</div>
-              <div className="card-title">&quot;The Bug That Ate My Weekend&quot;</div>
-              <div className="card-by">with Mara Chen, Design lead at LunaCo</div>
-              <p className="card-deck">A 72-hour debugging spiral, two pots of coffee, and one humbling git blame.</p>
+              <div className="card-eyebrow">EP 042 · Vol. 1 · 1:03:53</div>
+              <div className="card-title">&quot;App Certification with the Ecosystem Quality Team&quot;</div>
+              <div className="card-by">with the Ecosystem Quality Team</div>
               <div className="card-tags"><span className="tag">craft</span><span className="tag">career</span></div>
             </div>
           </article>
-          <article className="card" data-ep="002" tabIndex={0} role="button" aria-label="Episode 002: Wireframes at 2am">
-            <div className="ph ph-stripe"><span className="mono lbl">[ cover · ep 002 ]</span></div>
+          <article className="card" data-ep="041" tabIndex={0} role="button" aria-label="Episode 041: The Legend of hapily with Dax Miller">
+            <div className="ph ph-stripe"><span className="mono lbl">[ cover · ep 041 ]</span></div>
             <div className="card-body">
-              <div className="card-eyebrow">EP 002 · 38:08</div>
-              <div className="card-title">&quot;Wireframes at 2am&quot;</div>
-              <div className="card-by">with Devon Hart, Founder of Rivet</div>
-              <div className="card-tags"><span className="tag">design</span></div>
+              <div className="card-eyebrow">EP 041 · Vol. 1 · 57:52</div>
+              <div className="card-title">&quot;The Legend of hapily&quot;</div>
+              <div className="card-by">with Dax Miller</div>
+              <div className="card-tags"><span className="tag">founders</span></div>
             </div>
           </article>
-          <article className="card" data-ep="003" tabIndex={0} role="button" aria-label="Episode 003: Sleep Is For The Deployed">
-            <div className="ph ph-stripe red"><span className="mono lbl">[ cover · ep 003 ]</span></div>
+          <article className="card" data-ep="040" tabIndex={0} role="button" aria-label="Episode 040: Content Creation with Marc D. Hans">
+            <div className="ph ph-stripe red"><span className="mono lbl">[ cover · ep 040 ]</span></div>
             <div className="card-body">
-              <div className="card-eyebrow">EP 003 · 42:55</div>
-              <div className="card-title">&quot;Sleep Is For The Deployed&quot;</div>
-              <div className="card-by">with Priya Anand, Staff Eng at Polyglot</div>
-              <div className="card-tags"><span className="tag">infra</span></div>
+              <div className="card-eyebrow">EP 040 · Vol. 1 · 56:21</div>
+              <div className="card-title">&quot;Content Creation&quot;</div>
+              <div className="card-by">with Marc D. Hans</div>
+              <div className="card-tags"><span className="tag">craft</span></div>
             </div>
           </article>
         </div>
