@@ -196,8 +196,11 @@ export default function Home() {
       const pct = (audio.currentTime / audio.duration) * 100;
       (document.getElementById('miniProgressFill') as HTMLElement).style.width = pct + '%';
       (document.getElementById('miniProgress') as HTMLElement)?.setAttribute('aria-valuenow', String(Math.round(pct)));
+      const timeStr = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
       const timeEl = document.getElementById('miniTime');
-      if (timeEl) timeEl.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+      if (timeEl) timeEl.textContent = timeStr;
+      const hpcTimeEl = document.getElementById('hpcTime');
+      if (hpcTimeEl) hpcTimeEl.textContent = timeStr;
     });
 
     document.getElementById('miniProgress')?.addEventListener('click', (e) => {
@@ -213,6 +216,12 @@ export default function Home() {
 
     document.getElementById('miniSkipBack')?.addEventListener('click', () => {
       audio.currentTime = Math.max(0, audio.currentTime - 15);
+    });
+    document.getElementById('hpcSkipBack')?.addEventListener('click', () => {
+      audio.currentTime = Math.max(0, audio.currentTime - 15);
+    });
+    document.getElementById('hpcSkipFwd')?.addEventListener('click', () => {
+      if (audio.duration) audio.currentTime = Math.min(audio.duration, audio.currentTime + 15);
     });
 
     document.getElementById('miniSkipFwd')?.addEventListener('click', () => {
@@ -254,6 +263,12 @@ export default function Home() {
       (document.querySelector('.mini-player-info .ep-title') as HTMLElement).textContent = `"${ep.title}" — ${ep.guest}`;
       mp.classList.add('visible');
       (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = '❚❚';
+      const hpcShowEl = document.getElementById('hpcShow');
+      if (hpcShowEl) hpcShowEl.textContent = `EP ${String(ep.volEpNum).padStart(3,'0')} · Developers:After Dark`;
+      const hpcTitleEl = document.getElementById('hpcTitle');
+      if (hpcTitleEl) hpcTitleEl.textContent = ep.title;
+      const hpcPlay = document.getElementById('playBtn') as HTMLButtonElement;
+      if (hpcPlay) { hpcPlay.textContent = '❚❚'; hpcPlay.classList.add('playing'); }
     }
 
     document.getElementById('miniPlayBtn')?.addEventListener('click', () => {
@@ -494,13 +509,6 @@ export default function Home() {
               Late-night conversations with the people who keep the internet running while you sleep: the founders, the maintainers, the on-call engineers, and the friends-of-friends with one truly weird production story.
             </p>
             <div className="hero-actions fade-up fade-up-4">
-              <div className="play-cluster">
-                <button className="play-btn" id="playBtn" aria-label="Play latest episode">▶</button>
-                <div className="play-meta">
-                  <span className="ep">Now Playing · EP 042 · 1:03:53</span>
-                  <span className="ttl">&quot;App Certification with the Ecosystem Quality Team&quot;</span>
-                </div>
-              </div>
               <a href="#archive" className="btn btn-ghost">Browse the archive →</a>
             </div>
           </div>
@@ -510,6 +518,28 @@ export default function Home() {
             <span className="col-r">New episodes · Tuesdays · 11 PM ET</span>
           </div>
         </div>
+        <div className="hero-player-card fade-up fade-up-4" id="heroPlayerCard">
+          <div className="hpc-art">
+            <div className="hpc-art-inner mono">DAD</div>
+          </div>
+          <div className="hpc-info">
+            <div className="hpc-show mono" id="hpcShow">EP 042 · Developers:After Dark</div>
+            <div className="hpc-title" id="hpcTitle">App Certification with the Ecosystem Quality Team</div>
+          </div>
+          <div className="hpc-right">
+            <div className="hpc-time mono" id="hpcTime">0:00 / 1:03:53</div>
+            <div className="hpc-btns">
+              <button className="hpc-skip" id="hpcSkipBack" aria-label="Skip back 15 seconds">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/><text x="7" y="15" fontSize="5" fontFamily="monospace" fill="currentColor">15</text></svg>
+              </button>
+              <button className="hpc-play" id="playBtn" aria-label="Play latest episode">▶</button>
+              <button className="hpc-skip" id="hpcSkipFwd" aria-label="Skip forward 15 seconds">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5V1l5 5-5 5V7c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6h2c0 4.42-3.58 8-8 8s-8-3.58-8-8 3.58-8 8-8z"/><text x="7" y="15" fontSize="5" fontFamily="monospace" fill="currentColor">15</text></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
         <aside className="hero-meta-card vol2-teaser" aria-label="Volume 2 teaser">
           <div className="mono label">Vol. 02 · Coming Soon</div>
           <div className="title">Volume 2 drops<br /><em>August 1st.</em></div>
