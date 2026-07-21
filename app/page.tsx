@@ -458,7 +458,6 @@ export default function Home() {
       <header className="nav" id="mainNav">
         <div className="nav-brand">
           <a href="#" className="wordmark">Devs<em>After</em>Dark</a>
-          <div className="mono issue">Vol. 01 · EP 042</div>
         </div>
         <nav className="nav-links" aria-label="Primary navigation">
           <a href="#latest" className="active">The Latest</a>
