@@ -87,7 +87,7 @@ h1, h2, h3 { margin: 0; }
 .hero { position: relative; isolation: isolate; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; overflow: hidden; }
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
-  background-image: url("/assets/Podcast Studio Chicken Interview.jpg");
+  background-image: url("/assets/podcast-studio.jpg");
   background-size: cover; background-position: center 30%; background-repeat: no-repeat;
   transform: scale(1.04); will-change: transform;
 }
