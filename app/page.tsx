@@ -486,7 +486,6 @@ export default function Home() {
         <div className="hero-inner">
           <div className="coverline mono">
             <span>Vol. 01 · Issue №042</span>
-            <span className="coverline-mid">· The After-Hours Edition ·</span>
             <span id="liveTime">Sunday · 02:14 AM</span>
           </div>
           <div className="hero-stage">
