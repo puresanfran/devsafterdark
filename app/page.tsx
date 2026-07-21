@@ -483,10 +483,7 @@ export default function Home() {
         <div className="hero-bg" id="heroBg" aria-hidden="true"></div>
         <div className="hero-grain" aria-hidden="true"></div>
         <div className="hero-inner">
-          <div className="coverline mono">
-            <span>Vol. 01 · Issue №042</span>
-            <span id="liveTime">Sunday · 02:14 AM</span>
-          </div>
+
           <div className="hero-stage">
             <div className="eyebrow mono fade-up fade-up-1">A podcast for night-shift builders</div>
             <h1 className="headline fade-up fade-up-2">
