@@ -108,7 +108,7 @@ h1, h2, h3 { margin: 0; }
 .hero-stage { align-self: end; display: grid; gap: 28px; max-width: 1200px; width: 100%; margin: 0 auto 0 0; padding: clamp(28px, 8vh, 80px) 0 clamp(28px, 6vh, 56px); }
 .eyebrow { display: inline-flex; align-items: center; gap: 14px; color: var(--accent); }
 .eyebrow::before { content: ""; display: inline-block; width: 48px; height: 1px; background: var(--accent); }
-.headline { font-family: var(--serif); font-weight: var(--heading-weight); font-size: calc(clamp(38px, 7.5vw, 110px) * var(--headline-scale)); line-height: 0.88; letter-spacing: -0.035em; margin: 0; text-shadow: 0 6px 40px rgba(0,0,0,0.45); }
+.headline { font-family: var(--serif); font-weight: var(--heading-weight); font-size: calc(clamp(46px, 9vw, 140px) * var(--headline-scale)); line-height: 0.88; letter-spacing: -0.035em; margin: 0; text-shadow: 0 6px 40px rgba(0,0,0,0.45); }
 .headline em { font-style: var(--heading-ital); font-weight: var(--heading-weight); color: var(--accent); }
 .deck { font-family: var(--serif); font-style: italic; font-size: clamp(17px, 2vw, 25px); line-height: 1.5; color: var(--fg); opacity: 0.92; max-width: 600px; text-shadow: 0 2px 24px rgba(0,0,0,0.55); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 4px; }
