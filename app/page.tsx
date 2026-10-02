@@ -495,8 +495,10 @@ export default function Home() {
 
       {/* HERO */}
       <section className="hero" aria-label="Hero">
-        <div className="hero-bg" id="heroBg" aria-hidden="true"></div>
-        <div className="hero-grain" aria-hidden="true"></div>
+        <div className="hero-bg-wrap">
+          <div className="hero-bg" id="heroBg" aria-hidden="true"></div>
+          <div className="hero-grain" aria-hidden="true"></div>
+        </div>
         <div className="hero-inner">
 
           <div className="hero-stage">
@@ -531,30 +533,28 @@ export default function Home() {
             <span><span id="cdSecs">--</span><span className="cd-unit">s</span></span>
           </div>
         </aside>
-      </section>
-
-      {/* HERO PLAYER CARD */}
-      <div className="hero-player-card" id="heroPlayerCard">
-        <div className="hpc-art">
-          <div className="hpc-art-inner mono">DAD</div>
-        </div>
-        <div className="hpc-info">
-          <div className="hpc-show mono" id="hpcShow">EP 042 · Developers:After Dark</div>
-          <div className="hpc-title" id="hpcTitle">App Certification with the Ecosystem Quality Team</div>
-        </div>
-        <div className="hpc-right">
-          <div className="hpc-time mono" id="hpcTime">0:00 / 1:03:53</div>
-          <div className="hpc-btns">
-            <button className="hpc-skip" id="hpcSkipBack" aria-label="Skip back 15 seconds">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/><text x="7" y="15" fontSize="5" fontFamily="monospace" fill="currentColor">15</text></svg>
-            </button>
-            <button className="hpc-play" id="playBtn" aria-label="Play latest episode">▶</button>
-            <button className="hpc-skip" id="hpcSkipFwd" aria-label="Skip forward 15 seconds">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5V1l5 5-5 5V7c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6h2c0 4.42-3.58 8-8 8s-8-3.58-8-8 3.58-8 8-8z"/><text x="7" y="15" fontSize="5" fontFamily="monospace" fill="currentColor">15</text></svg>
-            </button>
+        <div className="hero-player-card" id="heroPlayerCard">
+          <div className="hpc-art">
+            <div className="hpc-art-inner mono">DAD</div>
+          </div>
+          <div className="hpc-info">
+            <div className="hpc-show mono" id="hpcShow">EP 042 · Developers:After Dark</div>
+            <div className="hpc-title" id="hpcTitle">App Certification with the Ecosystem Quality Team</div>
+          </div>
+          <div className="hpc-right">
+            <div className="hpc-time mono" id="hpcTime">0:00 / 1:03:53</div>
+            <div className="hpc-btns">
+              <button className="hpc-skip" id="hpcSkipBack" aria-label="Skip back 15 seconds">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/><text x="7" y="15" fontSize="5" fontFamily="monospace" fill="currentColor">15</text></svg>
+              </button>
+              <button className="hpc-play" id="playBtn" aria-label="Play latest episode">▶</button>
+              <button className="hpc-skip" id="hpcSkipFwd" aria-label="Skip forward 15 seconds">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5V1l5 5-5 5V7c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6h2c0 4.42-3.58 8-8 8s-8-3.58-8-8 3.58-8 8-8z"/><text x="7" y="15" fontSize="5" fontFamily="monospace" fill="currentColor">15</text></svg>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* MINI PLAYER */}
       <div className="mini-player" id="miniPlayer" role="complementary" aria-label="Mini player">
