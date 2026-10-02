@@ -515,7 +515,7 @@ export default function Home() {
           <div className="hero-foot mono">
             <span>Recorded in a garage. Mixed in a kitchen.</span>
             <span className="scroll-cue" aria-hidden="true"><span>Scroll</span><span className="line"></span></span>
-            <span className="col-r">New episodes · Tuesdays · 11 PM ET</span>
+            <span className="col-r">New episodes · Weekly</span>
           </div>
         </div>
         <aside className="hero-meta-card vol2-teaser" aria-label="Volume 2 teaser">
