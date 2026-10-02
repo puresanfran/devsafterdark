@@ -22,7 +22,7 @@
   --headline-scale: 0.9;
   --vignette: 0.30;
 
-  --pad-x: clamp(32px, 8vw, 120px);
+  --pad-x: clamp(40px, 10vw, 160px);
   --section-py: clamp(64px, 10vh, 120px);
 }
 
