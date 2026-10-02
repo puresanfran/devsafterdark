@@ -515,7 +515,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-foot mono">
-            <span>Recorded in a garage. Mixed in a kitchen.</span>
+            <span>Recorded between deploys. Edited on cold brew.</span>
             <span className="scroll-cue" aria-hidden="true"><span>Scroll</span><span className="line"></span></span>
             <span className="col-r">New episodes · Weekly</span>
           </div>
