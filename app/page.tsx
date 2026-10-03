@@ -535,7 +535,13 @@ export default function Home() {
         </aside>
         <div className="hero-player-card" id="heroPlayerCard">
           <div className="hpc-art">
-            <div className="hpc-art-inner mono">DAD</div>
+            <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="0" y="6" width="3" height="8" rx="1.5" fill="var(--accent)"/>
+              <rect x="5" y="2" width="3" height="16" rx="1.5" fill="var(--accent)"/>
+              <rect x="10" y="0" width="3" height="20" rx="1.5" fill="var(--accent)"/>
+              <rect x="15" y="3" width="3" height="14" rx="1.5" fill="var(--accent)"/>
+              <rect x="20" y="7" width="3" height="6" rx="1.5" fill="var(--accent)" opacity="0.6"/>
+            </svg>
           </div>
           <div className="hpc-info">
             <div className="hpc-show mono" id="hpcShow">EP 042 · Developers:After Dark</div>
@@ -545,11 +551,19 @@ export default function Home() {
             <div className="hpc-time mono" id="hpcTime">0:00 / 1:03:53</div>
             <div className="hpc-btns">
               <button className="hpc-skip" id="hpcSkipBack" aria-label="Skip back 15 seconds">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/><text x="7" y="15" fontSize="5" fontFamily="monospace" fill="currentColor">15</text></svg>
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13 4V1L8 5.5 13 10V7c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.14-7-7H4c0 4.97 4.03 9 9 9s9-4.03 9-9-4.03-9-9-9z" fill="currentColor"/>
+                  <text x="13" y="17" fontSize="6.5" fontFamily="monospace" fontWeight="700" fill="currentColor" textAnchor="middle">15</text>
+                </svg>
               </button>
-              <button className="hpc-play" id="playBtn" aria-label="Play latest episode">▶</button>
+              <button className="hpc-play" id="playBtn" aria-label="Play latest episode">
+                <svg width="14" height="16" viewBox="0 0 14 16" fill="currentColor"><polygon points="0,0 14,8 0,16"/></svg>
+              </button>
               <button className="hpc-skip" id="hpcSkipFwd" aria-label="Skip forward 15 seconds">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5V1l5 5-5 5V7c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6h2c0 4.42-3.58 8-8 8s-8-3.58-8-8 3.58-8 8-8z"/><text x="7" y="15" fontSize="5" fontFamily="monospace" fill="currentColor">15</text></svg>
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13 4V1l5 4.5L13 10V7c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7h2c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9z" fill="currentColor"/>
+                  <text x="13" y="17" fontSize="6.5" fontFamily="monospace" fontWeight="700" fill="currentColor" textAnchor="middle">15</text>
+                </svg>
               </button>
             </div>
           </div>
