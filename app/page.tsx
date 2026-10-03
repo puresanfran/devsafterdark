@@ -55,8 +55,6 @@ export default function Home() {
       'Content Creation with Marc D. Hans',
       'The Legend of hapily with Dax Miller',
       'App Certification with the Ecosystem Quality Team',
-      // Vol 2
-      "Tomorrow's Problem",
     ];
     function extractGuest(title: string): string {
       const m = title.match(/\bwith\s+(.+)$/i);
@@ -76,8 +74,8 @@ export default function Home() {
     };
 
     const EPISODES = EPISODE_TITLES.map((title, i) => {
-      const volume = i < 42 ? 1 : 2;
-      const volEpNum = i < 42 ? i + 1 : i - 41;
+      const volume = 1;
+      const volEpNum = i + 1;
       const guest = extractGuest(title);
       const paddedVolEp = String(volEpNum).padStart(3, '0');
       const audioUrl = volume === 1 && volEpNum !== 27
@@ -605,17 +603,16 @@ export default function Home() {
           <div className="section-head" style={{marginBottom:0}}>
             <div>
               <div className="mono section-eyebrow">┘ The Audio Archive ────────────</div>
-              <h2 id="archiveHeader">All Volumes: <em>43</em> episodes.</h2>
+              <h2 id="archiveHeader">Vol. 1: <em>42</em> episodes.</h2>
             </div>
           </div>
           <div className="filter-bar" style={{marginTop:'32px'}}>
             <input className="search-input" id="searchInput" type="search" placeholder="Search episodes, guests, topics…" aria-label="Search episodes" />
             <div className="filter-chips" id="volChips" role="group" aria-label="Filter by volume">
-              <button className="fchip active" data-vol="all">All Volumes</button>
-              <button className="fchip" data-vol="2">Vol. 2</button>
+              <button className="fchip active" data-vol="all">All Episodes</button>
               <button className="fchip" data-vol="1">Vol. 1</button>
             </div>
-            <span className="archive-count mono" id="archiveCount">43 episodes</span>
+            <span className="archive-count mono" id="archiveCount">42 episodes</span>
           </div>
           <div className="archive-list" id="archiveList" role="list" aria-label="Episode archive"></div>
           <button className="show-more" id="showMore">Show more episodes ↓</button>

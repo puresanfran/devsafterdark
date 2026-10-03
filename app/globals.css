@@ -251,7 +251,7 @@ section.frame { padding: var(--section-py) var(--pad-x); }
 
 /* ═══ ARCHIVE ═══ */
 .archive-list { margin-top: 8px; }
-.archive-row { display: grid; grid-template-columns: 52px 46px 1fr 220px 80px; align-items: center; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); transition: background 0.15s; cursor: pointer; }
+.archive-row { display: grid; grid-template-columns: 52px 46px 1fr 220px 80px; align-items: center; gap: 16px; padding: 18px 16px; border-bottom: 1px solid var(--line); transition: background 0.15s; cursor: pointer; }
 .archive-row:hover { background: rgba(255,255,255,0.02); }
 .archive-row .num { font-family: var(--serif); font-size: 22px; font-style: italic; color: var(--accent); }
 .archive-row .pp { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--accent); color: var(--accent); background: transparent; cursor: pointer; font-size: 11px; padding-left: 3px; transition: all 0.15s; }
