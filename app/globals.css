@@ -151,6 +151,7 @@ h1, h2, h3 { margin: 0; }
 .hpc-skip { background: none; border: none; color: rgba(255,255,255,0.65); cursor: pointer; padding: 4px; display: flex; align-items: center; transition: color 0.15s; }
 .hpc-skip:hover { color: var(--fg); }
 .hpc-play { width: 42px; height: 42px; border-radius: 50%; background: var(--accent); border: none; color: #000; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, opacity 0.15s; }
+.hpc-play svg { margin-left: 3px; }
 .hpc-play:hover { transform: scale(1.08); }
 section.frame.latest { padding-top: calc(var(--section-py) + 41px); }
 @media (max-width: 640px) { .hero-player-card { bottom: -44px; gap: 10px; padding: 10px 14px; } .hpc-art { width: 42px; height: 42px; } .hpc-title { font-size: 13px; } .hpc-time { display: none; } }
