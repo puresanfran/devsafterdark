@@ -790,7 +790,7 @@ export default function Home() {
         </div>
       </footer>
       <div className="colophon mono">
-        <span>© DevsAfterDark Studios. Brewed at unreasonable hours.</span>
+        <span>© {new Date().getFullYear()} Devs:AfterDark. Brewed at unreasonable hours.</span>
         <span>v.01.42</span>
       </div>
     </>
