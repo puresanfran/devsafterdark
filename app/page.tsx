@@ -578,39 +578,55 @@ export default function Home() {
       <section className="frame latest" id="latest" aria-label="Latest episodes">
         <div className="section-head">
           <div>
-            <div className="mono section-eyebrow">┘ Latest Issues ────────────</div>
-            <h2>The <em>latest</em> editions,<br />fresh off the late shift.</h2>
+            <div className="mono section-eyebrow"><span style={{color:'var(--accent)'}}>●</span> COMMS LOG</div>
+            <h2>Incoming <em>transmissions.</em></h2>
+            <p className="section-sub">Late-night dev conversations, broadcast from the garage. Pull up a chair.</p>
           </div>
-          <a href="#archive" className="mono" style={{color:'var(--accent)'}}>All issues →</a>
+          <a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" className="mono" style={{color:'var(--accent)'}}>Watch on YouTube →</a>
         </div>
-        <div className="featured-grid">
-          <article className="card big" data-ep="042" tabIndex={0} role="button" aria-label="Episode 042: App Certification with the Ecosystem Quality Team">
-            <div className="ph ph-stripe warm"><span className="mono lbl">[ cover · ep 042 ]</span></div>
-            <div className="card-body">
-              <div className="card-eyebrow">EP 042 · Vol. 1 · 1:03:53</div>
-              <div className="card-title">&quot;App Certification with the Ecosystem Quality Team&quot;</div>
-              <div className="card-by">with the Ecosystem Quality Team</div>
-              <div className="card-tags"><span className="tag">craft</span><span className="tag">career</span></div>
+        <div className="ep-grid">
+          <a className="ep-card" href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" aria-label="EP 042: App Certification with the Ecosystem Quality Team">
+            <div className="ep-thumb ep-thumb-warm">
+              <div className="ep-corners"><span/><span/><span/><span/></div>
+              <div className="ep-rec mono"><span className="ep-rec-dot">●</span> REC</div>
+              <div className="ep-play-circle">▶</div>
+              <div className="ep-badge mono">Vol. 1</div>
             </div>
-          </article>
-          <article className="card" data-ep="041" tabIndex={0} role="button" aria-label="Episode 041: The Legend of hapily with Dax Miller">
-            <div className="ph ph-stripe"><span className="mono lbl">[ cover · ep 041 ]</span></div>
-            <div className="card-body">
-              <div className="card-eyebrow">EP 041 · Vol. 1 · 57:52</div>
-              <div className="card-title">&quot;The Legend of hapily&quot;</div>
-              <div className="card-by">with Dax Miller</div>
-              <div className="card-tags"><span className="tag">founders</span></div>
+            <div className="ep-meta">
+              <div className="ep-num mono">EP-042</div>
+              <div className="ep-title">App Certification with the Ecosystem Quality Team</div>
+              <div className="ep-show">Developers:After Dark · 1:03:53</div>
             </div>
-          </article>
-          <article className="card" data-ep="040" tabIndex={0} role="button" aria-label="Episode 040: Content Creation with Marc D. Hans">
-            <div className="ph ph-stripe red"><span className="mono lbl">[ cover · ep 040 ]</span></div>
-            <div className="card-body">
-              <div className="card-eyebrow">EP 040 · Vol. 1 · 56:21</div>
-              <div className="card-title">&quot;Content Creation&quot;</div>
-              <div className="card-by">with Marc D. Hans</div>
-              <div className="card-tags"><span className="tag">craft</span></div>
+          </a>
+          <a className="ep-card" href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" aria-label="EP 041: The Legend of hapily with Dax Miller">
+            <div className="ep-thumb">
+              <div className="ep-corners"><span/><span/><span/><span/></div>
+              <div className="ep-rec mono"><span className="ep-rec-dot">●</span> REC</div>
+              <div className="ep-play-circle">▶</div>
+              <div className="ep-badge mono">Vol. 1</div>
             </div>
-          </article>
+            <div className="ep-meta">
+              <div className="ep-num mono">EP-041</div>
+              <div className="ep-title">The Legend of hapily with Dax Miller</div>
+              <div className="ep-show">Developers:After Dark · 57:52</div>
+            </div>
+          </a>
+          <a className="ep-card" href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" aria-label="EP 040: Content Creation with Marc D. Hans">
+            <div className="ep-thumb ep-thumb-red">
+              <div className="ep-corners"><span/><span/><span/><span/></div>
+              <div className="ep-rec mono"><span className="ep-rec-dot">●</span> REC</div>
+              <div className="ep-play-circle">▶</div>
+              <div className="ep-badge mono">Vol. 1</div>
+            </div>
+            <div className="ep-meta">
+              <div className="ep-num mono">EP-040</div>
+              <div className="ep-title">Content Creation with Marc D. Hans</div>
+              <div className="ep-show">Developers:After Dark · 56:21</div>
+            </div>
+          </a>
+        </div>
+        <div className="ep-cta">
+          <a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">More on YouTube →</a>
         </div>
 
         {/* ARCHIVE */}
