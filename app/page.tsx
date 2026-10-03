@@ -578,52 +578,35 @@ export default function Home() {
       <section className="frame latest" id="latest" aria-label="Latest episodes">
         <div className="section-head">
           <div>
-            <div className="mono section-eyebrow"><span style={{color:'var(--accent)'}}>●</span> COMMS LOG</div>
-            <h2>Incoming <em>transmissions.</em></h2>
-            <p className="section-sub">Late-night dev conversations, broadcast from the garage. Pull up a chair.</p>
+            <div className="mono section-eyebrow">┘ Latest Issues ────────────</div>
+            <h2>The <em>latest</em> editions,<br />fresh off the late shift.</h2>
           </div>
           <a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" className="mono" style={{color:'var(--accent)'}}>Watch on YouTube →</a>
         </div>
         <div className="ep-grid">
-          <a className="ep-card" href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" aria-label="EP 042: App Certification with the Ecosystem Quality Team">
-            <div className="ep-thumb ep-thumb-warm">
-              <div className="ep-corners"><span/><span/><span/><span/></div>
-              <div className="ep-rec mono"><span className="ep-rec-dot">●</span> REC</div>
-              <div className="ep-play-circle">▶</div>
-              <div className="ep-badge mono">Vol. 1</div>
-            </div>
-            <div className="ep-meta">
-              <div className="ep-num mono">EP-042</div>
-              <div className="ep-title">App Certification with the Ecosystem Quality Team</div>
-              <div className="ep-show">Developers:After Dark · 1:03:53</div>
-            </div>
-          </a>
-          <a className="ep-card" href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" aria-label="EP 041: The Legend of hapily with Dax Miller">
-            <div className="ep-thumb">
-              <div className="ep-corners"><span/><span/><span/><span/></div>
-              <div className="ep-rec mono"><span className="ep-rec-dot">●</span> REC</div>
-              <div className="ep-play-circle">▶</div>
-              <div className="ep-badge mono">Vol. 1</div>
-            </div>
-            <div className="ep-meta">
-              <div className="ep-num mono">EP-041</div>
-              <div className="ep-title">The Legend of hapily with Dax Miller</div>
-              <div className="ep-show">Developers:After Dark · 57:52</div>
-            </div>
-          </a>
-          <a className="ep-card" href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" aria-label="EP 040: Content Creation with Marc D. Hans">
-            <div className="ep-thumb ep-thumb-red">
-              <div className="ep-corners"><span/><span/><span/><span/></div>
-              <div className="ep-rec mono"><span className="ep-rec-dot">●</span> REC</div>
-              <div className="ep-play-circle">▶</div>
-              <div className="ep-badge mono">Vol. 1</div>
-            </div>
-            <div className="ep-meta">
-              <div className="ep-num mono">EP-040</div>
-              <div className="ep-title">Content Creation with Marc D. Hans</div>
-              <div className="ep-show">Developers:After Dark · 56:21</div>
-            </div>
-          </a>
+          {[
+            { num:'042', id:'e7jr6gBK7lY', title:'App Certification with the Ecosystem Quality Team', dur:'1:03:53' },
+            { num:'041', id:'ZexG_hbA17k', title:'The Legend of hapily with Dax Miller', dur:'57:52' },
+            { num:'040', id:'gZwRwm1VM9g', title:'Content Creation with Marc D. Hans', dur:'56:21' },
+            { num:'039', id:'4r-L2k5tXxU', title:'Intro to Introw with Simon Van Den Hende', dur:'41:53' },
+            { num:'038', id:'slH0Iq94axc', title:'Center of Developer Excellence with Zack Wolfson', dur:'1:13:10' },
+            { num:'037', id:'ZF08M3-jCYo', title:'Platform First with Karen Ng', dur:'53:53' },
+          ].map(ep => (
+            <a key={ep.num} className="ep-card" href={`https://www.youtube.com/watch?v=${ep.id}`} target="_blank" rel="noopener noreferrer" aria-label={`EP ${ep.num}: ${ep.title}`}>
+              <div className="ep-thumb">
+                <img src={`https://i.ytimg.com/vi/${ep.id}/hqdefault.jpg`} alt="" className="ep-thumb-img" />
+                <div className="ep-corners"><span/><span/><span/><span/></div>
+                <div className="ep-rec mono"><span className="ep-rec-dot">●</span> REC</div>
+                <div className="ep-play-circle">▶</div>
+                <div className="ep-badge mono">Vol. 1</div>
+              </div>
+              <div className="ep-meta">
+                <div className="ep-num mono">EP-{ep.num}</div>
+                <div className="ep-title">{ep.title}</div>
+                <div className="ep-show">Developers:After Dark · {ep.dur}</div>
+              </div>
+            </a>
+          ))}
         </div>
         <div className="ep-cta">
           <a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">More on YouTube →</a>
