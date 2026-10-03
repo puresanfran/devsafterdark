@@ -791,7 +791,7 @@ export default function Home() {
       </footer>
       <div className="colophon mono">
         <span>© DevsAfterDark Studios. Brewed at unreasonable hours.</span>
-        <span>v.02.43 · published Tuesday 02:14 AM</span>
+        <span>v.01.42</span>
       </div>
     </>
   );
