@@ -200,18 +200,11 @@ section.frame { padding: var(--section-py) var(--pad-x); }
 .ep-thumb-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
 .ep-thumb::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(125deg, transparent 0 14px, rgba(255,255,255,0.025) 14px 24px); pointer-events: none; z-index: 2; }
 
-/* viewfinder corner brackets */
-.ep-corners { position: absolute; inset: 10px; z-index: 3; pointer-events: none; }
-.ep-corners span { position: absolute; width: 16px; height: 16px; }
-.ep-corners span:nth-child(1) { top: 0; left: 0; border-top: 2px solid rgba(255,255,255,0.55); border-left: 2px solid rgba(255,255,255,0.55); }
-.ep-corners span:nth-child(2) { top: 0; right: 0; border-top: 2px solid rgba(255,255,255,0.55); border-right: 2px solid rgba(255,255,255,0.55); }
-.ep-corners span:nth-child(3) { bottom: 0; left: 0; border-bottom: 2px solid rgba(255,255,255,0.55); border-left: 2px solid rgba(255,255,255,0.55); }
-.ep-corners span:nth-child(4) { bottom: 0; right: 0; border-bottom: 2px solid rgba(255,255,255,0.55); border-right: 2px solid rgba(255,255,255,0.55); }
+/* viewfinder corner brackets — hidden on real thumbnails */
+.ep-corners { display: none; }
 
-/* REC badge */
-.ep-rec { position: absolute; top: 14px; left: 14px; z-index: 3; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 4px; }
-.ep-rec-dot { color: #ef4444; font-size: 8px; animation: blink 1.4s step-end infinite; }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+/* REC badge — hidden on real thumbnails */
+.ep-rec { display: none; }
 
 /* centered play button */
 .ep-play-circle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 3; width: 52px; height: 52px; border-radius: 50%; background: rgba(0,0,0,0.6); border: 2px solid rgba(255,255,255,0.7); color: #fff; font-size: 18px; display: flex; align-items: center; justify-content: center; padding-left: 3px; transition: background 0.2s, color 0.2s, transform 0.2s; backdrop-filter: blur(4px); }
