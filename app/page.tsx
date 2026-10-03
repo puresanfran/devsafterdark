@@ -11,7 +11,6 @@ function closeMobileMenu() {
 
 export default function Home() {
   useEffect(() => {
-    const TAGS = ['craft','shipping','founders','ai','design','infra','career','storytelling'];
     const EPISODE_TITLES = [
       // Vol 1
       'You Should Have Been An Astronaut (Pilot)',
@@ -59,27 +58,10 @@ export default function Home() {
       // Vol 2
       "Tomorrow's Problem",
     ];
-    const GUESTS = [
-      {name:'Mara Chen',role:'Design lead, LunaCo'},{name:'Devon Hart',role:'Founder, Rivet'},
-      {name:'Priya Anand',role:'Staff Eng, Polyglot'},{name:'Sam Okonkwo',role:'Indie hacker'},
-      {name:'Jules Park',role:'VP Eng, Plotline'},{name:'Riley Voss',role:'Author'},
-      {name:'Cass Imamura',role:'Solo founder, Lampshade'},{name:'Theo Brandt',role:'Game dev, Dot Studio'},
-      {name:'Nina Reyes',role:'Tech essayist'},{name:'Marcus Lin',role:'DevTools, Tessera'},
-      {name:'Iris Kapoor',role:'CEO, Halflight'},{name:'Owen Reilly',role:'Open source maintainer'},
-      {name:'Sloane Park',role:'Reliability engineer, Atlas'},{name:'Bea Ortiz',role:'Founder, Smolbase'},
-    ];
-    const SUMMARIES = [
-      'A 72-hour debugging spiral, two pots of coffee, and one humbling git blame.',
-      'On designing things alone at night, the courage of the first draft, and why polish is overrated.',
-      "What happens when the on-call phone rings and the room is dark and the bug isn't yours.",
-      "A speedrun through a side project: the constraints, the cuts, the launch day panic.",
-      "An intermittent failure that only happened on Tuesdays. We tried everything.",
-      "A founder story that starts in a dive bar and ends with paying customers.",
-      "Letting go of the perfect system diagram and learning to ship something messy.",
-      "On using AI for the boring parts of life, and what it gave back to us.",
-      "Real stories from the pager-duty trenches, plus a few coping mechanisms.",
-      "If your side project has been 'almost ready' for six months, this one is for you.",
-    ];
+    function extractGuest(title: string): string {
+      const m = title.match(/\bwith\s+(.+)$/i);
+      return m ? m[1] : '';
+    }
 
     const VOL1_DURATIONS: Record<number, string> = {
       1:'1:40:13', 2:'1:43:33', 3:'2:04:23', 4:'1:29:17', 5:'1:52:56',
@@ -96,23 +78,20 @@ export default function Home() {
     const EPISODES = EPISODE_TITLES.map((title, i) => {
       const volume = i < 42 ? 1 : 2;
       const volEpNum = i < 42 ? i + 1 : i - 41;
-      const guest = GUESTS[i % GUESTS.length];
+      const guest = extractGuest(title);
       const paddedVolEp = String(volEpNum).padStart(3, '0');
       const audioUrl = volume === 1 && volEpNum !== 27
         ? `https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-${paddedVolEp}.mp3`
         : null;
       return {
-        num: i + 1, volume, volEpNum, title, guest: guest.name, guestRole: guest.role,
+        num: i + 1, volume, volEpNum, title, guest,
         duration: volume === 1 ? (VOL1_DURATIONS[volEpNum] ?? '') : '',
-        summary: SUMMARIES[i % SUMMARIES.length],
-        tags: [TAGS[i % TAGS.length], TAGS[(i+3) % TAGS.length]],
         audioUrl,
       };
     }).sort((a, b) => b.num - a.num);
 
     /* ── Archive ── */
     let visibleCount = 10;
-    let activeTag = 'all';
     let activeVol = 'all';
     let searchQ = '';
     let currentlyPlayingEl: HTMLButtonElement | null = null;
@@ -124,12 +103,9 @@ export default function Home() {
 
       const filtered = EPISODES.filter(ep => {
         const matchVol = activeVol === 'all' || ep.volume === Number(activeVol);
-        const matchTag = activeTag === 'all' || ep.tags.includes(activeTag);
         const q = searchQ.toLowerCase();
-        const matchSearch = !q || ep.title.toLowerCase().includes(q)
-          || ep.guest.toLowerCase().includes(q) || ep.guestRole.toLowerCase().includes(q)
-          || ep.summary.toLowerCase().includes(q) || ep.tags.some(t => t.includes(q));
-        return matchVol && matchTag && matchSearch;
+        const matchSearch = !q || ep.title.toLowerCase().includes(q) || ep.guest.toLowerCase().includes(q);
+        return matchVol && matchSearch;
       });
 
       countEl.textContent = `${filtered.length} episode${filtered.length !== 1 ? 's' : ''}`;
@@ -155,10 +131,9 @@ export default function Home() {
           <button class="pp" data-ep="${ep.num}" aria-label="Play episode ${ep.volEpNum}">▶</button>
           <div>
             <div class="title">${ep.title}</div>
-            <div class="deck">${ep.summary}</div>
-            <div class="card-tags" style="margin-top:8px;"><span class="tag">Vol. ${ep.volume}</span>${ep.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+            <div class="card-tags" style="margin-top:8px;"><span class="tag">Vol. ${ep.volume}</span></div>
           </div>
-          <div class="guest">${ep.guest}<small>${ep.guestRole}</small></div>
+          <div class="guest">${ep.guest ? ep.guest : '—'}</div>
           <div class="dur">${ep.duration}</div>
         </div>
       `).join('');
@@ -329,7 +304,6 @@ export default function Home() {
       if (!chip) return;
       document.querySelectorAll('#filterChips .fchip').forEach(c => c.classList.remove('active'));
       chip.classList.add('active');
-      activeTag = chip.dataset.tag || 'all';
       visibleCount = 10;
       renderArchive();
     });
@@ -640,15 +614,6 @@ export default function Home() {
               <button className="fchip active" data-vol="all">All Volumes</button>
               <button className="fchip" data-vol="2">Vol. 2</button>
               <button className="fchip" data-vol="1">Vol. 1</button>
-            </div>
-            <div className="filter-chips" id="filterChips" role="group" aria-label="Filter by tag">
-              <button className="fchip active" data-tag="all">All</button>
-              <button className="fchip" data-tag="craft">Craft</button>
-              <button className="fchip" data-tag="shipping">Shipping</button>
-              <button className="fchip" data-tag="founders">Founders</button>
-              <button className="fchip" data-tag="ai">AI</button>
-              <button className="fchip" data-tag="infra">Infra</button>
-              <button className="fchip" data-tag="career">Career</button>
             </div>
             <span className="archive-count mono" id="archiveCount">43 episodes</span>
           </div>
