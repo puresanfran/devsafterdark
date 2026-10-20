@@ -107,7 +107,7 @@ h1, h2, h3 { margin: 0; }
 .coverline-mid { text-align: center; flex: 1; }
 @media (max-width: 720px) { .coverline { font-size: 10px; gap: 8px; } .coverline-mid { display: none; } }
 .hero-stage { align-self: end; display: grid; gap: 28px; max-width: 900px; width: 100%; margin: 0 auto; text-align: center; padding: clamp(28px, 8vh, 80px) 0 clamp(28px, 6vh, 56px); }
-.eyebrow { display: inline-flex; align-items: center; gap: 14px; color: var(--accent); }
+.eyebrow { display: flex; align-items: center; justify-content: center; gap: 14px; color: var(--accent); }
 .eyebrow::before { content: ""; display: inline-block; width: 48px; height: 1px; background: var(--accent); }
 .headline { font-family: var(--serif); font-weight: var(--heading-weight); font-size: calc(clamp(46px, 9vw, 140px) * var(--headline-scale)); line-height: 0.88; letter-spacing: -0.035em; margin: 0; text-shadow: 0 6px 40px rgba(0,0,0,0.45); }
 .headline em { font-style: var(--heading-ital); font-weight: var(--heading-weight); color: var(--accent); }
