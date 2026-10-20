@@ -484,6 +484,18 @@ export default function Home() {
             </p>
             <div className="hero-actions fade-up fade-up-4">
               <a href="#archive" className="btn btn-ghost">Browse the archive →</a>
+              <div className="vol2-inline mono" aria-label="Volume 2 teaser">
+                <span className="vol2-label">Vol. 02</span>
+                <span className="vol2-countdown" id="vol2Countdown">
+                  <span><span id="cdDays">--</span><span className="cd-unit">d</span></span>
+                  <span className="cd-sep">:</span>
+                  <span><span id="cdHours">--</span><span className="cd-unit">h</span></span>
+                  <span className="cd-sep">:</span>
+                  <span><span id="cdMins">--</span><span className="cd-unit">m</span></span>
+                  <span className="cd-sep">:</span>
+                  <span><span id="cdSecs">--</span><span className="cd-unit">s</span></span>
+                </span>
+              </div>
             </div>
           </div>
           <div className="hero-foot mono">
@@ -492,19 +504,6 @@ export default function Home() {
             <span className="col-r">New episodes · Weekly</span>
           </div>
         </div>
-        <aside className="hero-meta-card vol2-teaser" aria-label="Volume 2 teaser">
-          <div className="mono label">Vol. 02 · Coming Soon</div>
-          <div className="title">Volume 2 drops<br /><em>August 1st.</em></div>
-          <div className="countdown-row mono" id="vol2Countdown">
-            <span><span id="cdDays">--</span><span className="cd-unit">d</span></span>
-            <span className="cd-sep">:</span>
-            <span><span id="cdHours">--</span><span className="cd-unit">h</span></span>
-            <span className="cd-sep">:</span>
-            <span><span id="cdMins">--</span><span className="cd-unit">m</span></span>
-            <span className="cd-sep">:</span>
-            <span><span id="cdSecs">--</span><span className="cd-unit">s</span></span>
-          </div>
-        </aside>
         <div className="hero-player-card" id="heroPlayerCard">
           <div className="hpc-art">
             <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
