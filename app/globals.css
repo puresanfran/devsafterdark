@@ -88,7 +88,7 @@ h1, h2, h3 { margin: 0; }
 .hero-bg-wrap { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
-  background-image: url("/assets/podcast-studio.jpg");
+  background-image: url("/assets/hero-bg.jpg");
   background-size: cover; background-position: center 30%; background-repeat: no-repeat;
   transform: scale(1.04); will-change: transform;
 }
