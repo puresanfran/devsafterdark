@@ -298,7 +298,7 @@ section.frame { padding: var(--section-py) var(--pad-x); }
 .form-card { background: var(--bg); border: 1px solid var(--line); padding: 32px; position: relative; }
 .form-card .tape { position: absolute; top: -12px; right: 18px; }
 .form-grid { display: grid; gap: 22px; }
-.field-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mute); }
+.field-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
 .field input, .field textarea { width: 100%; margin-top: 8px; padding: 14px 0; background: transparent; border: none; border-bottom: 1px solid var(--line); color: var(--fg); font-family: var(--sans); font-size: 16px; outline: none; resize: vertical; }
 .field textarea { font-family: var(--serif); font-size: 17px; min-height: 120px; }
 .field input:focus, .field textarea:focus { border-bottom-color: var(--accent); }
