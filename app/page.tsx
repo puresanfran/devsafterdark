@@ -323,23 +323,6 @@ export default function Home() {
       thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
 
-    /* ── Shorts rail ── */
-    const rail = document.getElementById('shortsRail') as HTMLElement;
-    const prevBtn = document.getElementById('shortsPrev') as HTMLButtonElement;
-    const nextBtn = document.getElementById('shortsNext') as HTMLButtonElement;
-    const step = () => {
-      const card = rail.querySelector('.short');
-      const gap = parseFloat(getComputedStyle(rail).columnGap) || 18;
-      return card ? card.getBoundingClientRect().width + gap : 280;
-    };
-    prevBtn?.addEventListener('click', () => rail.scrollBy({ left: -step() * 2, behavior: 'smooth' }));
-    nextBtn?.addEventListener('click', () => rail.scrollBy({ left: step() * 2, behavior: 'smooth' }));
-    const updateArrows = () => {
-      prevBtn.disabled = rail.scrollLeft <= 4;
-      nextBtn.disabled = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 4;
-    };
-    rail?.addEventListener('scroll', updateArrows, { passive: true });
-    updateArrows();
 
     /* ── Nav scroll + active section ── */
     const nav = document.getElementById('mainNav') as HTMLElement;
@@ -431,7 +414,7 @@ export default function Home() {
         <a href="#archive" onClick={closeMobileMenu}>Archive</a>
         <a href="#hosts" onClick={closeMobileMenu}>The Hosts</a>
         <a href="#pitch" onClick={closeMobileMenu}>Be A Guest</a>
-        <a href="#shorts" onClick={closeMobileMenu}>Shorts</a>
+        <a href="#shorts" onClick={closeMobileMenu}>Media</a>
       </div>
 
       {/* NAV */}
@@ -444,7 +427,7 @@ export default function Home() {
           <a href="#archive">Archive</a>
           <a href="#hosts">The Hosts</a>
           <a href="#pitch">Be A Guest</a>
-          <a href="#shorts">Shorts</a>
+          <a href="#shorts">Media</a>
         </nav>
         <div className="nav-cta">
           <a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" className="btn btn-ghost hide-sm" style={{display:'inline-flex',alignItems:'center',gap:'6px'}}>
@@ -572,7 +555,7 @@ export default function Home() {
           ].map(ep => (
             <a key={ep.num} className="ep-card" href={`https://www.youtube.com/watch?v=${ep.id}`} target="_blank" rel="noopener noreferrer" aria-label={`EP ${ep.num}: ${ep.title}`}>
               <div className="ep-thumb">
-                <img src={`https://i.ytimg.com/vi/${ep.id}/hqdefault.jpg`} alt="" className="ep-thumb-img" />
+                <img src={`https://i.ytimg.com/vi/${ep.id}/hqdefault.jpg`} alt="" className="ep-thumb-img" loading="lazy" decoding="async" />
                 <div className="ep-corners"><span/><span/><span/><span/></div>
                 <div className="ep-rec mono"><span className="ep-rec-dot">●</span> REC</div>
                 <div className="ep-play-circle">▶</div>
@@ -619,7 +602,7 @@ export default function Home() {
         </div>
         <div className="hosts-grid">
           <div className="host">
-            <div className="ph"><img src="/assets/nick-bio.png" alt="Nick James Laporte" /></div>
+            <div className="ph"><img src="/assets/nick-bio.png" alt="Nick James Laporte" loading="lazy" decoding="async" /></div>
             <div className="host-row">
               <h3 className="host-name">Nick James Laporte</h3>
               <a className="mono host-handle" href="https://www.linkedin.com/in/nicklaporte/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
@@ -628,7 +611,7 @@ export default function Home() {
             <p className="host-bio">Nick Laporte is the founder, host, and chaos coordinator of Developers:After Dark. When he&apos;s not convincing developers to open up about their fears on a podcast, he&apos;s building things out of PVC pipe and buying domain names no one asked for. He considers the show &quot;more than 1s and 0s,&quot; which is either very profound or a cry for help. Probably both.</p>
           </div>
           <div className="host">
-            <div className="ph"><img src="/assets/dennis-bio.png" alt="Dennis Edson" /></div>
+            <div className="ph"><img src="/assets/dennis-bio.png" alt="Dennis Edson" loading="lazy" decoding="async" /></div>
             <div className="host-row">
               <h3 className="host-name">Dennis Edson</h3>
               <a className="mono host-handle" href="https://www.linkedin.com/in/dennisedson/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
@@ -637,7 +620,7 @@ export default function Home() {
             <p className="host-bio">Dennis Edson co-hosts, edits, and somehow keeps Developers:After Dark from sounding like a conference call gone wrong. Armed with a license to create awesome things, Dennis is the quiet backbone of the operation, the kind of person who writes &quot;very clear notes&quot; in the comments of a budget doc while everyone else is panicking. He is the show&apos;s signal-to-noise ratio.</p>
           </div>
           <div className="host">
-            <div className="ph"><img src="/assets/aj-bio.png" alt="AJ" /></div>
+            <div className="ph"><img src="/assets/aj-bio.png" alt="AJ" loading="lazy" decoding="async" /></div>
             <div className="host-row">
               <h3 className="host-name">A.J. La Porte</h3>
               <a className="mono host-handle" href="https://www.linkedin.com/in/ajlaporte/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
@@ -694,40 +677,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SHORTS */}
-      <section className="shorts" id="shorts" aria-label="Media: After Dark">
+      {/* MEDIA */}
+      <section className="frame media-section" id="shorts" aria-label="Media: After Dark">
         <div className="section-head">
           <div>
             <div className="mono section-eyebrow">┘ Media:After Dark ────────────</div>
             <h2>Shorts, clips <em>&amp; cursed AI.</em></h2>
           </div>
-          <div className="shorts-controls">
-            <button className="shorts-arrow" id="shortsPrev" aria-label="Scroll left">←</button>
-            <button className="shorts-arrow" id="shortsNext" aria-label="Scroll right">→</button>
-          </div>
         </div>
-        <div className="shorts-rail" id="shortsRail" role="list">
-          {[
-            {ep:'043',color:'warm',dur:'0:42',src:'The Bug That Ate My Weekend',ttl:'"I git-blamed myself."'},
-            {ep:'042',color:'',dur:'0:58',src:'Wireframes at 2am',ttl:'The case for the ugly first draft.'},
-            {ep:'041',color:'red',dur:'1:04',src:'Sleep Is For The Deployed',ttl:'The 3am pager rings differently.'},
-            {ep:'040',color:'',dur:'0:36',src:'Side Project in 11 Days',ttl:'Cut the feature. Ship the demo.'},
-            {ep:'039',color:'warm',dur:'0:51',src:'Ghost in the Staging Env',ttl:'It only broke on Tuesdays.'},
-            {ep:'038',color:'red',dur:'1:12',src:'I Built My CRM in a Bar',ttl:'Cocktail napkin to checkout flow.'},
-            {ep:'037',color:'',dur:'0:45',src:'Reformed Architect',ttl:'Throw away the diagram.'},
-            {ep:'036',color:'warm',dur:'0:39',src:'AI Refactored My Marriage',ttl:'On boring chores and bandwidth.'},
-          ].map(s => (
-            <article key={s.ep} className="short" role="listitem" tabIndex={0} aria-label={`Short clip from EP ${s.ep}`}>
-              <div className={`ph-stripe${s.color ? ' '+s.color : ''}`}></div>
-              <div className="short-tl mono"><span className="dot" aria-hidden="true"></span>EP {s.ep}</div>
-              <div className="short-tr mono">{s.dur}</div>
-              <button className="short-play" aria-label="Play clip">▶</button>
-              <div className="short-meta">
-                <div className="mono src">{s.src}</div>
-                <div className="ttl">{s.ttl}</div>
+        <div className="media-masonry">
+          {([
+            // ── Video clips (replace id with YouTube Short video ID) ──
+            { type:'video', id:'REPLACE_ME', title:'Short clip 1' },
+            { type:'video', id:'REPLACE_ME', title:'Short clip 2' },
+            { type:'video', id:'REPLACE_ME', title:'Short clip 3' },
+            { type:'video', id:'REPLACE_ME', title:'Short clip 4' },
+            // ── AI images (replace src with Vercel Blob URL) ──
+            { type:'image', src:'', caption:'', aspect:'3/4' },
+            { type:'image', src:'', caption:'', aspect:'1/1' },
+            { type:'image', src:'', caption:'', aspect:'4/5' },
+            { type:'image', src:'', caption:'', aspect:'3/4' },
+            { type:'image', src:'', caption:'', aspect:'16/9' },
+            { type:'image', src:'', caption:'', aspect:'1/1' },
+            { type:'image', src:'', caption:'', aspect:'3/4' },
+            { type:'image', src:'', caption:'', aspect:'4/5' },
+            { type:'image', src:'', caption:'', aspect:'1/1' },
+            { type:'image', src:'', caption:'', aspect:'3/4' },
+            { type:'image', src:'', caption:'', aspect:'16/9' },
+            { type:'image', src:'', caption:'', aspect:'4/5' },
+          ] as Array<{type:string,id?:string,title?:string,src?:string,caption?:string,aspect?:string}>).map((item, i) =>
+            item.type === 'video' ? (
+              <a key={i} className="media-item media-item-video"
+                href={`https://www.youtube.com/shorts/${item.id}`}
+                target="_blank" rel="noopener noreferrer"
+                aria-label={item.title}>
+                <img src={`https://i.ytimg.com/vi/${item.id}/hqdefault.jpg`} alt={item.title} loading="lazy" decoding="async" />
+                <div className="media-play-overlay">
+                  <div className="media-play-btn">▶</div>
+                  <div className="media-short-badge mono">Short</div>
+                </div>
+              </a>
+            ) : (
+              <div key={i} className="media-item media-item-img">
+                {item.src
+                  ? <img src={item.src} alt={item.caption || ''} loading="lazy" decoding="async" />
+                  : <div className="media-placeholder" style={{aspectRatio: item.aspect}} />
+                }
+                {item.caption && <div className="media-caption mono">{item.caption}</div>}
               </div>
-            </article>
-          ))}
+            )
+          )}
         </div>
       </section>
 
