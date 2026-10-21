@@ -773,7 +773,7 @@ export default function Home() {
       <footer className="foot">
         <div>
           <div className="word">Devs<em>After</em>Dark</div>
-          <p className="deck-foot">A small magazine of late-night conversations with the people who build the internet you use every day.</p>
+          <p className="deck-foot">A collection of late-night conversations with the people who build the internet you use every day.</p>
         </div>
         <div className="col">
           <h4 className="mono">Watch/Listen</h4>
