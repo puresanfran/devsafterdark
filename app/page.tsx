@@ -566,7 +566,7 @@ export default function Home() {
             <div className="mono section-eyebrow">┘ Latest Issues ────────────</div>
             <h2>The <em>latest</em> editions,<br />fresh off the late shift.</h2>
           </div>
-          <a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" className="mono" style={{color:'var(--accent)'}}>Watch on YouTube →</a>
+          <a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Watch on YouTube →</a>
         </div>
         <div className="ep-grid">
           {[
@@ -777,7 +777,7 @@ export default function Home() {
         </div>
         <div className="col">
           <h4 className="mono">Watch/Listen</h4>
-          <a href="#">Apple Podcasts</a><a href="#">Spotify</a><a href="#">Overcast</a><a href="#">RSS</a>
+          <a href="#">Apple Podcasts</a><a href="#">Spotify</a><a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer">YouTube</a><a href="#">RSS</a>
         </div>
         <div className="col">
           <h4 className="mono">About</h4>
@@ -785,7 +785,7 @@ export default function Home() {
         </div>
         <div className="col">
           <h4 className="mono">Read</h4>
-          <a href="#">Transcripts</a><a href="#">Newsletter <em style={{fontStyle:'italic',opacity:0.6}}>(coming soon)</em></a>
+          <a href="#">Transcripts <em style={{fontStyle:'italic',opacity:0.6}}>(coming soon)</em></a><a href="#">Newsletter <em style={{fontStyle:'italic',opacity:0.6}}>(coming soon)</em></a>
         </div>
       </footer>
       <div className="colophon mono">
