@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:content="http://purl.org/rss/modules/content/"
+  xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Developers After Dark</title>
+    <link>https://devsafterdark.com</link>
+    <atom:link href="https://devsafterdark.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Late-night conversations with the people who keep the internet running while you sleep — the founders, the maintainers, the on-call engineers, and the friends-of-friends with one truly weird production story.</description>
+    <language>en-us</language>
+    <copyright>© 2026 Developers After Dark</copyright>
+    <itunes:author>Nick James LaPorte</itunes:author>
+    <itunes:owner>
+      <itunes:name>Nick James LaPorte</itunes:name>
+      <itunes:email>puresanfran@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://devsafterdark.com/assets/podcast-cover.jpg"/>
+    <image>
+      <url>https://devsafterdark.com/assets/podcast-cover.jpg</url>
+      <title>Developers After Dark</title>
+      <link>https://devsafterdark.com</link>
+    </image>
+    <itunes:category text="Technology"/>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+
+    <item>
+      <title>App Certification with The Ecosystem Quality Team</title>
+      <link>https://www.youtube.com/watch?v=e7jr6gBK7lY</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep042</guid>
+      <pubDate>Mon, 15 Jul 2024 02:00:00 GMT</pubDate>
+      <description><![CDATA[App Certification with The Ecosystem Quality Team — Developers After Dark, Volume 1, Episode 42.]]></description>
+      <itunes:episode>42</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>App Certification with The Ecosystem Quality Team</itunes:title>
+      <itunes:duration>1:03:53</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-042.mp3" length="61328000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>The Legend of hapily with Dax Miller</title>
+      <link>https://www.youtube.com/watch?v=ZexG_hbA17k</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep041</guid>
+      <pubDate>Fri, 05 Jul 2024 02:00:00 GMT</pubDate>
+      <description><![CDATA[The Legend of hapily with Dax Miller — Developers After Dark, Volume 1, Episode 41.]]></description>
+      <itunes:episode>41</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>The Legend of hapily with Dax Miller</itunes:title>
+      <itunes:duration>00:57:52</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-041.mp3" length="55552000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Content Creation with Marc D. Hans</title>
+      <link>https://www.youtube.com/watch?v=gZwRwm1VM9g</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep040</guid>
+      <pubDate>Tue, 25 Jun 2024 02:00:00 GMT</pubDate>
+      <description><![CDATA[Content Creation with Marc D. Hans — Developers After Dark, Volume 1, Episode 40.]]></description>
+      <itunes:episode>40</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Content Creation with Marc D. Hans</itunes:title>
+      <itunes:duration>00:56:21</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-040.mp3" length="54096000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Intro to Introw with Simon Van Den Hende</title>
+      <link>https://www.youtube.com/watch?v=4r-L2k5tXxU</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep039</guid>
+      <pubDate>Sat, 15 Jun 2024 02:00:00 GMT</pubDate>
+      <description><![CDATA[Intro to Introw with Simon Van Den Hende — Developers After Dark, Volume 1, Episode 39.]]></description>
+      <itunes:episode>39</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Intro to Introw with Simon Van Den Hende</itunes:title>
+      <itunes:duration>00:41:53</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-039.mp3" length="40208000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Center of Developer Excellence with Zack Wolfson</title>
+      <link>https://www.youtube.com/watch?v=slH0Iq94axc</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep038</guid>
+      <pubDate>Wed, 05 Jun 2024 02:00:00 GMT</pubDate>
+      <description><![CDATA[Center of Developer Excellence with Zack Wolfson — Developers After Dark, Volume 1, Episode 38.]]></description>
+      <itunes:episode>38</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Center of Developer Excellence with Zack Wolfson</itunes:title>
+      <itunes:duration>1:13:10</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-038.mp3" length="70240000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Platform first with Karen Ng</title>
+      <link>https://www.youtube.com/watch?v=ZF08M3-jCYo</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep037</guid>
+      <pubDate>Sun, 26 May 2024 02:00:00 GMT</pubDate>
+      <description><![CDATA[Platform first with Karen Ng — Developers After Dark, Volume 1, Episode 37.]]></description>
+      <itunes:episode>37</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Platform first with Karen Ng</itunes:title>
+      <itunes:duration>00:53:53</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-037.mp3" length="51728000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Justin In A Box with Justin Givens</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep036</guid>
+      <pubDate>Thu, 16 May 2024 02:00:00 GMT</pubDate>
+      <description><![CDATA[Justin In A Box with Justin Givens — Developers After Dark, Volume 1, Episode 36.]]></description>
+      <itunes:episode>36</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Justin In A Box with Justin Givens</itunes:title>
+      <itunes:duration>00:57:44</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-036.mp3" length="55424000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Agency Owner to App Builder with Nicole Pereira</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep035</guid>
+      <pubDate>Mon, 06 May 2024 02:00:00 GMT</pubDate>
+      <description><![CDATA[Agency Owner to App Builder with Nicole Pereira — Developers After Dark, Volume 1, Episode 35.]]></description>
+      <itunes:episode>35</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Agency Owner to App Builder with Nicole Pereira</itunes:title>
+      <itunes:duration>00:48:01</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-035.mp3" length="46096000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>A Design Link To The Future with Chad Pierce</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep034</guid>
+      <pubDate>Fri, 26 Apr 2024 02:00:00 GMT</pubDate>
+      <description><![CDATA[A Design Link To The Future with Chad Pierce — Developers After Dark, Volume 1, Episode 34.]]></description>
+      <itunes:episode>34</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>A Design Link To The Future with Chad Pierce</itunes:title>
+      <itunes:duration>1:18:03</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-034.mp3" length="74928000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Elevate Your (Theme) Game with Elevate Team</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep033</guid>
+      <pubDate>Tue, 16 Apr 2024 02:00:00 GMT</pubDate>
+      <description><![CDATA[Elevate Your (Theme) Game with Elevate Team — Developers After Dark, Volume 1, Episode 33.]]></description>
+      <itunes:episode>33</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Elevate Your (Theme) Game with Elevate Team</itunes:title>
+      <itunes:duration>1:25:32</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-033.mp3" length="82112000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>HubSpot Dev Site: An Origin Story with A.J. and Brooke</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep032</guid>
+      <pubDate>Sat, 06 Apr 2024 02:00:00 GMT</pubDate>
+      <description><![CDATA[HubSpot Dev Site: An Origin Story with A.J. and Brooke — Developers After Dark, Volume 1, Episode 32.]]></description>
+      <itunes:episode>32</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>HubSpot Dev Site: An Origin Story with A.J. and Brooke</itunes:title>
+      <itunes:duration>1:11:50</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-032.mp3" length="68960000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>SEO in the AI World (Part 2) with Michelle Jensen</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep031</guid>
+      <pubDate>Wed, 27 Mar 2024 02:00:00 GMT</pubDate>
+      <description><![CDATA[SEO in the AI World (Part 2) with Michelle Jensen — Developers After Dark, Volume 1, Episode 31.]]></description>
+      <itunes:episode>31</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>SEO in the AI World (Part 2) with Michelle Jensen</itunes:title>
+      <itunes:duration>1:08:12</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-031.mp3" length="65472000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Sandboxes and Smile Files with Denise Thijzen</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep030</guid>
+      <pubDate>Sun, 17 Mar 2024 02:00:00 GMT</pubDate>
+      <description><![CDATA[Sandboxes and Smile Files with Denise Thijzen — Developers After Dark, Volume 1, Episode 30.]]></description>
+      <itunes:episode>30</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Sandboxes and Smile Files with Denise Thijzen</itunes:title>
+      <itunes:duration>1:12:29</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-030.mp3" length="69584000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>SEO in the AI World with Victor Pan</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep029</guid>
+      <pubDate>Thu, 07 Mar 2024 03:00:00 GMT</pubDate>
+      <description><![CDATA[SEO in the AI World with Victor Pan — Developers After Dark, Volume 1, Episode 29.]]></description>
+      <itunes:episode>29</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>SEO in the AI World with Victor Pan</itunes:title>
+      <itunes:duration>1:06:10</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-029.mp3" length="63520000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Be the Hero with Paul Maxwell</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep028</guid>
+      <pubDate>Mon, 26 Feb 2024 03:00:00 GMT</pubDate>
+      <description><![CDATA[Be the Hero with Paul Maxwell — Developers After Dark, Volume 1, Episode 28.]]></description>
+      <itunes:episode>28</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Be the Hero with Paul Maxwell</itunes:title>
+      <itunes:duration>1:01:12</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-028.mp3" length="58752000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Rolling In The Deep (Research) with Daniel Jacobson</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep026</guid>
+      <pubDate>Tue, 06 Feb 2024 03:00:00 GMT</pubDate>
+      <description><![CDATA[Rolling In The Deep (Research) with Daniel Jacobson — Developers After Dark, Volume 1, Episode 26.]]></description>
+      <itunes:episode>26</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Rolling In The Deep (Research) with Daniel Jacobson</itunes:title>
+      <itunes:duration>1:06:03</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-026.mp3" length="63408000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Crafting Success with Steve Laham</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep025</guid>
+      <pubDate>Sat, 27 Jan 2024 03:00:00 GMT</pubDate>
+      <description><![CDATA[Crafting Success with Steve Laham — Developers After Dark, Volume 1, Episode 25.]]></description>
+      <itunes:episode>25</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Crafting Success with Steve Laham</itunes:title>
+      <itunes:duration>1:06:46</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-025.mp3" length="64096000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Community Architecture with Jennifer Nixon</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep024</guid>
+      <pubDate>Wed, 17 Jan 2024 03:00:00 GMT</pubDate>
+      <description><![CDATA[Community Architecture with Jennifer Nixon — Developers After Dark, Volume 1, Episode 24.]]></description>
+      <itunes:episode>24</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Community Architecture with Jennifer Nixon</itunes:title>
+      <itunes:duration>1:04:05</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-024.mp3" length="61520000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Knight in shining PromptArmor with Vikram Jayanthi</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep023</guid>
+      <pubDate>Sun, 07 Jan 2024 03:00:00 GMT</pubDate>
+      <description><![CDATA[Knight in shining PromptArmor with Vikram Jayanthi — Developers After Dark, Volume 1, Episode 23.]]></description>
+      <itunes:episode>23</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Knight in shining PromptArmor with Vikram Jayanthi</itunes:title>
+      <itunes:duration>1:06:06</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-023.mp3" length="63456000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>A Cut Above the Rest with Chris Conant</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep022</guid>
+      <pubDate>Thu, 28 Dec 2023 03:00:00 GMT</pubDate>
+      <description><![CDATA[A Cut Above the Rest with Chris Conant — Developers After Dark, Volume 1, Episode 22.]]></description>
+      <itunes:episode>22</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>A Cut Above the Rest with Chris Conant</itunes:title>
+      <itunes:duration>1:07:55</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-022.mp3" length="65200000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Ride of The Valkyries with Melinda Green</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep021</guid>
+      <pubDate>Mon, 18 Dec 2023 03:00:00 GMT</pubDate>
+      <description><![CDATA[Ride of The Valkyries with Melinda Green — Developers After Dark, Volume 1, Episode 21.]]></description>
+      <itunes:episode>21</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Ride of The Valkyries with Melinda Green</itunes:title>
+      <itunes:duration>1:07:46</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-021.mp3" length="65056000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Spinning Confidence with Ashley Webster</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep020</guid>
+      <pubDate>Fri, 08 Dec 2023 03:00:00 GMT</pubDate>
+      <description><![CDATA[Spinning Confidence with Ashley Webster — Developers After Dark, Volume 1, Episode 20.]]></description>
+      <itunes:episode>20</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Spinning Confidence with Ashley Webster</itunes:title>
+      <itunes:duration>1:00:23</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-020.mp3" length="57968000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>To Be Or Not To Be...Comfortable with Ricky Diep</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep019</guid>
+      <pubDate>Tue, 28 Nov 2023 03:00:00 GMT</pubDate>
+      <description><![CDATA[To Be Or Not To Be...Comfortable with Ricky Diep — Developers After Dark, Volume 1, Episode 19.]]></description>
+      <itunes:episode>19</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>To Be Or Not To Be...Comfortable with Ricky Diep</itunes:title>
+      <itunes:duration>1:07:52</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-019.mp3" length="65152000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Eat Your Vegetables with Caitlin Siegrist</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep018</guid>
+      <pubDate>Sat, 18 Nov 2023 03:00:00 GMT</pubDate>
+      <description><![CDATA[Eat Your Vegetables with Caitlin Siegrist — Developers After Dark, Volume 1, Episode 18.]]></description>
+      <itunes:episode>18</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Eat Your Vegetables with Caitlin Siegrist</itunes:title>
+      <itunes:duration>00:57:16</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-018.mp3" length="54976000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Hall of Fame Edition with Anton Bujanowski</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep017</guid>
+      <pubDate>Wed, 08 Nov 2023 03:00:00 GMT</pubDate>
+      <description><![CDATA[Hall of Fame Edition with Anton Bujanowski — Developers After Dark, Volume 1, Episode 17.]]></description>
+      <itunes:episode>17</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Hall of Fame Edition with Anton Bujanowski</itunes:title>
+      <itunes:duration>1:12:14</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-017.mp3" length="69344000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>A is apple J is for Joomla with Nathan Gifford</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep016</guid>
+      <pubDate>Sun, 29 Oct 2023 02:00:00 GMT</pubDate>
+      <description><![CDATA[A is apple J is for Joomla with Nathan Gifford — Developers After Dark, Volume 1, Episode 16.]]></description>
+      <itunes:episode>16</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>A is apple J is for Joomla with Nathan Gifford</itunes:title>
+      <itunes:duration>1:06:29</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-016.mp3" length="63824000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>GarageBand Isn't Just a Garage Band with Branden Rogers</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep015</guid>
+      <pubDate>Thu, 19 Oct 2023 02:00:00 GMT</pubDate>
+      <description><![CDATA[GarageBand Isn't Just a Garage Band with Branden Rogers — Developers After Dark, Volume 1, Episode 15.]]></description>
+      <itunes:episode>15</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>GarageBand Isn't Just a Garage Band with Branden Rogers</itunes:title>
+      <itunes:duration>1:17:21</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-015.mp3" length="74256000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>The Last ActionScript Hero with Teun Rutten</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep014</guid>
+      <pubDate>Mon, 09 Oct 2023 02:00:00 GMT</pubDate>
+      <description><![CDATA[The Last ActionScript Hero with Teun Rutten — Developers After Dark, Volume 1, Episode 14.]]></description>
+      <itunes:episode>14</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>The Last ActionScript Hero with Teun Rutten</itunes:title>
+      <itunes:duration>1:01:57</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-014.mp3" length="59472000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>A Baker's Dozen with Brooke Bond</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep013</guid>
+      <pubDate>Fri, 29 Sep 2023 02:00:00 GMT</pubDate>
+      <description><![CDATA[A Baker's Dozen with Brooke Bond — Developers After Dark, Volume 1, Episode 13.]]></description>
+      <itunes:episode>13</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>A Baker's Dozen with Brooke Bond</itunes:title>
+      <itunes:duration>1:06:41</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-013.mp3" length="64016000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>The Sad Accountant with BJ Szyjakowski</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep012</guid>
+      <pubDate>Tue, 19 Sep 2023 02:00:00 GMT</pubDate>
+      <description><![CDATA[The Sad Accountant with BJ Szyjakowski — Developers After Dark, Volume 1, Episode 12.]]></description>
+      <itunes:episode>12</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>The Sad Accountant with BJ Szyjakowski</itunes:title>
+      <itunes:duration>1:16:02</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-012.mp3" length="72992000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Community Onion with SJ Morris</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep011</guid>
+      <pubDate>Sat, 09 Sep 2023 02:00:00 GMT</pubDate>
+      <description><![CDATA[Community Onion with SJ Morris — Developers After Dark, Volume 1, Episode 11.]]></description>
+      <itunes:episode>11</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Community Onion with SJ Morris</itunes:title>
+      <itunes:duration>1:07:01</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-011.mp3" length="64336000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>800 Pound Elephant with Isaac Takushi</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep010</guid>
+      <pubDate>Wed, 30 Aug 2023 02:00:00 GMT</pubDate>
+      <description><![CDATA[800 Pound Elephant with Isaac Takushi — Developers After Dark, Volume 1, Episode 10.]]></description>
+      <itunes:episode>10</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>800 Pound Elephant with Isaac Takushi</itunes:title>
+      <itunes:duration>1:12:54</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-010.mp3" length="69984000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>CTRL-ALT-SUGAR with Jana Babouder-Matta</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep009</guid>
+      <pubDate>Sun, 20 Aug 2023 02:00:00 GMT</pubDate>
+      <description><![CDATA[CTRL-ALT-SUGAR with Jana Babouder-Matta — Developers After Dark, Volume 1, Episode 9.]]></description>
+      <itunes:episode>9</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>CTRL-ALT-SUGAR with Jana Babouder-Matta</itunes:title>
+      <itunes:duration>1:15:59</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-009.mp3" length="72944000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Printers Are My Arch Nemesis with Carter McKay</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep008</guid>
+      <pubDate>Thu, 10 Aug 2023 02:00:00 GMT</pubDate>
+      <description><![CDATA[Printers Are My Arch Nemesis with Carter McKay — Developers After Dark, Volume 1, Episode 8.]]></description>
+      <itunes:episode>8</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Printers Are My Arch Nemesis with Carter McKay</itunes:title>
+      <itunes:duration>1:10:17</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-008.mp3" length="67472000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>Shaving the Yak with Chris Riley</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep007</guid>
+      <pubDate>Mon, 31 Jul 2023 02:00:00 GMT</pubDate>
+      <description><![CDATA[Shaving the Yak with Chris Riley — Developers After Dark, Volume 1, Episode 7.]]></description>
+      <itunes:episode>7</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>Shaving the Yak with Chris Riley</itunes:title>
+      <itunes:duration>1:19:55</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-007.mp3" length="76720000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>The Lost (Now Found) Holiday Episode</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep006</guid>
+      <pubDate>Fri, 21 Jul 2023 02:00:00 GMT</pubDate>
+      <description><![CDATA[The Lost (Now Found) Holiday Episode — Developers After Dark, Volume 1, Episode 6.]]></description>
+      <itunes:episode>6</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>The Lost (Now Found) Holiday Episode</itunes:title>
+      <itunes:duration>1:43:26</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-006.mp3" length="99296000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>You need the Highlights magazine with Jon McLaren</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep005</guid>
+      <pubDate>Tue, 11 Jul 2023 02:00:00 GMT</pubDate>
+      <description><![CDATA[You need the Highlights magazine with Jon McLaren — Developers After Dark, Volume 1, Episode 5.]]></description>
+      <itunes:episode>5</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>You need the Highlights magazine with Jon McLaren</itunes:title>
+      <itunes:duration>1:52:56</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-005.mp3" length="108416000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>I don't just read. I lead. with Bree Hall</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep004</guid>
+      <pubDate>Sat, 01 Jul 2023 02:00:00 GMT</pubDate>
+      <description><![CDATA[I don't just read. I lead. with Bree Hall — Developers After Dark, Volume 1, Episode 4.]]></description>
+      <itunes:episode>4</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>I don't just read. I lead. with Bree Hall</itunes:title>
+      <itunes:duration>1:29:17</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-004.mp3" length="85712000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>The Riches are in the Niches with David Roma</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep003</guid>
+      <pubDate>Wed, 21 Jun 2023 02:00:00 GMT</pubDate>
+      <description><![CDATA[The Riches are in the Niches with David Roma — Developers After Dark, Volume 1, Episode 3.]]></description>
+      <itunes:episode>3</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>The Riches are in the Niches with David Roma</itunes:title>
+      <itunes:duration>2:04:23</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-003.mp3" length="119408000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>No higher than Buckingham Palace with Hannah Seligson</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep002</guid>
+      <pubDate>Sun, 11 Jun 2023 02:00:00 GMT</pubDate>
+      <description><![CDATA[No higher than Buckingham Palace with Hannah Seligson — Developers After Dark, Volume 1, Episode 2.]]></description>
+      <itunes:episode>2</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>No higher than Buckingham Palace with Hannah Seligson</itunes:title>
+      <itunes:duration>1:43:33</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-002.mp3" length="99408000" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <title>You Should Have Been An Astronaut (Pilot)</title>
+      <link>https://devsafterdark.com/#archive</link>
+      <guid isPermaLink="false">devsafterdark-vol1-ep001</guid>
+      <pubDate>Thu, 01 Jun 2023 02:00:00 GMT</pubDate>
+      <description><![CDATA[You Should Have Been An Astronaut (Pilot) — Developers After Dark, Volume 1, Episode 1.]]></description>
+      <itunes:episode>1</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:title>You Should Have Been An Astronaut (Pilot)</itunes:title>
+      <itunes:duration>1:40:13</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://pqftev3ixyccqz09.public.blob.vercel-storage.com/episodes/vol1/ep-001.mp3" length="96208000" type="audio/mpeg"/>
+    </item>
+  </channel>
+</rss>
