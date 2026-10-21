@@ -702,7 +702,7 @@ export default function Home() {
         <div className="media-masonry">
           {([
             // ── Video clips (replace id with YouTube Short video ID) ──
-            { type:'video', id:'REPLACE_ME', title:'Short clip 1' },
+            { type:'video', id:'vWV_-QywjRk', title:'Short clip 1' },
             { type:'video', id:'REPLACE_ME', title:'Short clip 2' },
             { type:'video', id:'REPLACE_ME', title:'Short clip 3' },
             { type:'video', id:'REPLACE_ME', title:'Short clip 4' },
