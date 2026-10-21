@@ -315,13 +315,6 @@ export default function Home() {
     document.getElementById('showMore')?.addEventListener('click', () => { visibleCount += 10; renderArchive(); });
 
     /* ── Pitch form ── */
-    document.getElementById('pitchChips')?.addEventListener('click', e => {
-      const chip = (e.target as HTMLElement).closest('.chip');
-      if (!chip) return;
-      document.querySelectorAll('#pitchChips .chip').forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-    });
-
     document.getElementById('pitchForm')?.addEventListener('submit', e => {
       e.preventDefault();
       (document.getElementById('pitchForm') as HTMLElement).style.display = 'none';
@@ -682,16 +675,9 @@ export default function Home() {
                 <div className="field-label">Email</div>
                 <input type="email" placeholder="how we'll reach you" required autoComplete="email" />
               </div>
-              <div>
+              <div className="field">
                 <div className="field-label">What&apos;s the angle</div>
-                <div className="chips" id="pitchChips" role="group" aria-label="Choose a topic">
-                  <button type="button" className="chip active">shipping</button>
-                  <button type="button" className="chip">founders</button>
-                  <button type="button" className="chip">craft</button>
-                  <button type="button" className="chip">ai</button>
-                  <button type="button" className="chip">career</button>
-                  <button type="button" className="chip">infra</button>
-                </div>
+                <input type="text" placeholder="e.g. sponsoring ep. 044, series run, season 2 deal…" />
               </div>
               <div className="field">
                 <div className="field-label">The pitch</div>
