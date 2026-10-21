@@ -324,6 +324,20 @@ export default function Home() {
     });
 
 
+    /* ── Media masonry show-more ── */
+    const MEDIA_INITIAL = 10;
+    const mediaItems = document.querySelectorAll('[data-midx]');
+    const mediaShowMoreBtn = document.getElementById('mediaShowMore') as HTMLButtonElement;
+    mediaItems.forEach(el => {
+      const idx = parseInt((el as HTMLElement).dataset.midx || '0', 10);
+      if (idx >= MEDIA_INITIAL) el.classList.add('media-hidden');
+    });
+    if (mediaItems.length <= MEDIA_INITIAL) mediaShowMoreBtn.style.display = 'none';
+    mediaShowMoreBtn?.addEventListener('click', () => {
+      document.querySelectorAll('.media-hidden').forEach(el => el.classList.remove('media-hidden'));
+      mediaShowMoreBtn.style.display = 'none';
+    });
+
     /* ── Nav scroll + active section ── */
     const nav = document.getElementById('mainNav') as HTMLElement;
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -710,7 +724,8 @@ export default function Home() {
               <a key={i} className="media-item media-item-video"
                 href={`https://www.youtube.com/shorts/${item.id}`}
                 target="_blank" rel="noopener noreferrer"
-                aria-label={item.title}>
+                aria-label={item.title}
+                data-midx={i}>
                 <img src={`https://i.ytimg.com/vi/${item.id}/hqdefault.jpg`} alt={item.title} loading="lazy" decoding="async" />
                 <div className="media-play-overlay">
                   <div className="media-play-btn">▶</div>
@@ -718,7 +733,7 @@ export default function Home() {
                 </div>
               </a>
             ) : (
-              <div key={i} className="media-item media-item-img">
+              <div key={i} className="media-item media-item-img" data-midx={i}>
                 {item.src
                   ? <img src={item.src} alt={item.caption || ''} loading="lazy" decoding="async" />
                   : <div className="media-placeholder" style={{aspectRatio: item.aspect}} />
@@ -728,6 +743,7 @@ export default function Home() {
             )
           )}
         </div>
+        <button className="show-more" id="mediaShowMore">Show More ↓</button>
       </section>
 
       {/* SPONSORS */}
