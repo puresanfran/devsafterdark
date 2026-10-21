@@ -54,7 +54,7 @@ export default function Home() {
       'Intro to Introw with Simon Van Den Hende',
       'Content Creation with Marc D. Hans',
       'The Legend of hapily with Dax Miller',
-      'App Certification with the Ecosystem Quality Team',
+      'App Certification with The Ecosystem Quality Team',
     ];
     function extractGuest(title: string): string {
       const m = title.match(/\bwith\s+(.+)$/i);
@@ -509,7 +509,7 @@ export default function Home() {
           </div>
           <div className="hpc-info">
             <div className="hpc-show mono" id="hpcShow">EP 042 · Developers:After Dark</div>
-            <div className="hpc-title" id="hpcTitle">App Certification with the Ecosystem Quality Team</div>
+            <div className="hpc-title" id="hpcTitle">App Certification with The Ecosystem Quality Team</div>
           </div>
           <div className="hpc-right">
             <div className="hpc-time mono" id="hpcTime">0:00 / 1:03:53</div>
@@ -563,7 +563,7 @@ export default function Home() {
         </div>
         <div className="ep-grid">
           {[
-            { num:'042', id:'e7jr6gBK7lY', title:'App Certification with the Ecosystem Quality Team', dur:'1:03:53' },
+            { num:'042', id:'e7jr6gBK7lY', title:'App Certification with The Ecosystem Quality Team', dur:'1:03:53' },
             { num:'041', id:'ZexG_hbA17k', title:'The Legend of hapily with Dax Miller', dur:'57:52' },
             { num:'040', id:'gZwRwm1VM9g', title:'Content Creation with Marc D. Hans', dur:'56:21' },
             { num:'039', id:'4r-L2k5tXxU', title:'Intro to Introw with Simon Van Den Hende', dur:'41:53' },
