@@ -709,11 +709,11 @@ export default function Home() {
       </section>
 
       {/* SHORTS */}
-      <section className="shorts" id="shorts" aria-label="Sixty-second cuts">
+      <section className="shorts" id="shorts" aria-label="Media: After Dark">
         <div className="section-head">
           <div>
-            <div className="mono section-eyebrow">┘ Bite-Sized ────────────</div>
-            <h2>Sixty-second <em>cuts.</em></h2>
+            <div className="mono section-eyebrow">┘ Media:After Dark ────────────</div>
+            <h2>Shorts, clips <em>&amp; cursed AI.</em></h2>
           </div>
           <div className="shorts-controls">
             <button className="shorts-arrow" id="shortsPrev" aria-label="Scroll left">←</button>
