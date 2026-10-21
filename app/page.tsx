@@ -778,7 +778,7 @@ export default function Home() {
         </div>
         <div className="col">
           <h4 className="mono">Watch/Listen</h4>
-          <a href="#">Apple Podcasts</a><a href="#">Spotify</a><a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer">YouTube</a><a href="#">RSS</a>
+          <a href="#">Apple Podcasts</a><a href="#">Spotify</a><a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer">YouTube</a><a href="/feed.xml" target="_blank" rel="noopener noreferrer">RSS</a>
         </div>
         <div className="col">
           <h4 className="mono">About</h4>
