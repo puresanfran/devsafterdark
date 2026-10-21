@@ -748,9 +748,9 @@ export default function Home() {
       {/* SPONSORS */}
       <section className="frame" aria-label="Sponsors" style={{paddingTop:0}}>
         <div className="sponsors-bar">
-          <div className="mono" style={{color:'var(--mute)'}}>── Underwritten By ──────────</div>
+          <div className="mono" style={{color:'var(--mute)'}}>── Sponsored By ──────────</div>
           <div className="rule"></div>
-          <a href="#pitch" className="mono" style={{color:'var(--accent)',fontWeight:600}}>Sponsor a future episode →</a>
+          <a href="#pitch" className="btn btn-ghost">Sponsor a future episode →</a>
         </div>
         <div className="sponsors-grid">
           {[
@@ -781,7 +781,7 @@ export default function Home() {
         </div>
         <div className="col">
           <h4 className="mono">About</h4>
-          <a href="#hosts">The hosts</a><a href="#pitch">Be a guest</a><a href="#">Sponsorships</a><a href="#">Press kit</a>
+          <a href="#hosts">The hosts</a><a href="#pitch">Be a guest</a><a href="#">Sponsorships</a>
         </div>
         <div className="col">
           <h4 className="mono">Read</h4>
