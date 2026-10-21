@@ -316,8 +316,9 @@ section.frame { padding: var(--section-py) var(--pad-x); }
 
 /* ═══ MEDIA MASONRY ═══ */
 .media-section { padding: var(--section-py) var(--pad-x) clamp(64px, 8vh, 96px); }
-.media-masonry { columns: 3; column-gap: 16px; margin-top: 8px; }
-.media-item { break-inside: avoid; margin-bottom: 16px; display: block; position: relative; overflow: hidden; cursor: pointer; border: 1px solid var(--line); transition: border-color 0.2s; }
+.media-masonry { columns: 5; column-gap: 12px; margin-top: 8px; }
+.media-item { break-inside: avoid; margin-bottom: 12px; display: block; position: relative; overflow: hidden; cursor: pointer; border: 1px solid var(--line); transition: border-color 0.2s; }
+.media-item.media-hidden { display: none; }
 .media-item:hover { border-color: var(--accent); }
 .media-item img { width: 100%; display: block; }
 .media-placeholder { width: 100%; background: linear-gradient(135deg, rgba(251,191,36,0.04) 0%, rgba(255,255,255,0.03) 100%); border: 1px dashed rgba(251,191,36,0.15); box-sizing: border-box; }
@@ -325,10 +326,11 @@ section.frame { padding: var(--section-py) var(--pad-x); }
 .media-item-video { text-decoration: none; color: inherit; }
 .media-play-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: rgba(15,17,22,0.35); opacity: 0; transition: opacity 0.2s; }
 .media-item-video:hover .media-play-overlay { opacity: 1; }
-.media-play-btn { width: 48px; height: 48px; border-radius: 50%; background: var(--accent); color: #000; display: flex; align-items: center; justify-content: center; font-size: 16px; padding-left: 3px; }
+.media-play-btn { width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #000; display: flex; align-items: center; justify-content: center; font-size: 14px; padding-left: 3px; }
 .media-short-badge { font-size: 9px; letter-spacing: 0.14em; color: var(--accent); background: rgba(15,17,22,0.75); padding: 3px 8px; border: 1px solid rgba(251,191,36,0.3); }
-@media (max-width: 900px) { .media-masonry { columns: 2; } }
-@media (max-width: 560px) { .media-masonry { columns: 1; } }
+@media (max-width: 1100px) { .media-masonry { columns: 4; } }
+@media (max-width: 800px)  { .media-masonry { columns: 3; } }
+@media (max-width: 560px)  { .media-masonry { columns: 2; } }
 @media (min-width: 1280px) { .shorts-rail { grid-auto-columns: 255px; } }
 
 /* ═══ SPONSORS ═══ */
