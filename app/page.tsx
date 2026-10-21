@@ -578,7 +578,7 @@ export default function Home() {
               <div className="ep-meta">
                 <div className="ep-num mono">EP-{ep.num}</div>
                 <div className="ep-title">{ep.title}</div>
-                <div className="ep-show">Developers:After Dark · {ep.dur}</div>
+                <div className="ep-show">Devs:After Dark · {ep.dur}</div>
               </div>
             </a>
           ))}
