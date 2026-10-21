@@ -351,12 +351,12 @@ export default function Home() {
       if (window.scrollY > heroHeight * 0.8 && !audio.paused) {
         (document.getElementById('miniPlayer') as HTMLElement).classList.add('visible');
       }
-      let current = 'latest';
+      let current = '';
       sections.forEach(id => {
         const el = document.getElementById(id);
         if (el && el.getBoundingClientRect().top < 120) current = id;
       });
-      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+      navLinks.forEach(a => a.classList.toggle('active', !!current && a.getAttribute('href') === '#' + current));
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
 
@@ -440,7 +440,7 @@ export default function Home() {
           <a href="#" className="wordmark">Devs<em>After</em>Dark</a>
         </div>
         <nav className="nav-links" aria-label="Primary navigation">
-          <a href="#latest" className="active">The Latest</a>
+          <a href="#latest">The Latest</a>
           <a href="#archive">Archive</a>
           <a href="#hosts">The Hosts</a>
           <a href="#pitch">Be A Guest</a>
