@@ -556,7 +556,7 @@ export default function Home() {
             <div className="mono section-eyebrow">┘ Latest Issues ────────────</div>
             <h2>The <em>latest</em> editions,<br />fresh off the late shift.</h2>
           </div>
-          <a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Watch on YouTube →</a>
+          <a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{display:'inline-flex',alignItems:'center',gap:'6px'}}><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>Watch on YouTube →</a>
         </div>
         <div className="ep-grid">
           {[
@@ -584,7 +584,7 @@ export default function Home() {
           ))}
         </div>
         <div className="ep-cta">
-          <a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">More on YouTube →</a>
+          <a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{display:'inline-flex',alignItems:'center',gap:'6px'}}><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>More on YouTube →</a>
         </div>
 
         {/* ARCHIVE */}
@@ -778,7 +778,7 @@ export default function Home() {
         </div>
         <div className="col">
           <h4 className="mono">Watch/Listen</h4>
-          <a href="#">Apple Podcasts</a><a href="#">Spotify</a><a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer">YouTube</a><a href="/feed.xml" target="_blank" rel="noopener noreferrer">RSS</a>
+          <a href="#">Apple Podcasts</a><a href="#">Spotify</a><a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" style={{display:'inline-flex',alignItems:'center',gap:'5px'}}><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>YouTube</a><a href="/feed.xml" target="_blank" rel="noopener noreferrer">RSS</a>
         </div>
         <div className="col">
           <h4 className="mono">About</h4>
