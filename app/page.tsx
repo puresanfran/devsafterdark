@@ -465,7 +465,10 @@ export default function Home() {
         <div className="hero-inner">
 
           <div className="hero-stage">
-            <div className="eyebrow mono fade-up fade-up-1">A podcast for night-shift builders</div>
+            <div className="eyebrow-row fade-up fade-up-1">
+              <div className="eyebrow mono">A podcast for night-shift builders</div>
+              <span className="vol2-pill mono">Volume 2 Is Here</span>
+            </div>
             <h1 className="headline fade-up fade-up-2">
               The internet,<br />
               <em>after</em> bedtime.
@@ -474,19 +477,8 @@ export default function Home() {
               Late-night conversations with the people who keep the internet running while you sleep: the founders, the maintainers, the on-call engineers, and the friends-of-friends with one truly weird production story.
             </p>
             <div className="hero-actions fade-up fade-up-4">
-              <a href="#archive" className="btn btn-ghost">Browse the Audio Archive →</a>
-              <div className="vol2-inline mono" aria-label="Volume 2 teaser">
-                <span className="vol2-label">Vol. 02</span>
-                <span className="vol2-countdown" id="vol2Countdown">
-                  <span><span id="cdDays">--</span><span className="cd-unit">d</span></span>
-                  <span className="cd-sep">:</span>
-                  <span><span id="cdHours">--</span><span className="cd-unit">h</span></span>
-                  <span className="cd-sep">:</span>
-                  <span><span id="cdMins">--</span><span className="cd-unit">m</span></span>
-                  <span className="cd-sep">:</span>
-                  <span><span id="cdSecs">--</span><span className="cd-unit">s</span></span>
-                </span>
-              </div>
+              <a href="#latest" className="btn btn-primary">Watch the Latest <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></a>
+              <a href="#archive" className="btn btn-ghost">Browse the Audio Archive <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></a>
             </div>
           </div>
           <div className="hero-foot mono">
