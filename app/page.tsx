@@ -722,7 +722,7 @@ export default function Home() {
                 target="_blank" rel="noopener noreferrer"
                 aria-label={item.title}
                 data-midx={i}>
-                <img src={`https://i.ytimg.com/vi/${item.id}/oardefault.jpg`} alt={item.title} loading="lazy" decoding="async" />
+                <img src={`https://i.ytimg.com/vi/${item.id}/hqdefault.jpg`} alt={item.title} className="media-video-thumb" loading="lazy" decoding="async" />
                 <div className="media-play-overlay">
                   <div className="media-play-btn">▶</div>
                   <div className="media-short-badge mono">Short</div>
