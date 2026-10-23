@@ -82,10 +82,13 @@ h1, h2, h3 { margin: 0; }
 /* ── Buttons ── */
 .btn { border: none; cursor: pointer; font-family: var(--sans); font-weight: 600; padding: 10px 20px; font-size: 13px; letter-spacing: 0.01em; background: var(--accent); color: var(--bg); transition: transform 0.15s ease, filter 0.15s ease; white-space: nowrap; border-radius: 999px; }
 .btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
-.btn-ghost { background: transparent; color: var(--fg); border: 1px solid var(--line); }
+.btn-ghost { background: transparent; color: var(--fg); border: 1px solid var(--line); display: inline-flex; align-items: center; gap: 8px; }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); filter: none; }
 .btn-ghost:hover svg { color: var(--accent); fill: var(--accent); }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; }
 @media (max-width: 540px) { .btn-ghost.hide-sm { display: none; } }
+.eyebrow-row { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.vol2-pill { display: inline-block; padding: 3px 10px; background: var(--accent); color: var(--bg); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; border-radius: 4px; white-space: nowrap; }
 
 /* ═══ HERO ═══ */
 .hero { position: relative; isolation: isolate; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; overflow: visible; }
