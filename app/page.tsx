@@ -358,6 +358,55 @@ export default function Home() {
       mediaShowMoreBtn.style.display = 'none';
     });
 
+    /* ── Image modal ── */
+    const imgModal    = document.getElementById('imgModal') as HTMLElement;
+    const imgModalImg = document.getElementById('imgModalImg') as HTMLImageElement;
+    const imgModalCounter = document.getElementById('imgModalCounter') as HTMLElement;
+    let galleryItems: HTMLElement[] = [];
+    let galleryIdx = 0;
+
+    function openModal(idx: number) {
+      galleryItems = Array.from(document.querySelectorAll('.media-item-img[data-src]'))
+        .filter(el => (el as HTMLElement).dataset.src) as HTMLElement[];
+      galleryIdx = idx;
+      showSlide(galleryIdx);
+      imgModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      imgModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function showSlide(idx: number) {
+      const el = galleryItems[idx];
+      if (!el) return;
+      imgModalImg.src = el.dataset.src || '';
+      imgModalImg.alt = el.querySelector('img')?.alt || '';
+      imgModalCounter.textContent = `${idx + 1} / ${galleryItems.length}`;
+      document.getElementById('imgModalPrev')!.style.visibility = idx === 0 ? 'hidden' : 'visible';
+      document.getElementById('imgModalNext')!.style.visibility = idx === galleryItems.length - 1 ? 'hidden' : 'visible';
+    }
+
+    document.querySelectorAll('.media-item-img[data-src]').forEach((el, i) => {
+      el.addEventListener('click', () => openModal(i));
+      el.addEventListener('keydown', (e) => { if ((e as KeyboardEvent).key === 'Enter') openModal(i); });
+    });
+
+    document.getElementById('imgModalClose')?.addEventListener('click', closeModal);
+    document.getElementById('imgModalBackdrop')?.addEventListener('click', closeModal);
+    document.getElementById('imgModalPrev')?.addEventListener('click', () => { if (galleryIdx > 0) { galleryIdx--; showSlide(galleryIdx); } });
+    document.getElementById('imgModalNext')?.addEventListener('click', () => { if (galleryIdx < galleryItems.length - 1) { galleryIdx++; showSlide(galleryIdx); } });
+
+    function handleModalKey(e: KeyboardEvent) {
+      if (!imgModal.classList.contains('open')) return;
+      if (e.key === 'Escape') closeModal();
+      if (e.key === 'ArrowLeft'  && galleryIdx > 0)                        { galleryIdx--; showSlide(galleryIdx); }
+      if (e.key === 'ArrowRight' && galleryIdx < galleryItems.length - 1)  { galleryIdx++; showSlide(galleryIdx); }
+    }
+    document.addEventListener('keydown', handleModalKey);
+
     /* ── Nav scroll + active section ── */
     const nav = document.getElementById('mainNav') as HTMLElement;
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -729,7 +778,7 @@ export default function Home() {
                 </div>
               </a>
             ) : (
-              <div key={i} className="media-item media-item-img" data-midx={i}>
+              <div key={i} className="media-item media-item-img" data-midx={i} data-src={item.src || ''} role="button" tabIndex={0} aria-label="View image">
                 {item.src
                   ? <img src={item.src} alt={item.caption || ''} loading="lazy" decoding="async" />
                   : <div className="media-placeholder" style={{aspectRatio: item.aspect}} />
@@ -785,6 +834,24 @@ export default function Home() {
           <a href="#">Transcripts <em style={{fontStyle:'italic',opacity:0.6}}>(coming soon)</em></a><a href="#">Newsletter <em style={{fontStyle:'italic',opacity:0.6}}>(coming soon)</em></a>
         </div>
       </footer>
+      {/* IMAGE MODAL */}
+      <div id="imgModal" className="img-modal" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <div className="img-modal-backdrop" id="imgModalBackdrop"></div>
+        <button className="img-modal-close" id="imgModalClose" aria-label="Close">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
+        </button>
+        <button className="img-modal-prev" id="imgModalPrev" aria-label="Previous image">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M13 4l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        </button>
+        <div className="img-modal-content">
+          <img id="imgModalImg" src="" alt="" />
+        </div>
+        <button className="img-modal-next" id="imgModalNext" aria-label="Next image">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 4l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        </button>
+        <div className="img-modal-counter mono" id="imgModalCounter"></div>
+      </div>
+
       <div className="colophon mono">
         <span>© {new Date().getFullYear()} Devs:AfterDark. Brewed at unreasonable hours.</span>
         <span>v.01.42</span>
