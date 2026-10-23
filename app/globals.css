@@ -87,8 +87,8 @@ h1, h2, h3 { margin: 0; }
 .btn-ghost:hover svg { color: var(--accent); fill: var(--accent); }
 .btn-primary { display: inline-flex; align-items: center; gap: 8px; }
 @media (max-width: 540px) { .btn-ghost.hide-sm { display: none; } }
-.eyebrow-row { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
-.vol2-pill { display: inline-block; padding: 3px 10px; background: var(--accent); color: var(--bg); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; border-radius: 4px; white-space: nowrap; }
+.eyebrow-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; padding-bottom: 4px; }
+.vol2-pill { display: inline-block; padding: 5px 12px; background: var(--accent); color: var(--bg); font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; transform: rotate(-2deg); box-shadow: 0 6px 18px rgba(0,0,0,0.45); white-space: nowrap; }
 
 /* ═══ HERO ═══ */
 .hero { position: relative; isolation: isolate; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; overflow: visible; }
