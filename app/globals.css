@@ -370,7 +370,7 @@ footer .word { font-family: var(--serif); font-size: 34px; font-weight: 600; let
 footer .word em { font-style: italic; color: var(--accent); }
 footer .deck-foot { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--mute); margin-top: 10px; max-width: 360px; line-height: 1.6; }
 footer .col h4 { color: var(--accent); margin: 0 0 16px; }
-footer .col a { display: block; padding: 6px 0; font-size: 13px; color: var(--fg); transition: color 0.15s; }
+footer .col a { display: block; width: fit-content; padding: 6px 0; font-size: 13px; color: var(--fg); transition: color 0.15s; }
 footer .col a:hover { color: var(--accent); }
 .colophon { padding: 18px var(--pad-x); border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 16px; color: var(--mute); background: var(--bg-2); }
 @media (max-width: 720px) { .colophon { flex-direction: column; align-items: flex-start; } }
