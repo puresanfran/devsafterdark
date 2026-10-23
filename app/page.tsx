@@ -39,7 +39,7 @@ export default function Home() {
       'Community Architecture with Jennifer Nixon',
       'Crafting Success with Steve Laham',
       'Rolling In The Deep (Research) with Daniel Jacobson',
-      'Coming Soon', // Ep 27 â€” missing audio
+      'Coming Soon', // Ep 27 — missing audio
       'Be the Hero with Paul Maxwell',
       'SEO in the AI World with Victor Pan',
       'Sandboxes and Smile Files with Denise Thijzen',
@@ -88,7 +88,7 @@ export default function Home() {
       };
     }).sort((a, b) => b.num - a.num);
 
-    /* â”€â”€ Archive â”€â”€ */
+    /* ── Archive ── */
     let visibleCount = 10;
     let activeVol = 'all';
     let searchQ = '';
@@ -126,12 +126,12 @@ export default function Home() {
       list.innerHTML = showing.map(ep => `
         <div class="archive-row" data-ep="${ep.num}" role="listitem" tabindex="0" aria-label="Vol ${ep.volume} Episode ${ep.volEpNum}: ${ep.title}">
           <span class="num">${String(ep.volEpNum).padStart(3,'0')}</span>
-          <button class="pp" data-ep="${ep.num}" aria-label="Play episode ${ep.volEpNum}">â–¶</button>
+          <button class="pp" data-ep="${ep.num}" aria-label="Play episode ${ep.volEpNum}">▶</button>
           <div>
             <div class="title">${ep.title}</div>
             <div class="card-tags" style="margin-top:8px;"><span class="tag">Vol. ${ep.volume}</span></div>
           </div>
-          <div class="guest">${ep.guest ? ep.guest : 'â€”'}</div>
+          <div class="guest">${ep.guest ? ep.guest : '—'}</div>
           <div class="dur">${ep.duration}</div>
         </div>
       `).join('');
@@ -154,7 +154,7 @@ export default function Home() {
       });
     }
 
-    /* â”€â”€ Audio engine â”€â”€ */
+    /* ── Audio engine ── */
     const audio = new Audio();
     audio.preload = 'none';
 
@@ -203,26 +203,26 @@ export default function Home() {
 
     audio.addEventListener('ended', () => {
       (document.getElementById('miniProgressFill') as HTMLElement).style.width = '0%';
-      (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = 'â–¶';
-      if (currentlyPlayingEl) { currentlyPlayingEl.textContent = 'â–¶'; currentlyPlayingEl.classList.remove('playing'); currentlyPlayingEl = null; }
-      (document.getElementById('playBtn') as HTMLButtonElement).textContent = 'â–¶';
+      (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = '▶';
+      if (currentlyPlayingEl) { currentlyPlayingEl.textContent = '▶'; currentlyPlayingEl.classList.remove('playing'); currentlyPlayingEl = null; }
+      (document.getElementById('playBtn') as HTMLButtonElement).textContent = '▶';
       (document.getElementById('playBtn') as HTMLButtonElement).classList.remove('playing');
     });
 
     function triggerPlay(ep: typeof EPISODES[0], btnEl: HTMLButtonElement) {
       if (currentlyPlayingEl && currentlyPlayingEl !== btnEl) {
-        currentlyPlayingEl.textContent = 'â–¶';
+        currentlyPlayingEl.textContent = '▶';
         currentlyPlayingEl.classList.remove('playing');
       }
       const isPlaying = btnEl.classList.contains('playing');
       if (isPlaying) {
         audio.pause();
-        btnEl.textContent = 'â–¶';
+        btnEl.textContent = '▶';
         btnEl.classList.remove('playing');
         currentlyPlayingEl = null;
-        (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = 'â–¶';
+        (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = '▶';
       } else {
-        btnEl.textContent = 'âšâš';
+        btnEl.textContent = '❚❚';
         btnEl.classList.add('playing');
         currentlyPlayingEl = btnEl;
         showMiniPlayer(ep);
@@ -232,27 +232,27 @@ export default function Home() {
 
     function showMiniPlayer(ep: typeof EPISODES[0]) {
       const mp = document.getElementById('miniPlayer') as HTMLElement;
-      (document.querySelector('.mini-player-info .ep-label') as HTMLElement).textContent = `Vol. ${ep.volume} Â· EP ${String(ep.volEpNum).padStart(3,'0')}`;
-      (document.querySelector('.mini-player-info .ep-title') as HTMLElement).textContent = `"${ep.title}" â€” ${ep.guest}`;
+      (document.querySelector('.mini-player-info .ep-label') as HTMLElement).textContent = `Vol. ${ep.volume} · EP ${String(ep.volEpNum).padStart(3,'0')}`;
+      (document.querySelector('.mini-player-info .ep-title') as HTMLElement).textContent = `"${ep.title}" — ${ep.guest}`;
       mp.classList.add('visible');
-      (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = 'âšâš';
+      (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = '❚❚';
       const hpcShowEl = document.getElementById('hpcShow');
-      if (hpcShowEl) hpcShowEl.textContent = `EP ${String(ep.volEpNum).padStart(3,'0')} Â· Developers:After Dark`;
+      if (hpcShowEl) hpcShowEl.textContent = `EP ${String(ep.volEpNum).padStart(3,'0')} · Developers:After Dark`;
       const hpcTitleEl = document.getElementById('hpcTitle');
       if (hpcTitleEl) hpcTitleEl.textContent = ep.title;
       const hpcPlay = document.getElementById('playBtn') as HTMLButtonElement;
-      if (hpcPlay) { hpcPlay.textContent = 'âšâš'; hpcPlay.classList.add('playing'); }
+      if (hpcPlay) { hpcPlay.textContent = '❚❚'; hpcPlay.classList.add('playing'); }
     }
 
     document.getElementById('miniPlayBtn')?.addEventListener('click', () => {
       if (audio.paused) {
         audio.play().catch(() => {});
-        (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = 'âšâš';
-        if (currentlyPlayingEl) currentlyPlayingEl.textContent = 'âšâš';
+        (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = '❚❚';
+        if (currentlyPlayingEl) currentlyPlayingEl.textContent = '❚❚';
       } else {
         audio.pause();
-        (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = 'â–¶';
-        if (currentlyPlayingEl) currentlyPlayingEl.textContent = 'â–¶';
+        (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = '▶';
+        if (currentlyPlayingEl) currentlyPlayingEl.textContent = '▶';
       }
     });
 
@@ -261,12 +261,12 @@ export default function Home() {
       audio.src = '';
       (document.getElementById('miniPlayer') as HTMLElement).classList.remove('visible');
       (document.getElementById('miniProgressFill') as HTMLElement).style.width = '0%';
-      if (currentlyPlayingEl) { currentlyPlayingEl.textContent = 'â–¶'; currentlyPlayingEl.classList.remove('playing'); currentlyPlayingEl = null; }
-      (document.getElementById('playBtn') as HTMLButtonElement).textContent = 'â–¶';
+      if (currentlyPlayingEl) { currentlyPlayingEl.textContent = '▶'; currentlyPlayingEl.classList.remove('playing'); currentlyPlayingEl = null; }
+      (document.getElementById('playBtn') as HTMLButtonElement).textContent = '▶';
       (document.getElementById('playBtn') as HTMLButtonElement).classList.remove('playing');
     });
 
-    /* â”€â”€ Hero play (latest episode with audio) â”€â”€ */
+    /* ── Hero play (latest episode with audio) ── */
     const latestEp = [...EPISODES].reverse().find(ep => ep.audioUrl) ?? null;
     document.getElementById('playBtn')?.addEventListener('click', () => {
       if (!latestEp) return;
@@ -274,19 +274,19 @@ export default function Home() {
       const isPlaying = heroBtn.classList.contains('playing');
       if (isPlaying) {
         audio.pause();
-        heroBtn.textContent = 'â–¶';
+        heroBtn.textContent = '▶';
         heroBtn.classList.remove('playing');
-        (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = 'â–¶';
+        (document.getElementById('miniPlayBtn') as HTMLButtonElement).textContent = '▶';
       } else {
         if (audio.src !== latestEp.audioUrl) { audio.src = latestEp.audioUrl!; }
         audio.play().catch(() => {});
-        heroBtn.textContent = 'âšâš';
+        heroBtn.textContent = '❚❚';
         heroBtn.classList.add('playing');
         showMiniPlayer(latestEp);
       }
     });
 
-    /* â”€â”€ Filter + search â”€â”€ */
+    /* ── Filter + search ── */
     document.getElementById('volChips')?.addEventListener('click', e => {
       const chip = (e.target as HTMLElement).closest('.fchip') as HTMLElement;
       if (!chip) return;
@@ -314,7 +314,7 @@ export default function Home() {
 
     document.getElementById('showMore')?.addEventListener('click', () => { visibleCount += 10; renderArchive(); });
 
-    /* â”€â”€ Pitch form â”€â”€ */
+    /* ── Pitch form ── */
     document.getElementById('pitchForm')?.addEventListener('submit', e => {
       e.preventDefault();
       (document.getElementById('pitchForm') as HTMLElement).style.display = 'none';
@@ -324,7 +324,7 @@ export default function Home() {
     });
 
 
-    /* â”€â”€ Media masonry show-more â”€â”€ */
+    /* ── Media masonry show-more ── */
     const MEDIA_INITIAL = 10;
     const mediaItems = document.querySelectorAll('[data-midx]');
     const mediaShowMoreBtn = document.getElementById('mediaShowMore') as HTMLButtonElement;
@@ -338,7 +338,7 @@ export default function Home() {
       mediaShowMoreBtn.style.display = 'none';
     });
 
-    /* â”€â”€ Nav scroll + active section â”€â”€ */
+    /* ── Nav scroll + active section ── */
     const nav = document.getElementById('mainNav') as HTMLElement;
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = ['latest','archive','hosts','pitch','shorts'];
@@ -357,7 +357,7 @@ export default function Home() {
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    /* â”€â”€ Mobile menu â”€â”€ */
+    /* ── Mobile menu ── */
     document.getElementById('hamburgerBtn')?.addEventListener('click', () => {
       const open = (document.getElementById('mobileMenu') as HTMLElement).classList.toggle('open');
       const btn = document.getElementById('hamburgerBtn') as HTMLButtonElement;
@@ -366,7 +366,7 @@ export default function Home() {
       document.body.style.overflow = open ? 'hidden' : '';
     });
 
-    /* â”€â”€ Parallax â”€â”€ */
+    /* ── Parallax ── */
     const heroBg = document.getElementById('heroBg') as HTMLElement;
     const handleParallax = () => {
       const y = window.scrollY;
@@ -374,7 +374,7 @@ export default function Home() {
     };
     window.addEventListener('scroll', handleParallax, { passive: true });
 
-    /* â”€â”€ Live clock â”€â”€ */
+    /* ── Live clock ── */
     function updateClock() {
       const now = new Date();
       const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
@@ -383,14 +383,14 @@ export default function Home() {
       const ampm = h >= 12 ? 'PM' : 'AM';
       const h12 = String(h % 12 || 12).padStart(2,'0');
       const el = document.getElementById('liveTime');
-      if (el) el.textContent = `${days[now.getDay()]} Â· ${h12}:${m} ${ampm}`;
+      if (el) el.textContent = `${days[now.getDay()]} · ${h12}:${m} ${ampm}`;
     }
     updateClock();
     const clockInterval = setInterval(updateClock, 30000);
 
     renderArchive();
 
-    /* â”€â”€ Vol 2 countdown â”€â”€ */
+    /* ── Vol 2 countdown ── */
     const vol2Target = new Date('2026-08-01T00:00:00').getTime();
     function updateCountdown() {
       const diff = vol2Target - Date.now();
@@ -424,7 +424,7 @@ export default function Home() {
     <>
       {/* MOBILE MENU */}
       <div className="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
-        <button className="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">âœ•</button>
+        <button className="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">✕</button>
         <a href="#latest" onClick={closeMobileMenu}>The Latest</a>
         <a href="#archive" onClick={closeMobileMenu}>Audio Archive</a>
         <a href="#hosts" onClick={closeMobileMenu}>The Hosts</a>
@@ -474,7 +474,7 @@ export default function Home() {
               Late-night conversations with the people who keep the internet running while you sleep: the founders, the maintainers, the on-call engineers, and the friends-of-friends with one truly weird production story.
             </p>
             <div className="hero-actions fade-up fade-up-4">
-              <a href="#archive" className="btn btn-ghost">Browse the Audio Archive â†’</a>
+              <a href="#archive" className="btn btn-ghost">Browse the Audio Archive →</a>
               <div className="vol2-inline mono" aria-label="Volume 2 teaser">
                 <span className="vol2-label">Vol. 02</span>
                 <span className="vol2-countdown" id="vol2Countdown">
@@ -492,7 +492,7 @@ export default function Home() {
           <div className="hero-foot mono">
             <span>Recorded between deploys. Edited on cold brew.</span>
             <span className="scroll-cue" aria-hidden="true"><span>Scroll</span><span className="line"></span></span>
-            <span className="col-r">New episodes Â· Weekly</span>
+            <span className="col-r">New episodes · Weekly</span>
           </div>
         </div>
         <div className="hero-player-card" id="heroPlayerCard">
@@ -506,7 +506,7 @@ export default function Home() {
             </svg>
           </div>
           <div className="hpc-info">
-            <div className="hpc-show mono" id="hpcShow">EP 042 Â· Developers:After Dark</div>
+            <div className="hpc-show mono" id="hpcShow">EP 042 · Developers:After Dark</div>
             <div className="hpc-title" id="hpcTitle">App Certification with The Ecosystem Quality Team</div>
           </div>
           <div className="hpc-right">
@@ -534,12 +534,12 @@ export default function Home() {
 
       {/* MINI PLAYER */}
       <div className="mini-player" id="miniPlayer" role="complementary" aria-label="Mini player">
-        <button className="mini-skip-btn" id="miniSkipBack" aria-label="Skip back 15 seconds">âŸ¨15</button>
-        <button className="mini-play-btn" id="miniPlayBtn" aria-label="Play/pause">â–¶</button>
-        <button className="mini-skip-btn" id="miniSkipFwd" aria-label="Skip forward 15 seconds">15âŸ©</button>
+        <button className="mini-skip-btn" id="miniSkipBack" aria-label="Skip back 15 seconds">⟨15</button>
+        <button className="mini-play-btn" id="miniPlayBtn" aria-label="Play/pause">▶</button>
+        <button className="mini-skip-btn" id="miniSkipFwd" aria-label="Skip forward 15 seconds">15⟩</button>
         <div className="mini-player-info">
           <div className="ep-label mono">EP 001</div>
-          <div className="ep-title">&quot;The Bug That Ate My Weekend&quot; â€” Mara Chen</div>
+          <div className="ep-title">&quot;The Bug That Ate My Weekend&quot; — Mara Chen</div>
         </div>
         <div className="mini-progress" id="miniProgress" role="progressbar" aria-valuenow={0} aria-valuemin={0} aria-valuemax={100}>
           <div className="mini-progress-fill" id="miniProgressFill"></div>
@@ -547,17 +547,17 @@ export default function Home() {
         <div className="mini-time mono" id="miniTime">0:00 / 0:00</div>
         <span className="mini-vol-icon">&#128266;</span>
         <input className="mini-volume" id="miniVolume" type="range" min="0" max="1" step="0.05" defaultValue="1" aria-label="Volume" />
-        <button className="mini-close" id="miniClose" aria-label="Close player">âœ•</button>
+        <button className="mini-close" id="miniClose" aria-label="Close player">✕</button>
       </div>
 
       {/* LATEST FEATURED */}
       <section className="frame latest" id="latest" aria-label="Latest episodes">
         <div className="section-head">
           <div>
-            <div className="mono section-eyebrow">â”˜ Latest Issues â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€</div>
+            <div className="mono section-eyebrow">/ Latest Issues ------------</div>
             <h2>The <em>latest</em> editions,<br />fresh off the late shift.</h2>
           </div>
-          <a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{display:'inline-flex',alignItems:'center',gap:'6px'}}><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>Watch on YouTube â†’</a>
+          <a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{display:'inline-flex',alignItems:'center',gap:'6px'}}><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>Watch on YouTube →</a>
         </div>
         <div className="ep-grid">
           {[
@@ -572,32 +572,32 @@ export default function Home() {
               <div className="ep-thumb">
                 <img src={`https://i.ytimg.com/vi/${ep.id}/hqdefault.jpg`} alt="" className="ep-thumb-img" loading="lazy" decoding="async" />
                 <div className="ep-corners"><span/><span/><span/><span/></div>
-                <div className="ep-rec mono"><span className="ep-rec-dot">â—</span> REC</div>
-                <div className="ep-play-circle">â–¶</div>
+                <div className="ep-rec mono"><span className="ep-rec-dot">●</span> REC</div>
+                <div className="ep-play-circle">▶</div>
                 <div className="ep-badge mono">Vol. 1</div>
               </div>
               <div className="ep-meta">
                 <div className="ep-num mono">EP-{ep.num}</div>
                 <div className="ep-title">{ep.title}</div>
-                <div className="ep-show">Devs:After Dark Â· {ep.dur}</div>
+                <div className="ep-show">Devs:After Dark · {ep.dur}</div>
               </div>
             </a>
           ))}
         </div>
         <div className="ep-cta">
-          <a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{display:'inline-flex',alignItems:'center',gap:'6px'}}><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>More on YouTube â†’</a>
+          <a href="https://www.youtube.com/@devsafterdark" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{display:'inline-flex',alignItems:'center',gap:'6px'}}><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>More on YouTube →</a>
         </div>
 
         {/* ARCHIVE */}
         <div id="archive" style={{marginTop:'64px'}}>
           <div className="section-head" style={{marginBottom:0}}>
             <div>
-              <div className="mono section-eyebrow">â”˜ The Audio Archive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€</div>
+              <div className="mono section-eyebrow">/ The Audio Archive ------------</div>
               <h2 id="archiveHeader">Vol. 1: <em>42</em> episodes.</h2>
             </div>
           </div>
           <div className="filter-bar" style={{marginTop:'32px'}}>
-            <input className="search-input" id="searchInput" type="search" placeholder="Search episodes, guests, topicsâ€¦" aria-label="Search episodes" />
+            <input className="search-input" id="searchInput" type="search" placeholder="Search episodes, guests, topics…" aria-label="Search episodes" />
             <div className="filter-chips" id="volChips" role="group" aria-label="Filter by volume">
               <button className="fchip active" data-vol="all">All Episodes</button>
               <button className="fchip" data-vol="1">Vol. 1</button>
@@ -605,7 +605,7 @@ export default function Home() {
             <span className="archive-count mono" id="archiveCount">42 episodes</span>
           </div>
           <div className="archive-list" id="archiveList" role="list" aria-label="Episode archive"></div>
-          <button className="show-more" id="showMore">Show more episodes â†“</button>
+          <button className="show-more" id="showMore">Show more episodes ↓</button>
         </div>
       </section>
 
@@ -620,7 +620,7 @@ export default function Home() {
             <div className="ph"><img src="/assets/nick-bio.png" alt="Nick James Laporte" loading="lazy" decoding="async" /></div>
             <div className="host-row">
               <h3 className="host-name">Nick James Laporte</h3>
-              <a className="mono host-handle" href="https://www.linkedin.com/in/nicklaporte/" target="_blank" rel="noopener noreferrer">LinkedIn â†—</a>
+              <a className="mono host-handle" href="https://www.linkedin.com/in/nicklaporte/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
             </div>
             <div className="host-role">&quot;Recovering SEO. Designs by candlelight.&quot;</div>
             <p className="host-bio">Nick Laporte is the founder, host, and chaos coordinator of Developers:After Dark. When he&apos;s not convincing developers to open up about their fears on a podcast, he&apos;s building things out of PVC pipe and buying domain names no one asked for. He considers the show &quot;more than 1s and 0s,&quot; which is either very profound or a cry for help. Probably both.</p>
@@ -629,7 +629,7 @@ export default function Home() {
             <div className="ph"><img src="/assets/dennis-bio.png" alt="Dennis Edson" loading="lazy" decoding="async" /></div>
             <div className="host-row">
               <h3 className="host-name">Dennis Edson</h3>
-              <a className="mono host-handle" href="https://www.linkedin.com/in/dennisedson/" target="_blank" rel="noopener noreferrer">LinkedIn â†—</a>
+              <a className="mono host-handle" href="https://www.linkedin.com/in/dennisedson/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
             </div>
             <div className="host-role">&quot;He edits out our mistakes so we sound smarter than we are.&quot;</div>
             <p className="host-bio">Dennis Edson co-hosts, edits, and somehow keeps Developers:After Dark from sounding like a conference call gone wrong. Armed with a license to create awesome things, Dennis is the quiet backbone of the operation, the kind of person who writes &quot;very clear notes&quot; in the comments of a budget doc while everyone else is panicking. He is the show&apos;s signal-to-noise ratio.</p>
@@ -638,7 +638,7 @@ export default function Home() {
             <div className="ph"><img src="/assets/aj-bio.png" alt="AJ" loading="lazy" decoding="async" /></div>
             <div className="host-row">
               <h3 className="host-name">A.J. La Porte</h3>
-              <a className="mono host-handle" href="https://www.linkedin.com/in/ajlaporte/" target="_blank" rel="noopener noreferrer">LinkedIn â†—</a>
+              <a className="mono host-handle" href="https://www.linkedin.com/in/ajlaporte/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
             </div>
             <div className="host-role">&quot;Co-host, producer, and the reason there&apos;s a plan.&quot;</div>
             <p className="host-bio">A.J. LaPorte is the producer and co-host of Developers:After Dark, which means he&apos;s the one making sure things actually happen while Nick talks and Dennis edits. Part of the legendary LaPorte duo on the show, A.J. brings the structure to the storytelling, the kind of behind-the-scenes energy that makes everyone else look organized. He has not yet bought a domain name for this.</p>
@@ -675,7 +675,7 @@ export default function Home() {
               </div>
               <div className="field">
                 <div className="field-label">What&apos;s the angle</div>
-                <input type="text" placeholder="e.g. sponsoring ep. 044, series run, season 2 dealâ€¦" />
+                <input type="text" placeholder="e.g. sponsoring ep. 044, series run, season 2 deal…" />
               </div>
               <div className="field">
                 <div className="field-label">The pitch</div>
@@ -685,7 +685,7 @@ export default function Home() {
             </div>
           </form>
           <div className="thanks" id="thanks" aria-live="polite">
-            <div className="mono thanks-label">Received Â· pending review</div>
+            <div className="mono thanks-label">Received · pending review</div>
             <div className="thanks-h">Thanks, <em>friend.</em></div>
             <p className="thanks-p">We&apos;ll read your pitch this week and write back from a real inbox, not a bot. Save us a seat at the late-night table.</p>
           </div>
@@ -696,18 +696,18 @@ export default function Home() {
       <section className="frame media-section" id="shorts" aria-label="Media: After Dark">
         <div className="section-head">
           <div>
-            <div className="mono section-eyebrow">â”˜ Media:After Dark â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€</div>
+            <div className="mono section-eyebrow">/ Media:After Dark ------------</div>
             <h2>Shorts, clips <em>&amp; cursed AI.</em></h2>
           </div>
         </div>
         <div className="media-masonry">
           {([
-            // â”€â”€ Video clips (replace id with YouTube Short video ID) â”€â”€
+            // ── Video clips (replace id with YouTube Short video ID) ──
             { type:'video', id:'vWV_-QywjRk', title:'Short clip 1' },
             { type:'video', id:'REPLACE_ME', title:'Short clip 2' },
             { type:'video', id:'REPLACE_ME', title:'Short clip 3' },
             { type:'video', id:'REPLACE_ME', title:'Short clip 4' },
-            // â”€â”€ AI images â”€â”€
+            // ── AI images ──
             { type:'image', src:'https://r3tkg2hho6abm09m.public.blob.vercel-storage.com/spider-man.webp',   caption:'', aspect:'3/4' },
             { type:'image', src:'https://r3tkg2hho6abm09m.public.blob.vercel-storage.com/abbey-road.webp',   caption:'', aspect:'1/1' },
             { type:'image', src:'https://r3tkg2hho6abm09m.public.blob.vercel-storage.com/ghost-busters.webp',caption:'', aspect:'4/5' },
@@ -731,7 +731,7 @@ export default function Home() {
                 data-midx={i}>
                 <img src={`https://i.ytimg.com/vi/${item.id}/hqdefault.jpg`} alt={item.title} loading="lazy" decoding="async" />
                 <div className="media-play-overlay">
-                  <div className="media-play-btn">â–¶</div>
+                  <div className="media-play-btn">▶</div>
                   <div className="media-short-badge mono">Short</div>
                 </div>
               </a>
@@ -746,15 +746,15 @@ export default function Home() {
             )
           )}
         </div>
-        <button className="show-more" id="mediaShowMore">Show More â†“</button>
+        <button className="show-more" id="mediaShowMore">Show More ↓</button>
       </section>
 
       {/* SPONSORS */}
       <section className="frame" aria-label="Sponsors" style={{paddingTop:0}}>
         <div className="sponsors-bar">
-          <div className="mono" style={{color:'var(--mute)'}}>â”€â”€ Sponsored By â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€</div>
+          <div className="mono" style={{color:'var(--mute)'}}>── Sponsored By ──────────</div>
           <div className="rule"></div>
-          <a href="#pitch" className="btn btn-ghost">Sponsor a Future Episode â†’</a>
+          <a href="#pitch" className="btn btn-ghost">Sponsor a Future Episode →</a>
         </div>
         <div className="sponsors-grid">
           {[
@@ -793,7 +793,7 @@ export default function Home() {
         </div>
       </footer>
       <div className="colophon mono">
-        <span>Â© {new Date().getFullYear()} Devs:AfterDark. Brewed at unreasonable hours.</span>
+        <span>© {new Date().getFullYear()} Devs:AfterDark. Brewed at unreasonable hours.</span>
         <span>v.01.42</span>
       </div>
     </>
