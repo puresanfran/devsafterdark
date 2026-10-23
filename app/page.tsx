@@ -701,9 +701,7 @@ export default function Home() {
           {([
             // ── Video clips (replace id with YouTube Short video ID) ──
             { type:'video', id:'vWV_-QywjRk', title:'Short clip 1' },
-            { type:'video', id:'REPLACE_ME', title:'Short clip 2' },
-            { type:'video', id:'REPLACE_ME', title:'Short clip 3' },
-            { type:'video', id:'REPLACE_ME', title:'Short clip 4' },
+            { type:'video', id:'Q4BikyTxXqo', title:'Short clip 2' },
             // ── AI images ──
             { type:'image', src:'https://r3tkg2hho6abm09m.public.blob.vercel-storage.com/spider-man.webp',   caption:'', aspect:'3/4' },
             { type:'image', src:'https://r3tkg2hho6abm09m.public.blob.vercel-storage.com/abbey-road.webp',   caption:'', aspect:'1/1' },
