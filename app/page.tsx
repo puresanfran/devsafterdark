@@ -827,7 +827,7 @@ export default function Home() {
         </div>
         <div className="col">
           <h4 className="mono">About</h4>
-          <a href="#hosts">The Hosts</a><a href="#pitch">Be a Guest</a><a href="#">Sponsorships</a>
+          <a href="#hosts">The Hosts</a><a href="#pitch">Be a Guest</a><a href="#">Sponsorships <em style={{fontStyle:'italic',opacity:0.6}}>(coming soon)</em></a>
         </div>
         <div className="col">
           <h4 className="mono">Read</h4>
