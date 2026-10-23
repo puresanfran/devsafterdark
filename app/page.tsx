@@ -360,10 +360,11 @@ export default function Home() {
     /* ── Mobile menu ── */
     document.getElementById('hamburgerBtn')?.addEventListener('click', () => {
       const open = (document.getElementById('mobileMenu') as HTMLElement).classList.toggle('open');
-      (document.getElementById('hamburgerBtn') as HTMLButtonElement).setAttribute('aria-expanded', String(open));
+      const btn = document.getElementById('hamburgerBtn') as HTMLButtonElement;
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       document.body.style.overflow = open ? 'hidden' : '';
     });
-    document.getElementById('mobileMenuClose')?.addEventListener('click', closeMobileMenu);
 
     /* ── Parallax ── */
     const heroBg = document.getElementById('heroBg') as HTMLElement;
