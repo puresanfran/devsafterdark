@@ -681,7 +681,7 @@ export default function Home() {
                 <div className="field-label">The pitch</div>
                 <textarea placeholder="Start with the moment something went sideways." required></textarea>
               </div>
-              <button className="submit" type="submit"><span>Send the Pitch</span><span>â†’</span></button>
+              <button className="submit" type="submit"><span>Send the Pitch</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
             </div>
           </form>
           <div className="thanks" id="thanks" aria-live="polite">
