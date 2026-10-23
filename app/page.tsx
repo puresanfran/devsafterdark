@@ -390,32 +390,11 @@ export default function Home() {
 
     renderArchive();
 
-    /* ── Vol 2 countdown ── */
-    const vol2Target = new Date('2026-08-01T00:00:00').getTime();
-    function updateCountdown() {
-      const diff = vol2Target - Date.now();
-      if (diff <= 0) {
-        document.getElementById('vol2Countdown')!.textContent = 'It\'s here!';
-        return;
-      }
-      const d = Math.floor(diff / 86400000);
-      const h = Math.floor((diff % 86400000) / 3600000);
-      const m = Math.floor((diff % 3600000) / 60000);
-      const s = Math.floor((diff % 60000) / 1000);
-      const pad = (n: number) => String(n).padStart(2, '0');
-      (document.getElementById('cdDays') as HTMLElement).textContent = String(d);
-      (document.getElementById('cdHours') as HTMLElement).textContent = pad(h);
-      (document.getElementById('cdMins') as HTMLElement).textContent = pad(m);
-      (document.getElementById('cdSecs') as HTMLElement).textContent = pad(s);
-    }
-    updateCountdown();
-    const countdownInterval = setInterval(updateCountdown, 1000);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('scroll', handleParallax);
       clearInterval(clockInterval);
-      clearInterval(countdownInterval);
       audio.pause();
     };
   }, []);
