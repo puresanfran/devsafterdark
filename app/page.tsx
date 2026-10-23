@@ -699,16 +699,14 @@ export default function Home() {
         </div>
         <div className="media-masonry">
           {([
-            // ── Video clips (replace id with YouTube Short video ID) ──
-            { type:'video', id:'vWV_-QywjRk', title:'Short clip 1' },
-            { type:'video', id:'Q4BikyTxXqo', title:'Short clip 2' },
-            // ── AI images ──
             { type:'image', src:'https://r3tkg2hho6abm09m.public.blob.vercel-storage.com/spider-man.webp',   caption:'', aspect:'3/4' },
             { type:'image', src:'https://r3tkg2hho6abm09m.public.blob.vercel-storage.com/abbey-road.webp',   caption:'', aspect:'1/1' },
+            { type:'video', id:'vWV_-QywjRk', title:'Short clip 1' },
             { type:'image', src:'https://r3tkg2hho6abm09m.public.blob.vercel-storage.com/ghost-busters.webp',caption:'', aspect:'4/5' },
             { type:'image', src:'https://r3tkg2hho6abm09m.public.blob.vercel-storage.com/gta.webp',          caption:'', aspect:'3/4' },
             { type:'image', src:'https://r3tkg2hho6abm09m.public.blob.vercel-storage.com/top-gun.webp',      caption:'', aspect:'16/9' },
             { type:'image', src:'https://r3tkg2hho6abm09m.public.blob.vercel-storage.com/twilight.webp',     caption:'', aspect:'3/4' },
+            { type:'video', id:'Q4BikyTxXqo', title:'Short clip 2' },
             { type:'image', src:'https://r3tkg2hho6abm09m.public.blob.vercel-storage.com/pirates.webp',      caption:'', aspect:'4/5' },
             { type:'image', src:'https://r3tkg2hho6abm09m.public.blob.vercel-storage.com/sherlock.webp',     caption:'', aspect:'1/1' },
             { type:'image', src:'https://r3tkg2hho6abm09m.public.blob.vercel-storage.com/star-trek.webp',    caption:'', aspect:'3/4' },
