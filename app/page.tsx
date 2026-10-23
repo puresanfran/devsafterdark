@@ -267,7 +267,7 @@ export default function Home() {
     });
 
     /* ── Hero play (latest episode with audio) ── */
-    const latestEp = [...EPISODES].reverse().find(ep => ep.audioUrl) ?? null;
+    const latestEp = EPISODES.find(ep => ep.audioUrl) ?? null;
     document.getElementById('playBtn')?.addEventListener('click', () => {
       if (!latestEp) return;
       const heroBtn = document.getElementById('playBtn') as HTMLButtonElement;
