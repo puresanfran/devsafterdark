@@ -341,6 +341,7 @@ section.frame { padding: var(--section-py) var(--pad-x); }
 .media-placeholder { width: 100%; background: linear-gradient(135deg, rgba(251,191,36,0.04) 0%, rgba(255,255,255,0.03) 100%); border: 1px dashed rgba(251,191,36,0.15); box-sizing: border-box; }
 .media-caption { font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mute); padding: 6px 8px; background: var(--bg); }
 .media-item-video { text-decoration: none; color: inherit; }
+.media-video-thumb { width: 100%; aspect-ratio: 9/16; object-fit: cover; display: block; }
 .media-play-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: rgba(15,17,22,0.35); opacity: 0; transition: opacity 0.2s; }
 .media-item-video:hover .media-play-overlay { opacity: 1; }
 .media-play-btn { width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #000; display: flex; align-items: center; justify-content: center; font-size: 14px; padding-left: 3px; }
