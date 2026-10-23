@@ -286,13 +286,33 @@ export default function Home() {
       }
     });
 
-    /* ── Filter + search ── */
-    document.getElementById('volChips')?.addEventListener('click', e => {
-      const chip = (e.target as HTMLElement).closest('.fchip') as HTMLElement;
-      if (!chip) return;
-      document.querySelectorAll('#volChips .fchip').forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      activeVol = chip.dataset.vol || 'all';
+    /* ── Vol dropdown ── */
+    const volPillBtn = document.getElementById('volPillBtn') as HTMLButtonElement;
+    const volMenu    = document.getElementById('volMenu') as HTMLElement;
+    const volDropdown = document.getElementById('volDropdown') as HTMLElement;
+
+    volPillBtn?.addEventListener('click', e => {
+      e.stopPropagation();
+      const open = volDropdown.classList.toggle('open');
+      volPillBtn.setAttribute('aria-expanded', String(open));
+    });
+
+    document.addEventListener('click', () => {
+      volDropdown?.classList.remove('open');
+      volPillBtn?.setAttribute('aria-expanded', 'false');
+    });
+
+    volMenu?.addEventListener('click', e => {
+      const opt = (e.target as HTMLElement).closest('.vol-option') as HTMLElement;
+      if (!opt) return;
+      e.stopPropagation();
+      volMenu.querySelectorAll('.vol-option').forEach(o => o.classList.remove('active'));
+      opt.classList.add('active');
+      activeVol = opt.dataset.vol || 'all';
+      const label = document.getElementById('volPillLabel');
+      if (label) label.textContent = opt.textContent || 'All Episodes';
+      volDropdown.classList.remove('open');
+      volPillBtn.setAttribute('aria-expanded', 'false');
       visibleCount = 10;
       renderArchive();
     });
@@ -569,9 +589,15 @@ export default function Home() {
           </div>
           <div className="filter-bar" style={{marginTop:'32px'}}>
             <input className="search-input" id="searchInput" type="search" placeholder="Search episodes, guests, topics…" aria-label="Search episodes" />
-            <div className="filter-chips" id="volChips" role="group" aria-label="Filter by volume">
-              <button className="fchip active" data-vol="all">All Episodes</button>
-              <button className="fchip" data-vol="1">Vol. 1</button>
+            <div className="vol-dropdown" id="volDropdown">
+              <button className="vol-pill" id="volPillBtn" aria-haspopup="listbox" aria-expanded="false">
+                <span id="volPillLabel">All Episodes</span>
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </button>
+              <div className="vol-menu" id="volMenu" role="listbox" aria-label="Filter by volume">
+                <button className="vol-option active" data-vol="all" role="option">All Episodes</button>
+                <button className="vol-option" data-vol="1" role="option">Volume 1</button>
+              </div>
             </div>
             <span className="archive-count mono" id="archiveCount">42 episodes</span>
           </div>
