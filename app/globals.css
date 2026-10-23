@@ -185,7 +185,7 @@ section.frame { padding: var(--section-py) var(--pad-x); }
 .section-head h2 em { font-style: var(--heading-ital); color: var(--accent); font-weight: var(--heading-weight); }
 .section-eyebrow { color: var(--accent); margin-bottom: 14px; }
 .section-sub { font-size: 15px; color: var(--mute); margin-top: 10px; max-width: 400px; line-height: 1.55; }
-.ep-cta { margin-top: 36px; }
+.ep-cta { margin-top: 36px; text-align: center; }
 @media (max-width: 720px) { .section-head { flex-direction: column; align-items: flex-start; } }
 
 /* ═══ FEATURED / LATEST ═══ */
@@ -252,6 +252,17 @@ section.frame { padding: var(--section-py) var(--pad-x); }
 .fchip:hover { color: var(--fg); border-color: rgba(255,255,255,0.3); }
 .fchip.active { background: rgba(251,191,36,0.12); color: var(--accent); border-color: rgba(251,191,36,0.35); }
 .archive-count { font-family: var(--mono); font-size: 10px; color: var(--mute); margin-left: auto; }
+/* Vol dropdown pill */
+.vol-dropdown { position: relative; }
+.vol-pill { display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; background: transparent; border: 1px solid var(--line); border-radius: 999px; color: var(--fg); font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: border-color 0.15s, color 0.15s; white-space: nowrap; }
+.vol-pill:hover, .vol-dropdown.open .vol-pill { border-color: var(--accent); color: var(--accent); }
+.vol-pill svg { transition: transform 0.2s; }
+.vol-dropdown.open .vol-pill svg { transform: rotate(180deg); }
+.vol-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; min-width: 140px; background: var(--bg-2); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; z-index: 50; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.vol-dropdown.open .vol-menu { display: block; }
+.vol-option { display: block; width: 100%; padding: 10px 16px; background: transparent; border: none; color: var(--mute); font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; text-align: left; transition: background 0.12s, color 0.12s; }
+.vol-option:hover { background: rgba(255,255,255,0.05); color: var(--fg); }
+.vol-option.active { color: var(--accent); background: rgba(251,191,36,0.08); }
 
 /* ═══ ARCHIVE ═══ */
 .archive-list { margin-top: 8px; }
