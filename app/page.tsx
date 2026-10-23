@@ -426,9 +426,9 @@ export default function Home() {
       <div className="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
         <button className="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">✕</button>
         <a href="#latest" onClick={closeMobileMenu}>The Latest</a>
-        <a href="#archive" onClick={closeMobileMenu}>Archive</a>
+        <a href="#archive" onClick={closeMobileMenu}>Audio Archive</a>
         <a href="#hosts" onClick={closeMobileMenu}>The Hosts</a>
-        <a href="#pitch" onClick={closeMobileMenu}>Be A Guest</a>
+        <a href="#pitch" onClick={closeMobileMenu}>Be a Guest</a>
         <a href="#shorts" onClick={closeMobileMenu}>Media</a>
       </div>
 
@@ -439,9 +439,9 @@ export default function Home() {
         </div>
         <nav className="nav-links" aria-label="Primary navigation">
           <a href="#latest">The Latest</a>
-          <a href="#archive">Archive</a>
+          <a href="#archive">Audio Archive</a>
           <a href="#hosts">The Hosts</a>
-          <a href="#pitch">Be A Guest</a>
+          <a href="#pitch">Be a Guest</a>
           <a href="#shorts">Media</a>
         </nav>
         <div className="nav-cta">
@@ -474,7 +474,7 @@ export default function Home() {
               Late-night conversations with the people who keep the internet running while you sleep: the founders, the maintainers, the on-call engineers, and the friends-of-friends with one truly weird production story.
             </p>
             <div className="hero-actions fade-up fade-up-4">
-              <a href="#archive" className="btn btn-ghost">Browse the archive →</a>
+              <a href="#archive" className="btn btn-ghost">Browse the Audio Archive →</a>
               <div className="vol2-inline mono" aria-label="Volume 2 teaser">
                 <span className="vol2-label">Vol. 02</span>
                 <span className="vol2-countdown" id="vol2Countdown">
@@ -681,7 +681,7 @@ export default function Home() {
                 <div className="field-label">The pitch</div>
                 <textarea placeholder="Start with the moment something went sideways." required></textarea>
               </div>
-              <button className="submit" type="submit"><span>Send the pitch</span><span>→</span></button>
+              <button className="submit" type="submit"><span>Send the Pitch</span><span>→</span></button>
             </div>
           </form>
           <div className="thanks" id="thanks" aria-live="polite">
@@ -754,7 +754,7 @@ export default function Home() {
         <div className="sponsors-bar">
           <div className="mono" style={{color:'var(--mute)'}}>── Sponsored By ──────────</div>
           <div className="rule"></div>
-          <a href="#pitch" className="btn btn-ghost">Sponsor a future episode →</a>
+          <a href="#pitch" className="btn btn-ghost">Sponsor a Future Episode →</a>
         </div>
         <div className="sponsors-grid">
           {[
