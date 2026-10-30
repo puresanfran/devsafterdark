@@ -431,6 +431,7 @@ export default function Home() {
     const handleScroll = () => {
       nav.classList.toggle('scrolled', window.scrollY > 80);
       const heroHeight = (document.querySelector('.hero') as HTMLElement).offsetHeight;
+      document.getElementById('backToTop')?.classList.toggle('visible', window.scrollY > heroHeight);
       if (window.scrollY > heroHeight * 0.8 && !audio.paused) {
         (document.getElementById('miniPlayer') as HTMLElement).classList.add('visible');
       }
@@ -487,6 +488,13 @@ export default function Home() {
 
   return (
     <>
+      {/* BACK TO TOP */}
+      <button className="back-to-top" id="backToTop" aria-label="Back to top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M10 15V5M5 10l5-5 5 5" stroke="var(--bg)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
+
       {/* MOBILE MENU */}
       <div className="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
         <button className="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">✕</button>
