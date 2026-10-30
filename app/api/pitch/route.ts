@@ -4,14 +4,15 @@ const PORTAL_ID = '19659375';
 const FORM_GUID = '926d6e04-9f65-4cd6-be3c-8b1c844fc70e';
 
 export async function POST(req: NextRequest) {
-  const { firstname, email, whats_the_angle, message } = await req.json();
+  const { firstname, lastname, email, whats_the_angle, message } = await req.json();
 
-  if (!firstname || !email || !message) {
+  if (!firstname || !lastname || !email || !message) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
   }
 
   const fields = [
     { name: 'firstname', value: firstname },
+    { name: 'lastname', value: lastname },
     { name: 'email', value: email },
     { name: 'message', value: message },
   ];
