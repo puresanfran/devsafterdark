@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DevsAfterDark — The Internet After Bedtime",
+  title: "Devs:After Dark - The internet, after bedtime. | Tech Podcast",
   description: "Late-night conversations with the people who keep the internet running while you sleep — the founders, the maintainers, the on-call engineers, and the friends-of-friends with one truly weird production story.",
   openGraph: {
-    title: "DevsAfterDark — The Internet After Bedtime",
+    title: "Devs:After Dark - The internet, after bedtime. | Tech Podcast",
     description: "A podcast for night-shift builders.",
     type: "website",
   },
