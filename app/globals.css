@@ -373,7 +373,7 @@ section.frame { padding: var(--section-py) var(--pad-x); }
 @media (max-width: 980px) { .sponsors-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 540px) { .sponsors-grid { grid-template-columns: 1fr; } }
 @media (max-width: 540px) { .submit { width: 100%; } }
-@media (max-width: 540px) { .sponsors-label { display: none; } }
+@media (max-width: 540px) { .sponsors-dashes { display: none; } }
 .sponsor { padding: 28px 18px; text-align: center; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background 0.15s; cursor: pointer; }
 .sponsor:hover { background: rgba(255,255,255,0.03); }
 .sponsor .nm { font-family: var(--serif); font-size: 22px; font-weight: 600; }
