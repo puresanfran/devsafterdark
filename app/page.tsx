@@ -335,12 +335,29 @@ export default function Home() {
     document.getElementById('showMore')?.addEventListener('click', () => { visibleCount += 10; renderArchive(); });
 
     /* ── Pitch form ── */
-    document.getElementById('pitchForm')?.addEventListener('submit', e => {
+    document.getElementById('pitchForm')?.addEventListener('submit', async e => {
       e.preventDefault();
-      (document.getElementById('pitchForm') as HTMLElement).style.display = 'none';
-      const thanks = document.getElementById('thanks') as HTMLElement;
-      thanks.classList.add('show');
-      thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const form = e.target as HTMLFormElement;
+      const data = Object.fromEntries(new FormData(form));
+      const btn = form.querySelector('.submit') as HTMLButtonElement;
+      btn.disabled = true;
+      btn.querySelector('span')!.textContent = 'Sending…';
+      try {
+        const res = await fetch('/api/pitch', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        if (!res.ok) throw new Error('failed');
+        (document.getElementById('pitchForm') as HTMLElement).style.display = 'none';
+        const thanks = document.getElementById('thanks') as HTMLElement;
+        thanks.classList.add('show');
+        thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } catch {
+        btn.disabled = false;
+        btn.querySelector('span')!.textContent = 'Send the Pitch';
+        alert('Something went wrong — please try again.');
+      }
     });
 
 
@@ -713,19 +730,19 @@ export default function Home() {
             <div className="form-grid">
               <div className="field">
                 <div className="field-label">Your name</div>
-                <input type="text" placeholder="The byline" required autoComplete="name" />
+                <input type="text" name="firstname" placeholder="The byline" required autoComplete="name" />
               </div>
               <div className="field">
                 <div className="field-label">Email</div>
-                <input type="email" placeholder="how we'll reach you" required autoComplete="email" />
+                <input type="email" name="email" placeholder="how we'll reach you" required autoComplete="email" />
               </div>
               <div className="field">
                 <div className="field-label">What&apos;s the angle</div>
-                <input type="text" placeholder="e.g. sponsoring ep. 044, series run, season 2 deal…" />
+                <input type="text" name="whats_the_angle" placeholder="e.g. be a guest, sponsor an episode, season 2 collab…" />
               </div>
               <div className="field">
                 <div className="field-label">The pitch</div>
-                <textarea placeholder="Start with the moment something went sideways." required></textarea>
+                <textarea name="message" placeholder="Start with the moment something went sideways." required></textarea>
               </div>
               <button className="submit" type="submit"><span>Send the Pitch</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
             </div>
