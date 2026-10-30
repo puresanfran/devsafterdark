@@ -819,18 +819,18 @@ export default function Home() {
         <div className="sponsors-bar">
           <div className="mono" style={{color:'var(--mute)'}}>── Sponsored By ──────────</div>
           <div className="rule"></div>
-          <a href="#pitch" className="btn btn-ghost">Sponsor a Future Episode →</a>
+          <a href="#pitch" className="btn btn-ghost">Become a Sponsor →</a>
         </div>
         <div className="sponsors-grid">
           {[
-            {nm:'Linear',tg:'Issue tracking for builders'},
-            {nm:'Resend',tg:'Email for developers'},
-            {nm:'Neon',tg:'Serverless Postgres'},
-            {nm:'Railway',tg:'Ship faster, host smarter'},
-            {nm:'Pylon',tg:'Support that scales'},
-            {nm:'Tigris',tg:'Globally distributed storage'},
-          ].map(s => (
-            <div key={s.nm} className="sponsor">
+            {nm:'Your Brand',tg:'This spot is available'},
+            {nm:'Your Brand',tg:'This spot is available'},
+            {nm:'Your Brand',tg:'This spot is available'},
+            {nm:'Your Brand',tg:'This spot is available'},
+            {nm:'Your Brand',tg:'This spot is available'},
+            {nm:'Your Brand',tg:'This spot is available'},
+          ].map((s, i) => (
+            <div key={i} className="sponsor">
               <div className="nm">{s.nm}</div>
               <div className="tg mono">{s.tg}</div>
             </div>
