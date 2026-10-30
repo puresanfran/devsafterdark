@@ -318,8 +318,8 @@ section.frame { padding: var(--section-py) var(--pad-x); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
 @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
 .field-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
-.field input, .field textarea { width: 100%; margin-top: 8px; padding: 14px 0; background: transparent; border: none; border-bottom: 1px solid var(--line); color: var(--fg); font-family: var(--sans); font-size: 16px; outline: none; resize: vertical; }
-.field textarea { font-family: var(--serif); font-size: 17px; min-height: 120px; }
+.field input, .field textarea { width: 100%; margin-top: 8px; padding: 14px 0; background: transparent; border: none; border-bottom: 1px solid var(--line); color: var(--fg); font-family: var(--serif); font-size: 17px; outline: none; resize: vertical; }
+.field textarea { min-height: 120px; }
 .field input:focus, .field textarea:focus { border-bottom-color: var(--accent); }
 .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
 .chip { padding: 8px 14px; font-family: var(--sans); font-size: 12px; background: transparent; color: var(--fg); border: 1px solid var(--line); cursor: pointer; transition: all 0.15s; }
