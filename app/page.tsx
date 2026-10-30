@@ -733,6 +733,8 @@ export default function Home() {
         <div>
           <form className="form-card" id="pitchForm" noValidate>
             <span className="tape cyan">The Form</span>
+            {/* Honeypot — hidden from humans, bots fill it */}
+            <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{position:'absolute',left:'-9999px',width:'1px',height:'1px',opacity:0}} />
             <div className="form-grid">
               <div className="form-row">
                 <div className="field">
