@@ -740,11 +740,11 @@ export default function Home() {
               </div>
               <div className="field">
                 <div className="field-label">Email</div>
-                <input type="email" name="email" placeholder="how we'll reach you" required autoComplete="email" />
+                <input type="email" name="email" placeholder="How we'll reach you" required autoComplete="email" />
               </div>
               <div className="field">
                 <div className="field-label">What&apos;s the angle</div>
-                <input type="text" name="whats_the_angle" placeholder="e.g. be a guest, sponsor an episode, season 2 collab…" />
+                <input type="text" name="whats_the_angle" placeholder="e.g. Be a guest, Sponsor an episode, Season 2 collab…" />
               </div>
               <div className="field">
                 <div className="field-label">The pitch</div>
