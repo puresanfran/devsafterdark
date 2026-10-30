@@ -713,7 +713,7 @@ export default function Home() {
       <section className="frame pitch" id="pitch" aria-label="Be a guest">
         <div>
           <span className="tape" style={{marginBottom:'24px',display:'inline-block'}}>Open Submissions</span>
-          <h2>Pitch us<br /><em>a story.</em></h2>
+          <h2>Pitch us <br /><em>a story.</em></h2>
           <p className="deck-large">
             We&apos;re not interested in the polished version. We want the part you usually leave out: the bug that took two months, the bet that didn&apos;t pay off, the late-night decision that turned into a company.
           </p>
