@@ -728,9 +728,15 @@ export default function Home() {
           <form className="form-card" id="pitchForm" noValidate>
             <span className="tape cyan">The Form</span>
             <div className="form-grid">
-              <div className="field">
-                <div className="field-label">Your name</div>
-                <input type="text" name="firstname" placeholder="The byline" required autoComplete="name" />
+              <div className="form-row">
+                <div className="field">
+                  <div className="field-label">First name</div>
+                  <input type="text" name="firstname" placeholder="First" required autoComplete="given-name" />
+                </div>
+                <div className="field">
+                  <div className="field-label">Last name</div>
+                  <input type="text" name="lastname" placeholder="Last" required autoComplete="family-name" />
+                </div>
               </div>
               <div className="field">
                 <div className="field-label">Email</div>
