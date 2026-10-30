@@ -120,6 +120,7 @@ h1, h2, h3 { margin: 0; }
 .eyebrow::before { content: ""; display: inline-block; width: 48px; height: 1px; background: var(--accent); }
 .headline { font-family: var(--serif); font-weight: var(--heading-weight); font-size: calc(clamp(46px, 9vw, 140px) * var(--headline-scale)); line-height: 0.88; letter-spacing: -0.035em; margin: 0; text-shadow: 0 6px 40px rgba(0,0,0,0.45); }
 .headline em { font-style: var(--heading-ital); font-weight: var(--heading-weight); color: var(--accent); }
+@media (max-width: 768px) { .headline { font-size: calc(clamp(64px, 14vw, 140px) * var(--headline-scale)); } }
 .deck { font-family: var(--serif); font-style: italic; font-size: clamp(17px, 2vw, 25px); line-height: 1.5; color: var(--fg); opacity: 0.92; max-width: 600px; margin: 0 auto; text-shadow: 0 2px 24px rgba(0,0,0,0.55); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: center; margin-top: 4px; }
 .play-cluster { display: flex; align-items: center; gap: 18px; background: rgba(15,17,22,0.55); border: 1px solid var(--line); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); padding: 10px 18px 10px 10px; }
