@@ -817,7 +817,7 @@ export default function Home() {
       {/* SPONSORS */}
       <section className="frame" aria-label="Sponsors" style={{paddingTop:0}}>
         <div className="sponsors-bar">
-          <div className="mono" style={{color:'var(--mute)'}}>── Sponsored By ──────────</div>
+          <div className="sponsors-label mono" style={{color:'var(--mute)'}}>── Sponsored By ──────────</div>
           <div className="rule"></div>
           <a href="#pitch" className="btn btn-ghost">Become a Sponsor →</a>
         </div>
