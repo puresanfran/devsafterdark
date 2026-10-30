@@ -402,8 +402,6 @@ export default function Home() {
       imgModalImg.src = el.dataset.src || '';
       imgModalImg.alt = el.querySelector('img')?.alt || '';
       imgModalCounter.textContent = `${idx + 1} / ${galleryItems.length}`;
-      document.getElementById('imgModalPrev')!.style.visibility = idx === 0 ? 'hidden' : 'visible';
-      document.getElementById('imgModalNext')!.style.visibility = idx === galleryItems.length - 1 ? 'hidden' : 'visible';
     }
 
     document.querySelectorAll('.media-item-img[data-src]').forEach((el, i) => {
@@ -413,14 +411,14 @@ export default function Home() {
 
     document.getElementById('imgModalClose')?.addEventListener('click', closeModal);
     document.getElementById('imgModalBackdrop')?.addEventListener('click', closeModal);
-    document.getElementById('imgModalPrev')?.addEventListener('click', () => { if (galleryIdx > 0) { galleryIdx--; showSlide(galleryIdx); } });
-    document.getElementById('imgModalNext')?.addEventListener('click', () => { if (galleryIdx < galleryItems.length - 1) { galleryIdx++; showSlide(galleryIdx); } });
+    document.getElementById('imgModalPrev')?.addEventListener('click', () => { galleryIdx = (galleryIdx - 1 + galleryItems.length) % galleryItems.length; showSlide(galleryIdx); });
+    document.getElementById('imgModalNext')?.addEventListener('click', () => { galleryIdx = (galleryIdx + 1) % galleryItems.length; showSlide(galleryIdx); });
 
     function handleModalKey(e: KeyboardEvent) {
       if (!imgModal.classList.contains('open')) return;
       if (e.key === 'Escape') closeModal();
-      if (e.key === 'ArrowLeft'  && galleryIdx > 0)                        { galleryIdx--; showSlide(galleryIdx); }
-      if (e.key === 'ArrowRight' && galleryIdx < galleryItems.length - 1)  { galleryIdx++; showSlide(galleryIdx); }
+      if (e.key === 'ArrowLeft')  { galleryIdx = (galleryIdx - 1 + galleryItems.length) % galleryItems.length; showSlide(galleryIdx); }
+      if (e.key === 'ArrowRight') { galleryIdx = (galleryIdx + 1) % galleryItems.length; showSlide(galleryIdx); }
     }
     document.addEventListener('keydown', handleModalKey);
 
