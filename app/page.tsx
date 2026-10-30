@@ -532,7 +532,7 @@ export default function Home() {
           <div className="hero-stage">
             <div className="eyebrow-row fade-up fade-up-1">
               <div className="eyebrow mono">A podcast for night-shift builders</div>
-              <span className="vol2-pill mono">Volume 2 Is Here</span>
+              <span className="vol2-pill mono">Volume 2 Is Coming</span>
             </div>
             <h1 className="headline fade-up fade-up-2">
               The internet,<br />
