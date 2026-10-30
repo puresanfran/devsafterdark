@@ -544,7 +544,7 @@ export default function Home() {
             </div>
             <h1 className="headline fade-up fade-up-2">
               The internet,<br />
-              <em>after</em> bedtime.
+              <span style={{whiteSpace:'nowrap'}}><em>after</em> bedtime.</span>
             </h1>
             <p className="deck fade-up fade-up-3">
               Late-night conversations with the people who keep the internet running while you sleep: the founders, the maintainers, the on-call engineers, and the friends-of-friends with one truly weird production story.
