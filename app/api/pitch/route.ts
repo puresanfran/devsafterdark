@@ -3,7 +3,6 @@ import { Resend } from 'resend';
 
 const PORTAL_ID = '19659375';
 const FORM_GUID = '926d6e04-9f65-4cd6-be3c-8b1c844fc70e';
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Rate limiting: max 3 submissions per IP per hour
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
@@ -75,6 +74,7 @@ export async function POST(req: NextRequest) {
   }
 
   // Send notification email via Resend
+  const resend = new Resend(process.env.RESEND_API_KEY);
   await resend.emails.send({
     from: 'Devs After Dark Pitches <pitches@devsafterdark.com>',
     to: 'hello@devsafterdark.com',
