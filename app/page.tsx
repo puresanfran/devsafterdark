@@ -506,7 +506,7 @@ export default function Home() {
       {/* NAV */}
       <header className="nav" id="mainNav">
         <div className="nav-brand">
-          <a href="#" className="wordmark">Devs<em>After</em>Dark</a>
+          <a href="#" className="wordmark">Devs<span className="wordmark-colon">:</span><em>After</em> Dark</a>
         </div>
         <nav className="nav-links" aria-label="Primary navigation">
           <a href="#latest">The Latest</a>
