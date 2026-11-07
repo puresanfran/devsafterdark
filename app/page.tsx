@@ -506,7 +506,7 @@ export default function Home() {
       {/* NAV */}
       <header className="nav" id="mainNav">
         <div className="nav-brand">
-          <a href="#" className="wordmark">Devs<span className="wordmark-colon"><i/><i/></span><em>After</em>Dark</a>
+          <a href="#" className="wordmark"><img src="/assets/logo.webp" alt="Devs:AfterDark" className="wordmark-img" /></a>
         </div>
         <nav className="nav-links" aria-label="Primary navigation">
           <a href="#latest">The Latest</a>
@@ -849,7 +849,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="foot">
         <div>
-          <div className="word">Devs<span className="wordmark-colon"><i/><i/></span><em>After</em>Dark</div>
+          <div className="word"><img src="/assets/logo.webp" alt="Devs:AfterDark" className="footer-logo-img" /></div>
           <p className="deck-foot">A collection of late-night conversations with the people who build the internet you use every day.</p>
         </div>
         <div className="col">
