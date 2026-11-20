@@ -8,8 +8,9 @@ export const metadata: Metadata = {
     title: "Devs:After Dark - The internet, after bedtime. | Tech Podcast",
     description: "A podcast for night-shift builders.",
     type: "website",
+    images: [{ url: "https://devsafterdark.com/assets/og-image.webp", width: 1200, height: 630, alt: "Devs:After Dark" }],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", images: ["https://devsafterdark.com/assets/og-image.webp"] },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
